@@ -38,12 +38,19 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  size: {
+    type: String,
+    default: "md",
+    validator: (v: string) =>
+      ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
+  },
 });
 
 const classes = computed(() => {
   return [
     "btn",
     `btn-${props.color}`,
+    `btn-${props.size}`,
     {
       "btn-outlined": props.outlined,
       "btn-text": props.text,
@@ -67,7 +74,7 @@ const tag = computed(() =>
 
 <style scoped>
 .btn {
-  @apply appearance-none px-4 py-2.5 border rounded font-semibold transition duration-300;
+  @apply appearance-none border rounded font-semibold transition duration-300;
 }
 
 .btn-rounded {
@@ -85,6 +92,46 @@ const tag = computed(() =>
 .btn-block {
   @apply w-full block;
 }
+
+/* 
+ * -----
+ * SIZES
+ * -----
+ */
+
+.btn-xxs {
+  @apply text-xs px-1.5 py-1;
+}
+
+.btn-xs {
+  @apply text-xs px-2 py-1.5;
+}
+
+.btn-sm {
+  @apply text-sm px-2.5 py-1.5;
+}
+
+.btn-md {
+  @apply text-sm px-3 py-2;
+}
+
+.btn-lg {
+  @apply text-base px-4 py-2.5;
+}
+
+.btn-xl {
+  @apply text-lg px-5 py-3;
+}
+
+.btn-2xl {
+  @apply text-xl px-5 py-4;
+}
+
+/* 
+ * -----
+ * COLORS
+ * -----
+ */
 
 /* default */
 .btn,

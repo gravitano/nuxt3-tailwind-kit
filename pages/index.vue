@@ -11,6 +11,8 @@ const colors = [
 ];
 
 const variants = ["", "rounded", "outlined", "text", "block", "underline"];
+
+const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
 </script>
 
 <template>
@@ -27,6 +29,14 @@ const variants = ["", "rounded", "outlined", "text", "block", "underline"];
           variant ? { [variant]: true, text: variant === 'underline' } : {}
         "
       >
+        {{ color }}
+      </v-btn>
+    </div>
+
+    <h2 class="font-bold mb-2">Sizes</h2>
+    <div v-for="size in sizes" :key="size" class="space-x-2 space-y-2">
+      <h3 class="font-bold text-sm mb-2">{{ size }}</h3>
+      <v-btn v-for="color in colors" :key="color" :color="color" :size="size">
         {{ color }}
       </v-btn>
     </div>
