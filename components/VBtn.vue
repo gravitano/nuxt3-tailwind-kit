@@ -131,6 +131,9 @@ const tag = computed(() =>
 .btn-2xl {
   @apply text-xl px-5 py-4;
 }
+.btn:disabled {
+  @apply bg-gray-100 hover:bg-gray-100 hover:border-gray-100 text-gray-400 border-gray-100 cursor-not-allowed;
+}
 
 /* 
  * -----

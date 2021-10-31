@@ -10,7 +10,15 @@ const colors = [
   "dark",
 ];
 
-const variants = ["", "rounded", "outlined", "text", "block", "underline"];
+const variants = [
+  "",
+  "rounded",
+  "outlined",
+  "text",
+  "block",
+  "underline",
+  "disabled",
+];
 const iconVariants = ["", "rounded", "outlined", "text"];
 
 const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
