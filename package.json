@@ -6,6 +6,9 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt3": "latest"
+    "autoprefixer": "^10.4.0",
+    "nuxt3": "latest",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
   }
 }
