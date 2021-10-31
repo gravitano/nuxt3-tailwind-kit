@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 const primary = colors.indigo;
 const secondary = colors.pink;
@@ -25,6 +26,9 @@ module.exports = {
         warning,
         success,
         error,
+      },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
