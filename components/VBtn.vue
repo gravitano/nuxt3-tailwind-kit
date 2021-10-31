@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, toRefs } from "vue";
+import { computed } from "vue";
 
 const props = defineProps({
   type: {
@@ -30,6 +30,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  to: {
+    type: [String, Object],
+    default: "",
+  },
+  href: {
+    type: String,
+    default: "",
+  },
 });
 
 const classes = computed(() => {
@@ -45,12 +53,16 @@ const classes = computed(() => {
     },
   ];
 });
+
+const tag = computed(() =>
+  props.to ? "nuxt-link" : props.href ? "a" : "button"
+);
 </script>
 
 <template>
-  <button :type="type" :class="classes">
+  <component :is="tag" :to="to" :href="href" :type="type" :class="classes">
     <slot />
-  </button>
+  </component>
 </template>
 
 <style scoped>
