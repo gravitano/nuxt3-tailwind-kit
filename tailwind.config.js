@@ -1,3 +1,11 @@
+const colors = require('tailwindcss/colors');
+const primary = colors.indigo;
+const secondary = colors.pink;
+const info = colors.sky;
+const warning = colors.amber;
+const success = colors.emerald;
+const error = colors.red;
+
 module.exports = {
   purge: [
     './assets/**/*.{vue,js,css}',
@@ -9,7 +17,16 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary,
+        secondary,
+        info,
+        warning,
+        success,
+        error,
+      },
+    },
   },
   variants: {
     extend: {},
