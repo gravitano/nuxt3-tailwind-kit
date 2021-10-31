@@ -44,6 +44,10 @@ const props = defineProps({
     validator: (v: string) =>
       ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
   },
+  icon: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const classes = computed(() => {
@@ -57,6 +61,7 @@ const classes = computed(() => {
       "btn-rounded": props.rounded,
       "btn-block": props.block,
       "btn-underline": props.underline,
+      "btn-icon": props.icon,
     },
   ];
 });
@@ -74,7 +79,7 @@ const tag = computed(() =>
 
 <style scoped>
 .btn {
-  @apply appearance-none border rounded font-semibold transition duration-300;
+  @apply inline-flex justify-center items-center appearance-none border rounded font-semibold transition duration-300;
 }
 
 .btn-rounded {
@@ -262,5 +267,28 @@ const tag = computed(() =>
 /* dark */
 .btn-dark.btn-text {
   @apply bg-transparent hover:bg-transparent hover:text-gray-900 text-gray-800;
+}
+
+/** ICON **/
+.btn-icon.btn-xxs {
+  @apply w-6 h-6;
+}
+.btn-icon.btn-xs {
+  @apply w-8 h-8;
+}
+.btn-icon.btn-sm {
+  @apply w-10 h-10;
+}
+.btn-icon.btn-md {
+  @apply w-12 h-12;
+}
+.btn-icon.btn-lg {
+  @apply w-14 h-14;
+}
+.btn-icon.btn-xl {
+  @apply w-16 h-16;
+}
+.btn-icon.btn-2xl {
+  @apply w-20 h-20;
 }
 </style>

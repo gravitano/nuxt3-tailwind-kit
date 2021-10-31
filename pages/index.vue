@@ -11,8 +11,13 @@ const colors = [
 ];
 
 const variants = ["", "rounded", "outlined", "text", "block", "underline"];
+const iconVariants = ["", "rounded", "outlined", "text"];
 
 const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
+
+const bindVariant = (variant: string) => {
+  return variant ? { [variant]: true } : {};
+};
 </script>
 
 <template>
@@ -25,9 +30,7 @@ const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
         v-for="color in colors"
         :key="color"
         :color="color"
-        v-bind="
-          variant ? { [variant]: true, text: variant === 'underline' } : {}
-        "
+        v-bind="bindVariant(variant)"
       >
         {{ color }}
       </v-btn>
@@ -67,6 +70,33 @@ const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
       >
         {{ color }}
       </v-btn>
+    </div>
+
+    <div class="space-x-2 space-y-2">
+      <h2 class="font-bold mb-2">Icon</h2>
+      <div class="space-y-2" v-for="variant in iconVariants" :key="variant">
+        <div v-for="size in sizes" :key="size" class="space-x-2 space-y-2">
+          <v-btn
+            v-for="color in colors"
+            :key="color"
+            :color="color"
+            :size="size"
+            icon
+            v-bind="bindVariant(variant)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+              />
+            </svg>
+          </v-btn>
+        </div>
+      </div>
     </div>
   </div>
 </template>
