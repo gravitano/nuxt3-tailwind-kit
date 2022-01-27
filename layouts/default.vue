@@ -43,7 +43,7 @@ const menus = ref([
 </script>
 
 <template>
-  <div class="py-4 bg-white border-b">
+  <div class="py-4 bg-white border-b dark:bg-gray-900">
     <div class="container mx-auto flex justify-between gap-4">
       <nuxt-link to="/" class="font-semibold text-primary-500 mr-5">
         Nuxt Tailwind Kit
