@@ -21,7 +21,10 @@ const bindVariant = (variant: string) => {
 </script>
 
 <template>
-  <h1 class="font-bold text-3xl mb-5">Buttons</h1>
+  <div class="mb-5">
+    <h1 class="font-bold text-xl text-gray-900">Buttons</h1>
+    <p class="text-gray-700 text-base">Button components</p>
+  </div>
 
   <div class="space-y-6">
     <div v-for="variant in variants" :key="variant" class="space-x-2 space-y-2">
