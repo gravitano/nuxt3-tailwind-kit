@@ -8,7 +8,7 @@ const success = colors.emerald;
 const error = colors.red;
 
 module.exports = {
-  purge: [
+  content: [
     './assets/**/*.{vue,js,css}',
     './components/**/*.{vue,js}',
     './layouts/**/*.vue',
@@ -16,7 +16,7 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
-  darkMode: false, // or 'media' or 'class'
+  // darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
