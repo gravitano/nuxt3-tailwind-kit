@@ -17,7 +17,7 @@ const emit = defineEmits(["update:modelValue"]);
   <div>
     <Navbar />
 
-    <div class="dark:bg-gray-900 transition-all duration-300">
+    <div class="dark:bg-gray-900 transition-all duration-300 min-h-[calc(100vh-65px)]">
       <div
         class="container mx-auto xl:p-4 py-4 flex flex-col sm:flex-row gap-4 px-4 sm:px-0"
       >
