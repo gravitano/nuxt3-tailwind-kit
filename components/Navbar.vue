@@ -5,9 +5,9 @@ const mainMenu = ref(false);
 </script>
 
 <template>
-  <div class="py-4 bg-white border-b dark:bg-gray-900">
+  <div class="py-4 bg-white border-b dark:bg-gray-900 dark:border-b-gray-800">
     <div class="container mx-auto flex justify-between gap-4 px-4 sm:px-0">
-      <nuxt-link to="/" class="font-semibold text-primary-500 mr-5">
+      <nuxt-link to="/" class="font-semibold text-primary-500 mr-5 dark:text-white">
         Nuxt Tailwind Kit
       </nuxt-link>
       <button class="appearance-none sm:hidden" @click="mainMenu = !mainMenu">
@@ -36,14 +36,16 @@ const mainMenu = ref(false);
         "
       >
         <nuxt-link
-          class="hover:text-primary-500 block sm:inline"
+          class="hover:text-primary-500 block sm:inline dark:text-gray-300 dark:hover:text-primary-500"
+          exact-active-class="dark:text-primary-500 text-primary-500 font-semibold"
           @click="mainMenu = false"
           to="/"
         >
           Home
         </nuxt-link>
         <nuxt-link
-          class="hover:text-primary-500 block sm:inline"
+          class="hover:text-primary-500 block sm:inline dark:text-gray-300 dark:hover:text-primary-500"
+          exact-active-class="dark:text-primary-500 text-primary-500 font-semibold"
           @click="mainMenu = false"
           to="/components"
         >

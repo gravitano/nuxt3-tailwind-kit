@@ -57,13 +57,15 @@ const sideMenu = ref(false);
     class="mb-5"
     :class="sideMenu ? 'block' : 'hidden sm:block'"
   >
-    <h3 class="text-xs text-gray-500 uppercase mb-2">{{ menu.text }}</h3>
+    <h3 class="text-xs text-gray-500 uppercase mb-2">
+      {{ menu.text }}
+    </h3>
     <nuxt-link
       v-for="(child, j) in menu.children"
       :key="j"
       :to="child.to"
-      class="px-4 hover:text-primary-500 text-gray-800 block py-1 text-sm border-l hover:border-primary-500 hover:font-semibold"
-      exact-active-class="font-semibold text-primary-500 border-primary-500"
+      class="px-4 transition duration-300 hover:text-primary-500 text-gray-800 dark:text-gray-400 block py-1 text-sm border-l dark:border-gray-800 hover:border-primary-500"
+      exact-active-class="font-semibold text-primary-500 border-primary-500 dark:!border-primary-500"
     >
       {{ child.text }}
     </nuxt-link>

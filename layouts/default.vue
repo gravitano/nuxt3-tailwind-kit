@@ -16,12 +16,16 @@ const emit = defineEmits(["update:modelValue"]);
 <template>
   <Navbar />
 
-  <div class="container mx-auto xl:p-4 py-4 flex flex-col sm:flex-row gap-4 px-4 sm:px-0">
-    <div class="w-full sm:w-2/12">
-      <Sidebar />
-    </div>
-    <div class="w-full sm:w-9/12">
-      <slot />
+  <div class="dark:bg-gray-900">
+    <div
+      class="container mx-auto xl:p-4 py-4 flex flex-col sm:flex-row gap-4 px-4 sm:px-0"
+    >
+      <div class="w-full sm:w-2/12">
+        <Sidebar />
+      </div>
+      <div class="w-full sm:w-9/12">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
