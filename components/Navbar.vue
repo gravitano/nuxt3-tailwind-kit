@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+import MenuIcon from "./icons/MenuIcon.vue";
 
 const mainMenu = ref(false);
 
@@ -17,20 +18,7 @@ const toggleDark = useToggle(isDark);
         Nuxt Tailwind Kit
       </nuxt-link>
       <button class="appearance-none sm:hidden" @click="mainMenu = !mainMenu">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
+        <menu-icon />
         <span class="sr-only">Menu</span>
       </button>
       <div
