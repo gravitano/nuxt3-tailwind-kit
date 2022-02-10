@@ -41,8 +41,7 @@ const props = defineProps({
   size: {
     type: String,
     default: "md",
-    validator: (v: string) =>
-      ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
+    validator: (v: string) => ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
   },
   icon: {
     type: Boolean,
@@ -66,9 +65,7 @@ const classes = computed(() => {
   ];
 });
 
-const tag = computed(() =>
-  props.to ? "nuxt-link" : props.href ? "a" : "button"
-);
+const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"));
 </script>
 
 <template>
@@ -132,7 +129,7 @@ const tag = computed(() =>
   @apply text-xl px-5 py-4;
 }
 .btn:disabled {
-  @apply bg-gray-100 hover:bg-gray-100 hover:border-gray-100 text-gray-400 border-gray-100 cursor-not-allowed;
+  @apply bg-gray-100 hover:bg-gray-100 hover:border-gray-100 text-gray-400 border-gray-100 cursor-not-allowed dark:bg-gray-800 dark:border-gray-800 dark:text-gray-600;
 }
 
 /* 
@@ -144,42 +141,42 @@ const tag = computed(() =>
 /* default */
 .btn,
 .btn-default {
-  @apply border-gray-500 bg-white hover:bg-gray-100;
+  @apply border-gray-500 bg-white hover:bg-gray-100 dark:text-gray-900;
 }
 
 /* primary */
 .btn-primary {
-  @apply border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600 text-white;
+  @apply border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600 text-white dark:text-white;
 }
 
 /* secondary */
 .btn-secondary {
-  @apply border-secondary-500 bg-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 text-white;
+  @apply border-secondary-500 bg-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 text-white dark:text-white;
 }
 
 /* info */
 .btn-info {
-  @apply border-info-500 bg-info-500 hover:bg-info-600 hover:border-info-600 text-white;
+  @apply border-info-500 bg-info-500 hover:bg-info-600 hover:border-info-600 text-white dark:text-white;
 }
 
 /* secondary */
 .btn-warning {
-  @apply border-warning-500 bg-warning-500 hover:bg-warning-600 hover:border-warning-600 text-white;
+  @apply border-warning-500 bg-warning-500 hover:bg-warning-600 hover:border-warning-600 text-white dark:text-white;
 }
 
 /* secondary */
 .btn-error {
-  @apply border-error-500 bg-error-500 hover:bg-error-600 hover:border-error-600 text-white;
+  @apply border-error-500 bg-error-500 hover:bg-error-600 hover:border-error-600 text-white dark:text-white;
 }
 
 /* secondary */
 .btn-success {
-  @apply border-success-500 bg-success-500 hover:bg-success-600 hover:border-success-600 text-white;
+  @apply border-success-500 bg-success-500 hover:bg-success-600 hover:border-success-600 text-white dark:text-white;
 }
 
 /* dark */
 .btn-dark {
-  @apply border-gray-800 bg-gray-800 hover:bg-gray-900 hover:border-gray-900 text-white;
+  @apply border-gray-800 bg-gray-800 hover:bg-gray-900 hover:border-gray-900 text-white dark:text-white;
 }
 
 /*
@@ -191,6 +188,10 @@ const tag = computed(() =>
 .btn.btn-outlined,
 .btn-default.btn-outlined {
   @apply border-gray-500 bg-transparent hover:bg-gray-100;
+}
+
+.btn-default.btn-outlined {
+  @apply dark:text-white dark:hover:bg-gray-800;
 }
 
 /* primary */
@@ -224,7 +225,7 @@ const tag = computed(() =>
 }
 /* dark */
 .btn-dark.btn-outlined {
-  @apply bg-transparent border-gray-800 hover:bg-gray-100  text-gray-800;
+  @apply bg-transparent border-gray-800 hover:bg-gray-100  text-gray-800 dark:text-white dark:border-gray-400 dark:hover:bg-gray-800;
 }
 
 /*
@@ -236,6 +237,10 @@ const tag = computed(() =>
 .btn.btn-text,
 .btn-default.btn-text {
   @apply border-gray-500 bg-transparent hover:bg-transparent hover:text-gray-600;
+}
+
+.btn-default.btn-text {
+  @apply dark:text-white dark:hover:text-gray-400;
 }
 
 /* primary */
@@ -269,7 +274,7 @@ const tag = computed(() =>
 }
 /* dark */
 .btn-dark.btn-text {
-  @apply bg-transparent hover:bg-transparent hover:text-gray-900 text-gray-800;
+  @apply bg-transparent hover:bg-transparent hover:text-gray-900 text-gray-800 dark:text-gray-100 dark:hover:text-gray-400;
 }
 
 /** ICON **/
