@@ -22,9 +22,9 @@ const bindVariant = (variant: string) => {
 
 <template>
   <div>
-    <div class="mb-5">
-      <h1 class="font-bold text-xl text-gray-900">Buttons</h1>
-      <p class="text-gray-700 text-base">Button components</p>
+    <div class="mb-5 space-y-1">
+      <h1 class="font-bold text-3xl text-gray-900 dark:text-gray-200">Buttons</h1>
+      <p class="text-gray-700 text-base dark:text-gray-400">Button components</p>
     </div>
 
     <div class="space-y-6">

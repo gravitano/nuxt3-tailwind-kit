@@ -64,7 +64,7 @@ const sideMenu = ref(false);
       v-for="(child, j) in menu.children"
       :key="j"
       :to="child.to"
-      class="px-4 transition duration-300 hover:text-primary-500 text-gray-800 dark:text-gray-400 block py-1 text-sm border-l dark:border-gray-800 hover:border-primary-500"
+      class="px-4 transition duration-300 hover:text-primary-500 text-gray-800 dark:text-gray-400 block py-1 text-sm border-l dark:border-gray-800 hover:border-primary-500 dark:hover:text-gray-200 dark:hover:border-gray-200"
       exact-active-class="font-semibold text-primary-500 border-primary-500 dark:!border-primary-500"
     >
       {{ child.text }}
