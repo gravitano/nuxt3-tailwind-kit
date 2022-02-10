@@ -50,30 +50,34 @@ const bindVariant = (variant: string) => {
 
       <div class="space-x-2 space-y-2">
         <h2 class="font-bold mb-2">Anchor</h2>
-        <v-btn
-          v-for="color in colors"
-          :key="color"
-          :color="color"
-          text
-          underline
-          href="https://google.com"
-        >
-          {{ color }}
-        </v-btn>
+        <div class="flex gap-2 flex-wrap">
+          <v-btn
+            v-for="color in colors"
+            :key="color"
+            :color="color"
+            text
+            underline
+            href="https://google.com"
+          >
+            {{ color }}
+          </v-btn>
+        </div>
       </div>
 
       <div class="space-x-2 space-y-2">
         <h2 class="font-bold mb-2">Nuxt Link</h2>
-        <v-btn
-          v-for="color in colors"
-          :key="color"
-          :color="color"
-          text
-          underline
-          :to="{ path: color }"
-        >
-          {{ color }}
-        </v-btn>
+        <div class="flex gap-2 flex-wrap">
+          <v-btn
+            v-for="color in colors"
+            :key="color"
+            :color="color"
+            text
+            underline
+            :to="{ path: color }"
+          >
+            {{ color }}
+          </v-btn>
+        </div>
       </div>
 
       <div class="space-x-2 space-y-2">
