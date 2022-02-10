@@ -6,6 +6,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.0.0-4",
     "@vueuse/nuxt": "^7.5.5",
     "autoprefixer": "^10.4.0",
     "nuxt3": "latest",
