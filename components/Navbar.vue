@@ -19,12 +19,8 @@ const toggleDark = useToggle(isDark);
       <nuxt-link to="/" class="font-semibold text-primary-500 mr-5 dark:text-white">
         Nuxt Tailwind Kit
       </nuxt-link>
-      <button class="appearance-none sm:hidden" @click="mainMenu = !mainMenu">
-        <menu-icon />
-        <span class="sr-only">Menu</span>
-      </button>
       <div
-        class="space-y-2 sm:space-y-0"
+        class="space-y-2 sm:space-y-0 dark:bg-gray-900"
         :class="
           mainMenu
             ? 'block w-full fixed inset-x-0 px-4 shadow py-4 top-14 sm:top-0 bg-white z-5'
@@ -47,7 +43,9 @@ const toggleDark = useToggle(isDark);
         >
           Components
         </nuxt-link>
+      </div>
 
+      <div class="flex items-center">
         <v-btn
           rounded
           size="xs"
@@ -60,6 +58,10 @@ const toggleDark = useToggle(isDark);
           <moon-icon v-if="isDark" />
           <sun-icon v-else />
         </v-btn>
+        <button class="appearance-none sm:hidden" @click="mainMenu = !mainMenu">
+          <menu-icon />
+          <span class="sr-only">Menu</span>
+        </button>
       </div>
     </div>
   </div>
