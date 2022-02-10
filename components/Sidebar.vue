@@ -2,19 +2,19 @@
 import { ref } from "vue";
 
 const menus = ref([
-  {
-    text: "Getting Started",
-    children: [
-      {
-        text: "Installation",
-        to: "/getting-started/installation",
-      },
-      {
-        text: "Core Concepts",
-        to: "/getting-started/installation",
-      },
-    ],
-  },
+  // {
+  //   text: "Getting Started",
+  //   children: [
+  //     {
+  //       text: "Installation",
+  //       to: "/getting-started/installation",
+  //     },
+  //     {
+  //       text: "Core Concepts",
+  //       to: "/getting-started/installation",
+  //     },
+  //   ],
+  // },
   {
     text: "Components",
     children: [
