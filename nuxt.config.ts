@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   buildModules: ['@vueuse/nuxt', '@nuxtjs/strapi'],
   modules: ['@nuxtjs/tailwindcss'],
   strapi: {
-    url: process.env.STRAPI_URL || 'http://strapi.warsono.id',
+    url: process.env.STRAPI_URL || 'https://strapi.warsono.id',
     prefix: '/api',
     version: 'v4',
     cookie: {},
