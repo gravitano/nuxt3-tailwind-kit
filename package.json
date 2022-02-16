@@ -6,6 +6,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@nuxtjs/strapi": "^1.3.0",
     "@nuxtjs/tailwindcss": "^5.0.0-4",
     "@vueuse/nuxt": "^7.5.5",
     "autoprefixer": "^10.4.0",
