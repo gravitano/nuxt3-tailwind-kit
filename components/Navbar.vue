@@ -27,22 +27,9 @@ const toggleDark = useToggle(isDark);
             : 'hidden sm:flex sm:flex-items-center sm:gap-3'
         "
       >
-        <nuxt-link
-          class="hover:text-primary-500 block sm:inline-flex sm:items-center dark:text-gray-300 dark:hover:text-primary-500"
-          exact-active-class="dark:text-primary-500 text-primary-500 font-semibold"
-          @click="mainMenu = false"
-          to="/"
-        >
-          Home
-        </nuxt-link>
-        <nuxt-link
-          class="hover:text-primary-500 block sm:inline-flex sm:items-center dark:text-gray-300 dark:hover:text-primary-500"
-          exact-active-class="dark:text-primary-500 text-primary-500 font-semibold"
-          @click="mainMenu = false"
-          to="/components"
-        >
-          Components
-        </nuxt-link>
+        <nav-link @click="mainMenu = false" to="/"> Home </nav-link>
+        <nav-link @click="mainMenu = false" to="/components"> Components </nav-link>
+        <nav-link @click="mainMenu = false" to="/blog"> Blog </nav-link>
       </div>
 
       <div class="flex items-center">
