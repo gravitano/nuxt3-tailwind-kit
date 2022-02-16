@@ -8,6 +8,7 @@
   "devDependencies": {
     "@nuxtjs/strapi": "^1.3.0",
     "@nuxtjs/tailwindcss": "^5.0.0-4",
+    "@tailwindcss/typography": "^0.5.2",
     "@vueuse/nuxt": "^7.5.5",
     "autoprefixer": "^10.4.0",
     "nuxt3": "latest",
@@ -16,6 +17,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^7.5.5",
+    "highlight.js": "^11.4.0",
+    "markdown-it": "^12.3.2",
+    "markdown-it-prism": "^2.2.2",
     "vue": "^3.2.29"
   }
 }
