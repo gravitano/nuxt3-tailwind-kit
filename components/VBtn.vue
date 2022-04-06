@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from 'vue';
 
 const props = defineProps({
   type: {
     type: String,
-    default: "button",
+    default: 'button',
   },
   color: {
     type: String,
-    default: "default",
+    default: 'default',
   },
   rounded: {
     type: Boolean,
@@ -32,16 +32,17 @@ const props = defineProps({
   },
   to: {
     type: [String, Object],
-    default: "",
+    default: '',
   },
   href: {
     type: String,
-    default: "",
+    default: '',
   },
   size: {
     type: String,
-    default: "md",
-    validator: (v: string) => ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
+    default: 'md',
+    validator: (v: string) =>
+      ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'].includes(v),
   },
   icon: {
     type: Boolean,
@@ -51,21 +52,23 @@ const props = defineProps({
 
 const classes = computed(() => {
   return [
-    "btn",
+    'btn',
     `btn-${props.color}`,
     `btn-${props.size}`,
     {
-      "btn-outlined": props.outlined,
-      "btn-text": props.text,
-      "btn-rounded": props.rounded,
-      "btn-block": props.block,
-      "btn-underline": props.underline,
-      "btn-icon": props.icon,
+      'btn-outlined': props.outlined,
+      'btn-text': props.text,
+      'btn-rounded': props.rounded,
+      'btn-block': props.block,
+      'btn-underline': props.underline,
+      'btn-icon': props.icon,
     },
   ];
 });
 
-const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"));
+const tag = computed(() =>
+  props.to ? 'nuxt-link' : props.href ? 'a' : 'button'
+);
 </script>
 
 <template>
@@ -76,7 +79,8 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 
 <style scoped>
 .btn {
-  @apply inline-flex justify-center items-center appearance-none border rounded font-semibold transition duration-300;
+  @apply inline-flex justify-center items-center appearance-none border rounded font-semibold transition duration-300
+    focus:ring focus:outline-none focus:ring-offset-1;
 }
 
 .btn-rounded {
@@ -146,37 +150,44 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 
 /* primary */
 .btn-primary {
-  @apply border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600 text-white dark:text-white;
+  @apply border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600 text-white dark:text-white
+    focus:ring-primary-300;
 }
 
 /* secondary */
 .btn-secondary {
-  @apply border-secondary-500 bg-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 text-white dark:text-white;
+  @apply border-secondary-500 bg-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 text-white dark:text-white
+  focus:ring-secondary-300;
 }
 
 /* info */
 .btn-info {
-  @apply border-info-500 bg-info-500 hover:bg-info-600 hover:border-info-600 text-white dark:text-white;
+  @apply border-info-500 bg-info-500 hover:bg-info-600 hover:border-info-600 text-white dark:text-white
+    focus:ring-info-300;
 }
 
-/* secondary */
+/* warning */
 .btn-warning {
-  @apply border-warning-500 bg-warning-500 hover:bg-warning-600 hover:border-warning-600 text-white dark:text-white;
+  @apply border-warning-500 bg-warning-500 hover:bg-warning-600 hover:border-warning-600 text-white dark:text-white
+    focus:ring-warning-300;
 }
 
-/* secondary */
+/* error */
 .btn-error {
-  @apply border-error-500 bg-error-500 hover:bg-error-600 hover:border-error-600 text-white dark:text-white;
+  @apply border-error-500 bg-error-500 hover:bg-error-600 hover:border-error-600 text-white dark:text-white
+    focus:ring-error-300;
 }
 
-/* secondary */
+/* success */
 .btn-success {
-  @apply border-success-500 bg-success-500 hover:bg-success-600 hover:border-success-600 text-white dark:text-white;
+  @apply border-success-500 bg-success-500 hover:bg-success-600 hover:border-success-600 text-white dark:text-white
+    focus:ring-success-300;
 }
 
 /* dark */
 .btn-dark {
-  @apply border-gray-800 bg-gray-800 hover:bg-gray-900 hover:border-gray-900 text-white dark:text-white;
+  @apply border-gray-800 bg-gray-800 hover:bg-gray-900 hover:border-gray-900 text-white dark:text-white
+    focus:ring-gray-300;
 }
 
 /*
