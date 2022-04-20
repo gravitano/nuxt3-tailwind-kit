@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from "vue";
-import { useDark, useToggle } from "@vueuse/core";
-import MenuIcon from "./icons/MenuIcon.vue";
-import MoonIcon from "./icons/MoonIcon.vue";
-import SunIcon from "./icons/SunIcon.vue";
+import { ref } from 'vue';
+import { useDark, useToggle } from '@vueuse/core';
+import MenuIcon from './icons/MenuIcon.vue';
+import MoonIcon from './icons/MoonIcon.vue';
+import SunIcon from './icons/SunIcon.vue';
 
 const mainMenu = ref(false);
 
@@ -15,8 +15,13 @@ const toggleDark = useToggle(isDark);
   <div
     class="py-4 bg-white border-b dark:bg-gray-900 dark:border-b-gray-800 transition-all duration-300"
   >
-    <div class="container mx-auto flex items-center justify-between gap-4 px-4 sm:px-0">
-      <nuxt-link to="/" class="font-semibold text-primary-500 mr-5 dark:text-white">
+    <div
+      class="container mx-auto flex items-center justify-between gap-4 px-4 sm:px-0"
+    >
+      <nuxt-link
+        to="/"
+        class="font-semibold text-primary-500 mr-5 dark:text-white"
+      >
         Nuxt Tailwind Kit
       </nuxt-link>
       <div
@@ -27,8 +32,10 @@ const toggleDark = useToggle(isDark);
             : 'hidden sm:flex sm:flex-items-center sm:gap-3'
         "
       >
-        <nav-link @click="mainMenu = false" to="/"> Home </nav-link>
-        <nav-link @click="mainMenu = false" to="/components"> Components </nav-link>
+        <nav-link @click="mainMenu = false" to="/docs"> Home </nav-link>
+        <nav-link @click="mainMenu = false" to="/docs/components">
+          Components
+        </nav-link>
         <nav-link @click="mainMenu = false" to="/blog"> Blog </nav-link>
       </div>
 

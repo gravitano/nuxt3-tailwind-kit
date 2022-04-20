@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import SideMenuIcon from "./icons/SideMenuIcon.vue";
+import { ref } from 'vue';
+import SideMenuIcon from '../icons/SideMenuIcon.vue';
 
 const menus = ref([
   // {
@@ -17,15 +17,15 @@ const menus = ref([
   //   ],
   // },
   {
-    text: "Components",
+    text: 'Components',
     children: [
       {
-        text: "Buttons",
-        to: "/components/buttons",
+        text: 'Buttons',
+        to: '/components/buttons',
       },
       {
-        text: "Alerts",
-        to: "/components/alerts",
+        text: 'Alerts',
+        to: '/components/alerts',
       },
     ],
   },
