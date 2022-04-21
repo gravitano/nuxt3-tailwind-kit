@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+useHead({
+  title: 'Login',
+});
+
 definePageMeta({
   layout: 'auth',
 });
