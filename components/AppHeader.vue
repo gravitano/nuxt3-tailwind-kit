@@ -9,7 +9,7 @@ const emit = defineEmits(['menu:click']);
 
 <template>
   <header class="bg-white border-b border-gray-200">
-    <div class="px-6 py-3 flex gap-2 items-center justify-between">
+    <div class="pr-6 pl-3 py-3 flex gap-2 items-center justify-between">
       <button
         @click="$emit('menu:click')"
         class="flex-shrink-0 px-4 py-2 rounded inline sm:hidden"
@@ -24,7 +24,7 @@ const emit = defineEmits(['menu:click']);
         <input
           type="search"
           placeholder="Search"
-          class="pl-9 py-2 border rounded-lg focus:outline-none w-full"
+          class="pl-10 py-2 appearance-none border-none focus:border-none focus:ring-0 rounded-lg focus:outline-none w-full"
         />
       </div>
 
