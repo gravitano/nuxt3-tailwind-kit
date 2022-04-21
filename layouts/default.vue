@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Nuxt 3 UnoCSS',
+  title: 'Nuxt 3 Tailwind',
 });
 
 const sidebar = useSidebar();
