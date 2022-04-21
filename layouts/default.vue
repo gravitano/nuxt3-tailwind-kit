@@ -1,37 +1,29 @@
 <script setup lang="ts">
-import { ref, toRefs } from 'vue';
-
-const props = defineProps({
-  modelValue: {
-    type: String,
-    default: '',
-  },
+useHead({
+  title: 'Nuxt 3 UnoCSS',
 });
 
-const { modelValue } = toRefs(props);
-
-const emit = defineEmits(['update:modelValue']);
+const sidebar = useSidebar();
 </script>
 
 <template>
-  <div>
-    <Navbar />
+  <main class="flex flex-col sm:flex-row">
+    <Sidebar v-model="sidebar" />
 
-    <div
-      class="dark:bg-gray-900 transition-all duration-300 min-h-[calc(100vh-65px)]"
-    >
-      <div
-        class="container mx-auto xl:p-4 py-4 flex flex-col sm:flex-row gap-4 px-4 sm:px-0"
-      >
-        <div class="w-full sm:w-2/12">
-          <DocsSidebar />
-        </div>
-        <div class="w-full sm:w-9/12">
-          <slot />
-        </div>
+    <div class="w-full flex-grow">
+      <AppHeader @menu:click="sidebar = true" />
+
+      <!-- main content -->
+      <div class="px-6 py-6">
+        <NuxtPage />
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
-<style scoped></style>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+</style>
