@@ -1,27 +1,33 @@
 <script setup lang="ts">
-import { ref, toRefs, watch } from "vue";
-import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from "@headlessui/vue";
-import Icon from "../Icon/index.vue";
-import type { SelectItem } from "./types";
+import { ref, toRefs, watch } from 'vue';
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue';
+import type { SelectItem } from './types';
+import CheckIcon from '~icons/ri/check-line';
+import SelectorIcon from '~icons/heroicons-outline/selector';
 
 type Props = {
   modelValue: SelectItem;
   items: SelectItem[];
-  placeholder: string;
-  checkIcon?: boolean;
+  placeholder?: string;
+  hideCheckIcon?: boolean;
   outlined?: boolean;
   large?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
-  placeholder: "Choose",
-  checkIcon: false,
+  placeholder: 'Choose',
+  hideCheckIcon: false,
   outlined: false,
   large: false,
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const { modelValue } = toRefs(props);
 
@@ -32,7 +38,7 @@ watch(modelValue, (val) => {
 });
 
 watch(selected, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 </script>
 
@@ -40,7 +46,7 @@ watch(selected, (val) => {
   <Listbox v-model="selected" class="w-full">
     <div class="relative mt-1">
       <ListboxButton
-        class="relative w-full pl-3 pr-10 text-left rounded-lg border border-gray-50 cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+        class="relative w-full pl-3 pr-10 text-left rounded-lg border border-gray-300 cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
         :class="[
           outlined
             ? 'bg-transparent border-icon-inverse text-inverse-subdued'
@@ -52,11 +58,7 @@ watch(selected, (val) => {
         <span
           class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
         >
-          <Icon
-            :name="outlined ? 'select.white' : 'select'"
-            :size="24"
-            aria-hidden="true"
-          />
+          <SelectorIcon class="w-5 h-5" aria-hidden="true" />
         </span>
       </ListboxButton>
 
@@ -81,20 +83,23 @@ watch(selected, (val) => {
                 v-else
                 :class="[
                   'cursor-default select-none relative py-2 pr-4 rounded',
-                  active ? 'bg-surface-pressed' : 'text-gray-900',
-                  checkIcon ? 'pl-10' : 'pl-4',
+                  active ? 'bg-gray-100' : 'text-gray-900',
+                  !hideCheckIcon ? 'pl-10' : 'pl-4',
                 ]"
               >
                 <span
-                  :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']"
+                  :class="[
+                    selected ? 'font-medium text-primary-500' : 'font-normal',
+                    'block truncate',
+                  ]"
                 >
                   {{ item.text }}
                 </span>
                 <span
-                  v-if="selected && checkIcon"
-                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                  v-if="selected && !hideCheckIcon"
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
                 >
-                  <Icon name="check" class="text-blue-70" :size="20" aria-hidden="true" />
+                  <CheckIcon class="w-5 h-5" aria-hidden="true" />
                 </span>
               </li>
             </div>
