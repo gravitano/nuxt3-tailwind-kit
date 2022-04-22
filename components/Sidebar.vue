@@ -64,6 +64,10 @@ const menus = ref([
         text: 'Autocomplete',
         to: '/docs/components/autocompletes',
       },
+      {
+        text: 'Forms',
+        to: '/docs/components/forms',
+      },
     ],
   },
   {

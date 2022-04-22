@@ -32,20 +32,39 @@ const props = withDefaults(
 
 <template>
   <div :class="classes.wrapper">
-    <CardHeader
-      v-if="!hideHeader"
+    <slot
+      name="headerWrapper"
       :title="title"
       :bordered="bordered"
-      :class="[classes.header, headerClass]"
-    />
+      :classes="[classes.header, headerClass]"
+      :hide-header="hideHeader"
+    >
+      <CardHeader
+        v-if="!hideHeader"
+        :title="title"
+        :bordered="bordered"
+        :class="[classes.header, headerClass]"
+      >
+        <slot name="header" />
+      </CardHeader>
+    </slot>
     <CardBody :class="[classes.body, bodyClass]" :bordered="bordered">
-      <slot />
+      <slot :classes="[classes.body, bodyClass]" :bordered="bordered" />
     </CardBody>
-    <CardFooter
-      v-if="!hideFooter"
-      :class="[classes.footer, footerClass]"
+    <slot
+      name="footerWrapper"
+      :classes="[classes.footer, footerClass]"
       :bordered="bordered"
-    />
+      :hide-footer="hideFooter"
+    >
+      <CardFooter
+        v-if="!hideFooter"
+        :class="[classes.footer, footerClass]"
+        :bordered="bordered"
+      >
+        <slot name="footer" />
+      </CardFooter>
+    </slot>
   </div>
 </template>
 
