@@ -93,10 +93,10 @@ const clear = () => {
     </ComboboxLabel>
     <div class="relative mt-1">
       <div
-        class="relative w-full text-left bg-white rounded cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-teal-300 focus-visible:ring-offset-2 sm:text-sm overflow-hidden"
+        class="relative w-full text-left bg-white border border-gray-300 rounded cursor-default focus:outline-none focus-within:ring focus-within:ring-primary-500 focus-within:border-primary-500 focus-within:ring-opacity-50 sm:text-sm overflow-hidden transition duration-300"
       >
         <ComboboxInput
-          class="w-full border-gray-300 rounded border focus:ring focus:border-primary-2 focus:ring-primary-2 py-3 pl-3 pr-20 leading-5 text-gray-600"
+          class="w-full border-none focus:ring-0 py-3 pl-3 pr-20 leading-5 text-gray-600"
           :display-value="(item) => item[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"
@@ -146,7 +146,7 @@ const clear = () => {
             :value="item"
           >
             <li
-              class="cursor-default select-none relative py-2 pl-10 pr-4 rounded"
+              class="cursor-default select-none relative py-2 pl-10 pr-4"
               :class="{
                 'bg-gray-100': active,
                 'text-gray-900': !active,
