@@ -37,16 +37,12 @@ const menus = ref([
     to: '/',
   },
   {
-    text: 'Posts',
+    text: 'Components',
     icon: IconPosts,
     children: [
       {
-        text: 'New Post',
-        to: '/posts/create',
-      },
-      {
-        text: 'All Posts',
-        to: '/posts',
+        text: 'Collapsible & Accordion',
+        to: '/docs/components/collapsibles',
       },
     ],
   },
