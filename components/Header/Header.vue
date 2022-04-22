@@ -28,16 +28,30 @@ const emit = defineEmits(['menu:click']);
         />
       </div>
 
-      <div class="space-x-0">
-        <nuxt-link
-          class="text-gray-600 hover:bg-indigo-500 hover:text-white px-3 py-2 rounded flex items-center gap-2"
-          to="/"
-        >
-          <icon-user class="i-ri-user-line w-5 h-5" />
-          <span class="hidden sm:inline">Admin</span>
-          <icon-arrow-down class="i-ri-arrow-down-s-line w-5 h-5" />
-        </nuxt-link>
-      </div>
+      <Dropdown right>
+        <template #activator>
+          <DropdownButton
+            as="button"
+            type="button"
+            class="text-gray-600 hover:bg-gray-200 hover:text-indigo-500 px-2 py-2 rounded"
+            v-slot="{ open }"
+          >
+            <span
+              :class="[open ? 'text-indigo-500' : '']"
+              class="flex items-center gap-2"
+            >
+              <IconUser class="i-ri-user-line w-5 h-5" />
+              <span class="hidden sm:inline">Admin</span>
+              <IconArrowDown class="i-ri-arrow-down-s-line w-5 h-5" />
+            </span>
+          </DropdownButton>
+        </template>
+
+        <DropdownItem>Profile</DropdownItem>
+        <DropdownItem>Setting</DropdownItem>
+        <DropdownItem divider></DropdownItem>
+        <DropdownItem>Logout</DropdownItem>
+      </Dropdown>
     </div>
   </header>
 </template>

@@ -11,7 +11,7 @@ const sidebar = useSidebar();
     <Sidebar v-model="sidebar" />
 
     <div class="w-full flex-grow">
-      <AppHeader @menu:click="sidebar = true" />
+      <Header @menu:click="sidebar = true" />
 
       <!-- main content -->
       <div class="px-6 py-6">

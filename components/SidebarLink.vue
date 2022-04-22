@@ -13,7 +13,7 @@ const props = defineProps<{
 
 <template>
   <nuxt-link
-    class="px-4 py-2 block transition duration-300 hover:bg-indigo-500 hover:text-white rounded flex gap-2 items-center w-full"
+    class="px-4 py-2 transition duration-300 hover:bg-indigo-500 hover:text-white rounded flex gap-2 items-center w-full"
   >
     <div v-if="child" class="w-5"></div>
     <component v-else-if="icon" class="w-5 h-5" :is="icon" />
