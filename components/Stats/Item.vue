@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import type { Component } from 'vue';
-
 defineProps<{
-  color: string | Component;
-  icon: string;
+  color: string;
+  icon: any;
   count: string | number;
   text: string;
 }>();
@@ -11,7 +9,7 @@ defineProps<{
 
 <template>
   <div
-    class="flex gap-4 border border-gray-200 rounded-xl items-center px-4 py-3"
+    class="flex gap-4 border border-gray-200 rounded-xl items-center px-4 py-3 bg-white"
   >
     <div
       class="rounded-full w-10 h-10 flex items-center justify-center text-white flex-shrink-0"
