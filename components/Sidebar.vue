@@ -74,6 +74,14 @@ const menus = ref([
         text: 'Register',
         to: '/auth/register',
       },
+      {
+        text: 'Forgot Password',
+        to: '/auth/forgot-password',
+      },
+      {
+        text: 'Reset Password',
+        to: '/auth/reset-password',
+      },
     ],
   },
 ]);
