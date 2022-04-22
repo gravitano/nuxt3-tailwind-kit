@@ -45,17 +45,11 @@ const stats = ref([
     </div>
 
     <!-- card -->
-    <div class="border border-gray-200 rounded-lg">
-      <h1 class="font-semibold text-lg text-gray-700 px-4 pt-3 pb-2">
-        Hello World
-      </h1>
-      <div class="px-4 pb-3 text-gray-600">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sit
-        esse voluptatem et deserunt earum explicabo aut quis laboriosam nostrum
-        quisquam sequi maxime est vitae, vero reiciendis veniam repudiandae
-        fugit!
-      </div>
-    </div>
+    <Card title="Hello World">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sit esse
+      voluptatem et deserunt earum explicabo aut quis laboriosam nostrum
+      quisquam sequi maxime est vitae, vero reiciendis veniam repudiandae fugit!
+    </Card>
   </div>
 </template>
 

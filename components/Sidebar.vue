@@ -44,6 +44,10 @@ const menus = ref([
         text: 'Collapsible & Accordion',
         to: '/docs/components/collapsibles',
       },
+      {
+        text: 'Card',
+        to: '/docs/components/cards',
+      },
     ],
   },
   {
