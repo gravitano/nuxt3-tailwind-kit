@@ -15,17 +15,19 @@
 
 ## Components
 
-| Component                                                                    | Description                          | Status |
-| :--------------------------------------------------------------------------- | :----------------------------------- | :----: |
-| [Button](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)      | Card Component                       |   ✅   |
-| [Card](https://nuxt3-tailwind-kit.vercel.app/docs/components/cards)          | Card Component                       |   ✅   |
-| [Collapsible](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons) | Wrapper for Headless UI's Disclosure |   ✅   |
-| [Dropdown](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)    | Dropdown Component                   |   ✅   |
-| [Select](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)      | Select Component                     |   ✅   |
-| Form                                                                         | Form Component                       |   ✅   |
-| Header                                                                       | Header Component                     |   ✅   |
-| Icons                                                                        | Icons Component                      |   ✅   |
-| Stats                                                                        | Statistic Component                  |   ✅   |
+| Component                                                                    | Description           | Status |
+| :--------------------------------------------------------------------------- | :-------------------- | :----: |
+| [Button](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)      | Button Component      |   ✅   |
+| [Card](https://nuxt3-tailwind-kit.vercel.app/docs/components/cards)          | Card Component        |   ✅   |
+| [Collapsible](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons) | Collapsible Component |   ✅   |
+| [Dropdown](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)    | Dropdown Component    |   ✅   |
+| [Select](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)      | Select Component      |   ✅   |
+| Form                                                                         | Form Component        |   ✅   |
+| Header                                                                       | Header Component      |   ✅   |
+| Icons                                                                        | Icons Component       |   ✅   |
+| Stats                                                                        | Statistic Component   |   ✅   |
+
+> Some components maybe not listed here. Check it out on `/components` folder.
 
 ## Pages
 
@@ -36,6 +38,8 @@
 | [`/auth/register`](https://nuxt3-tailwind-kit.vercel.app/auth/register)               | Register            |   ✅   |
 | [`/auth/forgot-password`](https://nuxt3-tailwind-kit.vercel.app/auth/forgot-password) | Forgot Password     |   ✅   |
 | [`/auth/reset-password`](https://nuxt3-tailwind-kit.vercel.app/auth/reset-password)   | Reset Password      |   ✅   |
+
+> Some page maybe not listed here. Check it out on `/pages` folder.
 
 ## Development
 
