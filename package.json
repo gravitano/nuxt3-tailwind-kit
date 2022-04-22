@@ -23,9 +23,12 @@
   "dependencies": {
     "@headlessui/vue": "^1.5.0",
     "@vueuse/core": "^8.3.0",
+    "add": "^2.0.6",
     "highlight.js": "^11.5.1",
     "markdown-it": "^12.3.2",
     "markdown-it-prism": "^2.2.4",
-    "vue": "^3.2.33"
+    "vee-validate": "^4.5.11",
+    "vue": "^3.2.33",
+    "yup": "^0.32.11"
   }
 }

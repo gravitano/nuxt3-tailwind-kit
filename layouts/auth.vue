@@ -2,7 +2,7 @@
 
 <template>
   <div class="flex flex-col sm:flex-row sm:h-screen">
-    <div class="w-full sm:w-5/12 p-6">
+    <div class="w-full sm:w-5/12 p-6 bg-white">
       <NuxtPage />
     </div>
     <div
