@@ -32,13 +32,13 @@ watch(isOpen, (val) => {
 
 const menus = ref([
   {
-    icon: IconHome,
+    icon: markRaw(IconHome),
     text: 'Dashboard',
     to: '/',
   },
   {
     text: 'Components',
-    icon: IconPosts,
+    icon: markRaw(IconPosts),
     children: [
       {
         text: 'Buttons',
@@ -56,7 +56,7 @@ const menus = ref([
   },
   {
     text: 'Pages',
-    icon: IconPages,
+    icon: markRaw(IconPages),
     children: [
       {
         text: 'Login',

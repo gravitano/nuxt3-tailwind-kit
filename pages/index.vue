@@ -8,25 +8,25 @@ const stats = ref([
   {
     text: 'Users',
     count: '100',
-    icon: RiUserLine,
+    icon: markRaw(RiUserLine),
     color: 'bg-indigo-500',
   },
   {
     text: 'Posts',
     count: '20',
-    icon: RiBook2Line,
+    icon: markRaw(RiBook2Line),
     color: 'bg-blue-500',
   },
   {
     text: 'Comments',
     count: '500',
-    icon: RiChat2Line,
+    icon: markRaw(RiChat2Line),
     color: 'bg-orange-500',
   },
   {
     text: 'Views',
     count: '12000',
-    icon: RiBarChartBoxLine,
+    icon: markRaw(RiBarChartBoxLine),
     color: 'bg-emerald-500',
   },
 ]);
