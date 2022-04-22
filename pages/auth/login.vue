@@ -12,7 +12,7 @@ definePageMeta({
 
 const { handleSubmit } = useForm({
   validationSchema: object({
-    email: string().required().label('Email'),
+    email: string().required().email().label('Email'),
     password: string().required().label('Password'),
   }),
 });
