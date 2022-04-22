@@ -45,7 +45,7 @@ const menus = ref([
         to: '/docs/components/buttons',
       },
       {
-        text: 'Collapsible & Accordion',
+        text: 'Collapsible',
         to: '/docs/components/collapsibles',
       },
       {
