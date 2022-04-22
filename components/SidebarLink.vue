@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import type { Component } from 'vue';
 import IconArrowRight from '~icons/ri/arrow-right-s-line';
 
 const props = defineProps<{
-  icon?: string | Component;
-  appendIcon?: string | Component;
+  icon?: any;
+  appendIcon?: any;
   text?: string;
   child?: boolean;
   parent?: boolean;
