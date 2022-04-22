@@ -41,6 +41,10 @@ const menus = ref([
     icon: IconPosts,
     children: [
       {
+        text: 'Buttons',
+        to: '/docs/components/buttons',
+      },
+      {
         text: 'Collapsible & Accordion',
         to: '/docs/components/collapsibles',
       },
