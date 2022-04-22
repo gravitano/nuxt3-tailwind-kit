@@ -8,5 +8,5 @@ body {
   font-family: 'Poppins', sans-serif;
   font-display: swap;
 
-  @apply text-gray-900 dark:text-white;
+  @apply text-gray-900 bg-gray-100 dark:text-white;
 }
