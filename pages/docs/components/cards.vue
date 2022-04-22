@@ -2,6 +2,8 @@
 
 <template>
   <div class="space-y-5">
+    <PageHeader title="Card" subtitle="Card component" />
+
     <Card title="Default">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
       ipsam debitis aliquid eius at eaque nisi itaque sed accusantium, optio

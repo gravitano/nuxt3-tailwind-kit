@@ -12,6 +12,11 @@ const items2 = ref(genItems());
 
 <template>
   <div class="space-y-5">
+    <PageHeader
+      title="Collapsible"
+      subtitle="Collapsible and Accordion component"
+    />
+
     <Card title="Default">
       <Collapsible title="Collapse">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione

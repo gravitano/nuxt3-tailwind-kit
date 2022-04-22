@@ -11,7 +11,10 @@ const selected = ref();
 
 <template>
   <div class="space-y-5">
-    <h1 class="font-semibold text-2xl text-primary-500">Autocomplete</h1>
+    <PageHeader
+      title="Autocomplete"
+      subtitle="Wrapper for combobox component"
+    />
 
     <Card title="Default">
       <Autocomplete v-model="selected" :items="items" />

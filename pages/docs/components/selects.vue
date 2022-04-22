@@ -11,6 +11,8 @@ const selected = ref();
 
 <template>
   <div class="space-y-5">
+    <PageHeader title="Select" subtitle="Select component" />
+
     <Card title="Default">
       <Select v-model="selected" label="Choose" :items="items" />
     </Card>

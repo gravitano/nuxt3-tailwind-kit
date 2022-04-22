@@ -10,6 +10,8 @@ import IconArrowDown from '~icons/ri/arrow-down-s-line';
 
 <template>
   <div class="space-y-5">
+    <PageHeader title="Dropdown" subtitle="Dropdown component" />
+
     <Card title="Default">
       <Dropdown label="Dropdown">
         <DropdownItem>Item 1</DropdownItem>

@@ -30,14 +30,7 @@ const bindVariant = (variant: string) => {
 
 <template>
   <div>
-    <div class="mb-5 space-y-1">
-      <h1 class="font-bold text-2xl text-gray-900 dark:text-gray-200">
-        Buttons
-      </h1>
-      <p class="text-gray-700 text-base dark:text-gray-400">
-        Button components
-      </p>
-    </div>
+    <PageHeader title="Buttons" subtitle="Button component" />
 
     <div class="space-y-6">
       <div
