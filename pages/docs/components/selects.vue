@@ -20,6 +20,12 @@ const selected = ref();
     <Card title="Default">
       <Select v-model="selected" label="Choose" :items="items" />
     </Card>
+
+    <Card title="Sizing">
+      <Select v-model="selected" label="Small" :items="items" small />
+      <Select v-model="selected" label="Default" :items="items" />
+      <Select v-model="selected" label="Large" :items="items" large />
+    </Card>
   </div>
 </template>
 
