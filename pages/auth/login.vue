@@ -31,7 +31,12 @@ const onSubmit = handleSubmit((values) => {
       </div>
 
       <FormInput name="email" label="Email" placeholder="Email" />
-      <FormInput name="password" label="Password" placeholder="Password" />
+      <FormInput
+        name="password"
+        label="Password"
+        placeholder="Password"
+        type="password"
+      />
 
       <div class="mb-4 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">
