@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import IconArrowDown from '~icons/ri/arrow-down-s-line';
+import CollapseTransition from './CollapseTransition.vue';
 
 const props = withDefaults(
   defineProps<{
@@ -67,19 +68,12 @@ const toggle = () => {
         class="w-5 h-5"
       />
     </DisclosureButton>
-    <transition
-      enter-active-class="transition duration-100 ease-out"
-      enter-from-class="transform scale-95 opacity-0"
-      enter-to-class="transform scale-100 opacity-100"
-      leave-active-class="transition duration-75 ease-out"
-      leave-from-class="transform scale-100 opacity-100"
-      leave-to-class="transform scale-95 opacity-0"
-    >
+    <CollapseTransition>
       <div v-show="isOpen">
         <DisclosurePanel static class="pb-2 text-15" :class="classes?.panel">
           <slot>{{ content }}</slot>
         </DisclosurePanel>
       </div>
-    </transition>
+    </CollapseTransition>
   </Disclosure>
 </template>
