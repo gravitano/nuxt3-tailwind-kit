@@ -14,6 +14,9 @@ const props = withDefaults(
     classes?: Classes;
     hideHeader?: boolean;
     hideFooter?: boolean;
+    headerClass?: string;
+    bodyClass?: string;
+    footerClass?: string;
   }>(),
   {
     bordered: false,
@@ -33,14 +36,14 @@ const props = withDefaults(
       v-if="!hideHeader"
       :title="title"
       :bordered="bordered"
-      :class="classes.header"
+      :class="[classes.header, headerClass]"
     />
-    <CardBody :class="classes.body" :bordered="bordered">
+    <CardBody :class="[classes.body, bodyClass]" :bordered="bordered">
       <slot />
     </CardBody>
     <CardFooter
       v-if="!hideFooter"
-      :class="classes.footer"
+      :class="[classes.footer, footerClass]"
       :bordered="bordered"
     />
   </div>

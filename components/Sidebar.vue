@@ -52,6 +52,10 @@ const menus = ref([
         text: 'Card',
         to: '/docs/components/cards',
       },
+      {
+        text: 'Dropdown',
+        to: '/docs/components/dropdowns',
+      },
     ],
   },
   {

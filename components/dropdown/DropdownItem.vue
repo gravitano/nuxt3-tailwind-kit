@@ -3,14 +3,20 @@ import { MenuItem } from '@headlessui/vue';
 import { RouterLink } from 'vue-router';
 import { computed } from 'vue';
 
-const props = defineProps<{
-  text?: string;
-  to?: string;
-  href?: string;
-  icon?: string;
-  newTab?: boolean;
-  divider?: boolean;
-}>();
+const props = withDefaults(
+  defineProps<{
+    text?: string;
+    to?: string;
+    href?: string;
+    icon?: any;
+    iconClass?: string;
+    newTab?: boolean;
+    divider?: boolean;
+  }>(),
+  {
+    iconClass: 'w-5 h-5',
+  }
+);
 
 const computedComponent = computed(() => {
   if (props.href) return 'a';
@@ -41,7 +47,9 @@ const hrefProps = computed(() => {
       ]"
       v-bind="{ ...hrefProps, ...toProps, ...$attrs }"
     >
-      <slot name="icon" />
+      <slot name="icon">
+        <component :is="icon" :class="iconClass" />
+      </slot>
       <slot>{{ text }}</slot>
     </component>
   </MenuItem>

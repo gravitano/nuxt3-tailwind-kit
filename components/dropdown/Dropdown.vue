@@ -44,7 +44,7 @@ const props = withDefaults(
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute p-1 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute z-10 p-1 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         :class="right ? 'right-0' : 'left-0'"
       >
         <slot>
