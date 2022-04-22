@@ -4,6 +4,8 @@ import PencilIcon from '~icons/ri/pencil-line';
 import TrashIcon from '~icons/ri/delete-bin-line';
 import CheckIcon from '~icons/ri/check-line';
 import XIcon from '~icons/ri/close-line';
+import IconUser from '~icons/ri/user-line';
+import IconArrowDown from '~icons/ri/arrow-down-s-line';
 </script>
 
 <template>
@@ -49,6 +51,32 @@ import XIcon from '~icons/ri/close-line';
         <DropdownItem divider />
         <DropdownItem :icon="CheckIcon">Approve</DropdownItem>
         <DropdownItem :icon="XIcon">Reject</DropdownItem>
+      </Dropdown>
+    </Card>
+    <Card title="Custom Button Activator" body-class="flex justify-center">
+      <Dropdown right>
+        <template #activator>
+          <DropdownButton
+            as="button"
+            type="button"
+            class="text-gray-600 hover:bg-gray-200 hover:text-indigo-500 px-2 py-2 rounded"
+            v-slot="{ open }"
+          >
+            <span
+              :class="[open ? 'text-indigo-500' : '']"
+              class="flex items-center gap-2"
+            >
+              <IconUser class="i-ri-user-line w-5 h-5" />
+              <span class="hidden sm:inline">Admin</span>
+              <IconArrowDown class="i-ri-arrow-down-s-line w-5 h-5" />
+            </span>
+          </DropdownButton>
+        </template>
+
+        <DropdownItem>Profile</DropdownItem>
+        <DropdownItem>Setting</DropdownItem>
+        <DropdownItem divider></DropdownItem>
+        <DropdownItem>Logout</DropdownItem>
       </Dropdown>
     </Card>
   </div>
