@@ -1,19 +1,27 @@
 <script setup lang="ts">
 const colors = [
-  "default",
-  "primary",
-  "secondary",
-  "info",
-  "warning",
-  "success",
-  "error",
-  "dark",
+  'default',
+  'primary',
+  'secondary',
+  'info',
+  'warning',
+  'success',
+  'error',
+  'dark',
 ];
 
-const variants = ["", "rounded", "outlined", "text", "block", "underline", "disabled"];
-const iconVariants = ["", "rounded", "outlined", "text"];
+const variants = [
+  '',
+  'rounded',
+  'outlined',
+  'text',
+  'block',
+  'underline',
+  'disabled',
+];
+const iconVariants = ['', 'rounded', 'outlined', 'text'];
 
-const sizes = ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"];
+const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'];
 
 const bindVariant = (variant: string) => {
   return variant ? { [variant]: true } : {};
@@ -23,13 +31,21 @@ const bindVariant = (variant: string) => {
 <template>
   <div>
     <div class="mb-5 space-y-1">
-      <h1 class="font-bold text-3xl text-gray-900 dark:text-gray-200">Buttons</h1>
-      <p class="text-gray-700 text-base dark:text-gray-400">Button components</p>
+      <h1 class="font-bold text-2xl text-gray-900 dark:text-gray-200">
+        Buttons
+      </h1>
+      <p class="text-gray-700 text-base dark:text-gray-400">
+        Button components
+      </p>
     </div>
 
     <div class="space-y-6">
-      <div v-for="variant in variants" :key="variant" class="space-x-2 space-y-2">
-        <h2 class="font-bold mb-2">{{ variant || "default" }}</h2>
+      <div
+        v-for="variant in variants"
+        :key="variant"
+        class="space-x-2 space-y-2"
+      >
+        <h2 class="font-bold mb-2">{{ variant || 'default' }}</h2>
         <v-btn
           v-for="color in colors"
           :key="color"

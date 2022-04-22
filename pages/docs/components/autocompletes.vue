@@ -11,14 +11,18 @@ const selected = ref();
 
 <template>
   <div class="space-y-5">
+    <h1 class="font-semibold text-2xl text-primary-500">Autocomplete</h1>
+
     <Card title="Default">
-      <Select v-model="selected" label="Choose" :items="items" />
+      <Autocomplete v-model="selected" :items="items" />
     </Card>
 
-    <Card title="Sizing">
-      <Select v-model="selected" label="Small" :items="items" small />
-      <Select v-model="selected" label="Default" :items="items" />
-      <Select v-model="selected" label="Large" :items="items" large />
+    <Card title="Label">
+      <Autocomplete v-model="selected" label="Choose" :items="items" />
+    </Card>
+
+    <Card title="No Data">
+      <Autocomplete v-model="selected" label="Choose" :items="[]" />
     </Card>
   </div>
 </template>

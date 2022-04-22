@@ -60,6 +60,10 @@ const menus = ref([
         text: 'Select',
         to: '/docs/components/selects',
       },
+      {
+        text: 'Autocomplete',
+        to: '/docs/components/autocompletes',
+      },
     ],
   },
   {
