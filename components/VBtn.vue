@@ -118,7 +118,7 @@ const tag = computed(() =>
 }
 
 .btn-md {
-  @apply text-sm px-3 py-2;
+  @apply px-3 py-2;
 }
 
 .btn-lg {

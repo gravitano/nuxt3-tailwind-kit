@@ -21,9 +21,4 @@ const sidebar = useSidebar();
   </main>
 </template>
 
-<style>
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-}
-</style>
+<style></style>
