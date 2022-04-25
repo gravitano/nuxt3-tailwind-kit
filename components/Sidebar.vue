@@ -68,6 +68,10 @@ const menus = ref([
         text: 'Forms',
         to: '/docs/components/forms',
       },
+      {
+        text: 'WindPlus',
+        to: '/docs/components/windplus',
+      },
     ],
   },
   {

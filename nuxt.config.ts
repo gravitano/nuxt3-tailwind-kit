@@ -23,4 +23,5 @@ export default defineNuxtConfig({
       include: ['markdown-it'],
     },
   },
+  // css: ['~/windplus/styles/main.css'],
 });

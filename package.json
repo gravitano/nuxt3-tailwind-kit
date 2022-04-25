@@ -29,6 +29,7 @@
     "markdown-it-prism": "^2.2.4",
     "vee-validate": "^4.5.11",
     "vue": "^3.2.33",
+    "windplus": "^0.0.1",
     "yup": "^0.32.11"
   }
 }

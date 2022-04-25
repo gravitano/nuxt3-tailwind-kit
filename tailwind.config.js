@@ -15,6 +15,9 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
+    './node_modules/windplus/styles/**/*.{vue,js,css}',
+    './node_modules/windplus/styles/*.{vue,js,css}',
+    './node_modules/windplus/styles/main.css'
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
