@@ -9,6 +9,7 @@ const sidebar = useSidebar();
 <template>
   <main class="flex flex-col sm:flex-row">
     <Sidebar v-model="sidebar" />
+    <!-- <NavDrawer /> -->
 
     <div class="w-full flex-grow">
       <Header @menu:click="sidebar = true" />
