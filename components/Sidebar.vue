@@ -94,6 +94,10 @@ const menus = ref([
         text: 'Reset Password',
         to: '/auth/reset-password',
       },
+      {
+        text: 'Counter',
+        to: '/counter',
+      },
     ],
   },
 ]);

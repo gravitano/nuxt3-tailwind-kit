@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         /* options */
       },
     ],
+    ['@pinia/nuxt', { disableVuex: true }],
   ],
   modules: ['@nuxtjs/tailwindcss'],
   strapi: {
