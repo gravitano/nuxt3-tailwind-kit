@@ -98,6 +98,10 @@ const menus = ref([
         text: 'Counter',
         to: '/counter',
       },
+      {
+        text: 'Content',
+        to: '/content',
+      },
     ],
   },
 ]);

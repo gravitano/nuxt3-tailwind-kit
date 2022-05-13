@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     ],
     ['@pinia/nuxt', { disableVuex: true }],
   ],
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
   strapi: {
     url: process.env.STRAPI_URL || 'https://strapi.warsono.id',
     prefix: '/api',
