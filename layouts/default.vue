@@ -1,25 +1,23 @@
 <script setup lang="ts">
 useHead({
-  title: 'Nuxt 3 Tailwind',
+  title: 'Nuxt Tailwind Kit',
 });
-
-const sidebar = useSidebar();
 </script>
 
 <template>
-  <main class="flex flex-col sm:flex-row">
-    <Sidebar v-model="sidebar" />
-    <!-- <NavDrawer /> -->
+  <div>
+    <AppHeader />
 
-    <div class="w-full flex-grow">
-      <Header @menu:click="sidebar = true" />
-
-      <!-- main content -->
-      <div class="px-6 py-6">
-        <NuxtPage />
-      </div>
+    <div
+      :class="
+        $route.name === 'index' ? '' : 'container mx-auto px-4 sm:px-0 py-4'
+      "
+    >
+      <NuxtPage />
     </div>
-  </main>
+
+    <AppFooter />
+  </div>
 </template>
 
-<style></style>
+<style scoped></style>

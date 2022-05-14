@@ -8,10 +8,6 @@ import 'prismjs/plugins/toolbar/prism-toolbar';
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prism-themes/themes/prism-one-dark.css';
 
-definePageMeta({
-  layout: 'blog',
-});
-
 const md = new MarkdownIt({
   // highlight: function (str, lang) {
   //   if (lang && hljs.getLanguage(lang)) {

@@ -2,10 +2,6 @@
 import type { Post } from '~/types';
 import type { Strapi4Response } from '@nuxtjs/strapi';
 
-definePageMeta({
-  layout: 'blog',
-});
-
 const { find } = useStrapi4();
 
 const posts = useState<Post[]>([]);
