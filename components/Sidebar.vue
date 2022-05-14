@@ -102,6 +102,10 @@ const menus = ref([
         text: 'Content',
         to: '/content',
       },
+      {
+        text: 'Blog',
+        to: '/blog',
+      },
     ],
   },
 ]);
