@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import type { Post } from "~/types";
-import type { Strapi4Response } from "@nuxtjs/strapi";
+import type { Post } from '~/types';
+import type { Strapi4Response } from '@nuxtjs/strapi';
+
+definePageMeta({
+  layout: 'blog',
+});
 
 const { find } = useStrapi4();
 
 const posts = useState<Post[]>([]);
 try {
-  const response = await find<Strapi4Response<Post>>("posts", {
-    sort: "publishedAt",
-    populate: ["image", "author"],
+  const response = await find<Strapi4Response<Post>>('posts', {
+    sort: 'publishedAt',
+    populate: ['image', 'author'],
   });
 
   posts.value = response.data;
