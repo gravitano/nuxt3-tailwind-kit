@@ -1,22 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
-
-const breakpoints = useBreakpoints(breakpointsTailwind);
-
 const isOpen = ref(false);
-
-function onResize() {
-  isOpen.value = breakpoints.greater('sm').value;
-}
-
-onMounted(() => {
-  window.addEventListener('resize', onResize);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', onResize);
-});
 </script>
 
 <template>
@@ -57,7 +40,7 @@ onUnmounted(() => {
       <div
         :class="
           isOpen
-            ? 'fixed top-16 shadow sm:shadow-none left-4 right-4 rounded-lg overflow-hidden bg-white sm:bg-transparent py-2'
+            ? 'fixed sm:relative top-16 shadow sm:shadow-none left-4 right-4 rounded-lg overflow-hidden bg-white sm:bg-transparent py-2'
             : 'hidden sm:flex sm:w-6/12'
         "
       >
