@@ -19,11 +19,13 @@ try {
 
 <template>
   <div>
-    <h1 class="text-3xl mb-1 font-bold">Blog</h1>
-    <h2 class="text-xl mb-5 font-normal dark:text-gray-400">Latest Posts</h2>
+    <h1 class="text-3xl mb-2 mt-2 font-semibold">Blog</h1>
+    <h2 class="text-lg mb-8 font-normal text-gray-600 dark:text-gray-400">
+      Latest Posts
+    </h2>
 
-    <BlogPostItem v-for="post in posts" :key="post.id" :post="post" />
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <BlogPostItem v-for="post in posts" :key="post.id" :post="post" />
+    </div>
   </div>
 </template>
-
-<style scoped></style>
