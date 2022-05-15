@@ -1,5 +1,24 @@
 <script setup lang="ts">
 const isOpen = ref(false);
+
+const menus = ref([
+  {
+    text: 'Home',
+    to: '/',
+  },
+  {
+    text: 'Store',
+    to: '/store',
+  },
+  {
+    text: 'Blog',
+    to: '/blog',
+  },
+  {
+    text: 'Dashboard',
+    to: '/dashboard',
+  },
+]);
 </script>
 
 <template>
@@ -48,25 +67,13 @@ const isOpen = ref(false);
           class="flex flex-col sm:relative w-full items-start sm:flex-row sm:justify-end sm:gap-1 sm:items-center"
         >
           <NuxtLink
-            to="/"
+            v-for="menu in menus"
+            :key="menu.text"
+            :to="menu.to"
             class="px-4 py-2 rounded-full w-full sm:w-auto text-gray-800 sm:text-white transition duration-200 font-medium hover:bg-white hover:text-blue-600"
             exact-active-class="bg-white !text-blue-600"
           >
-            Home
-          </NuxtLink>
-          <NuxtLink
-            to="/blog"
-            class="px-4 py-2 rounded-full w-full sm:w-auto text-gray-800 sm:text-white transition duration-200 font-medium hover:bg-white hover:text-blue-600"
-            exact-active-class="bg-white !text-blue-600"
-          >
-            Blog
-          </NuxtLink>
-          <NuxtLink
-            to="/dashboard"
-            class="px-4 py-2 rounded-full w-full sm:w-auto text-gray-800 sm:text-white transition duration-200 font-medium hover:bg-white hover:text-blue-600"
-            exact-active-class="bg-white !text-blue-600"
-          >
-            Dashboard
+            {{ menu.text }}
           </NuxtLink>
         </nav>
       </div>
