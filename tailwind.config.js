@@ -13,6 +13,7 @@ module.exports = {
     './components/**/*.{vue,js}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
+    './server/**/*.{js,ts}',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
     './node_modules/windplus/styles/**/*.{vue,js,css}',
