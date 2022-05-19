@@ -12,7 +12,11 @@ const isHome = computed(() => route.path === '/');
       class="container py-4 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
       :class="isHome ? '' : 'border-t'"
     >
-      <NuxtLink to="/" class="font-semibold text-lg text-gray-800">
+      <NuxtLink
+        to="/"
+        class="font-semibold text-lg"
+        :class="isHome ? 'text-white' : 'text-gray-800'"
+      >
         <!-- <img
           loading="lazy"
           src="/logo.svg"
@@ -25,7 +29,8 @@ const isHome = computed(() => route.path === '/');
         Nuxt Tailwind Kit by
         <a
           href="https://github.com/gravitano"
-          class="font-semibold text-gray-800"
+          class="font-semibold"
+          :class="isHome ? 'text-white' : 'text-gray-800'"
         >
           Warsono
         </a>
