@@ -31,10 +31,10 @@ defineProps<{
               : 'order-1 sm:order-2'
           "
         >
-          <h2 class="text-3xl font-semibold text-gray-800">
+          <h2 class="text-3xl font-semibold">
             {{ feature.name }}
           </h2>
-          <p class="mt-1 text-lg text-gray-500">
+          <p class="mt-1 text-lg">
             {{ feature.description }}
           </p>
           <div class="mt-8">
@@ -68,7 +68,7 @@ defineProps<{
                   <h3 class="-mt-1.5 text-lg font-semibold">
                     {{ item.title }}
                   </h3>
-                  <p class="text-gray-500">
+                  <p class="">
                     {{ item.description }}
                   </p>
                 </div>
