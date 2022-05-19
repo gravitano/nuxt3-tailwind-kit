@@ -31,6 +31,19 @@ module.exports = {
         success,
         error,
       },
+      textColor: {
+        skin: {
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-muted)',
+          icon: 'var(--color-text-icon)',
+        }
+      },
+      backgroundColor: {
+        skin: {
+          fill: 'var(--color-fill)',
+          'icon-fill': 'var(--color-icon-fill)',
+        }
+      },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },

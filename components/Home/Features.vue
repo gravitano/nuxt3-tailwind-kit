@@ -11,6 +11,7 @@ defineProps<{
       title: string;
       description: string;
     }[];
+    theme?: string;
   }[];
 }>();
 </script>
@@ -19,8 +20,8 @@ defineProps<{
   <section
     v-for="feature in features"
     :key="feature.name"
-    class="py-20"
-    :class="feature.class"
+    class="py-20 bg-skin-fill text-skin-base"
+    :class="feature.theme"
   >
     <div class="container mx-auto">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-20">
@@ -45,7 +46,7 @@ defineProps<{
                 class="flex items-start gap-4"
               >
                 <div
-                  class="grid h-10 w-10 flex-shrink-0 place-items-center rounded bg-blue-600 text-white"
+                  class="grid h-10 w-10 flex-shrink-0 place-items-center rounded bg-skin-icon-fill text-skin-icon"
                 >
                   <!-- Heroicon name: outline/globe-alt -->
                   <svg

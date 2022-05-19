@@ -32,7 +32,7 @@ export default defineEventHandler(() => {
           'https://images.unsplash.com/photo-1446941303752-a64bb1048d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
         imagePosition: 'right',
         imageAlt: '',
-        class: 'bg-white',
+        theme: '', // default
         items: [
           {
             title: 'Feature 1.1',
@@ -56,7 +56,7 @@ export default defineEventHandler(() => {
           'https://images.unsplash.com/photo-1614315517650-3771cf72d18a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80',
         imagePosition: 'left',
         imageAlt: '',
-        class: 'bg-white',
+        theme: '', // default
         items: [
           {
             title: 'Feature 2.1',
@@ -80,7 +80,7 @@ export default defineEventHandler(() => {
           'https://images.unsplash.com/photo-1614315517650-3771cf72d18a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80',
         imagePosition: 'right',
         imageAlt: '',
-        class: 'bg-blue-600 text-white',
+        theme: 'feature-blue',
         items: [
           {
             title: 'Feature 3.1',

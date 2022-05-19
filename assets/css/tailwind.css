@@ -8,3 +8,19 @@ body {
 
   @apply text-gray-900 bg-gray-100 dark:text-white;
 }
+
+@layer base {
+  :root {
+    --color-text-base: #171717;
+    --color-fill: #ffffff;
+    --color-icon-fill: #1d4ed8;
+    --color-text-icon: #ffffff;
+  }
+}
+
+.feature-blue {
+  --color-text-base: #ffffff;
+  --color-fill: #2563eb;
+  --color-icon-fill: #1d4ed8;
+  --color-text-icon: #ffffff;
+}
