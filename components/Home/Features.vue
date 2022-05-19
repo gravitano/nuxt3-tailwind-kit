@@ -87,7 +87,7 @@ defineProps<{
             loading="lazy"
             :src="feature.image"
             :alt="feature.imageAlt"
-            class="max-w-full md:max-w-md mx-auto rounded-lg border"
+            class="max-w-full lg:max-w-md mx-auto rounded-lg border"
           />
         </div>
       </div>
