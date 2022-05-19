@@ -1,4 +1,4 @@
-export default defineEventHandler(({ res }) => {
+export default defineEventHandler(() => {
   return {
     hero: {
       title: 'Nuxt 3 Tailwind Kit',

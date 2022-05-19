@@ -1,75 +1,17 @@
 <script setup>
-const products = [
-  {
-    id: 1,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '$48',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
-    imageAlt:
-      'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 2,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '$35',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
-    imageAlt:
-      'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 3,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '$89',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
-    imageAlt:
-      'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 4,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '$35',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-    imageAlt:
-      'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
-  // More products...
-];
+const { data } = await useFetch('/api/store/products', {});
+const products = data.value.products;
+const header = data.value.header;
 </script>
-
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 
 <template>
   <div class="">
     <div class="mt-5 mb-10 text-center space-y-1 sm:max-w-3xl mx-auto">
-      <h1 class="text-3xl font-semibold text-gray-900">Store</h1>
+      <h1 class="text-3xl font-semibold text-gray-900">
+        {{ header.title }}
+      </h1>
       <p class="text-gray-500">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
-        accusantium, tenetur porro eum amet incidunt nemo, dolore ducimus vitae
-        ipsa corporis obcaecati rem reprehenderit doloremque aliquid, aperiam
-        officiis debitis commodi.
+        {{ header.description }}
       </p>
     </div>
 
