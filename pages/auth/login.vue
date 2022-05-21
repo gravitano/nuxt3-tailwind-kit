@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useForm } from 'vee-validate';
 import { object, string } from 'yup';
+import { useAuthStore } from '~~/stores/auth';
 
 useHead({
   title: 'Login',
@@ -8,6 +9,7 @@ useHead({
 
 definePageMeta({
   layout: 'auth',
+  middleware: 'guest'
 });
 
 const { handleSubmit } = useForm({
@@ -17,8 +19,32 @@ const { handleSubmit } = useForm({
   }),
 });
 
-const onSubmit = handleSubmit((values) => {
-  alert(JSON.stringify(values, null, 2));
+const auth = useAuthStore()
+const router = useRouter()
+const error = ref()
+const route = useRoute()
+
+const { store } = useAuthStorage()
+
+const onSubmit = handleSubmit(async (values) => {
+  const { data, error: err } = await useFetch('/api/auth/login', {
+    method: 'post',
+    body: values,
+  });
+
+  const token = data.value.data.token
+  const user = data.value.data.user
+
+  store(token, user)
+
+  auth.user = user
+  auth.loggedIn = true
+
+  if (!err.value && !data.value.error) {
+    router.push((route.query as any).next || '/')
+  } else {
+    error.value = err.value || data.value.error?.message
+  }
 });
 </script>
 
@@ -30,26 +56,20 @@ const onSubmit = handleSubmit((values) => {
         <p class="text-gray-500">Please enter your credentials</p>
       </div>
 
+      <div v-if="error" class="alert alert-error mb-4">
+        {{ error }}
+      </div>
+
       <FormInput name="email" label="Email" placeholder="Email" />
-      <FormInput
-        name="password"
-        label="Password"
-        placeholder="Password"
-        type="password"
-      />
+      <FormInput name="password" label="Password" placeholder="Password" type="password" />
 
       <div class="mb-4 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">
-          <input
-            type="checkbox"
-            class="w-4 h-4 rounded text-primary-500 focus:ring-primary-500 transition duration-300"
-          />
+          <input type="checkbox"
+            class="w-4 h-4 rounded text-primary-500 focus:ring-primary-500 transition duration-300" />
           Remember me
         </label>
-        <nuxt-link
-          to="/auth/forgot-password"
-          class="text-primary-500 hover:underline font-semibold text-sm"
-        >
+        <nuxt-link to="/auth/forgot-password" class="text-primary-500 hover:underline font-semibold text-sm">
           Forgot Password?
         </nuxt-link>
       </div>
@@ -66,10 +86,7 @@ const onSubmit = handleSubmit((values) => {
 
       <div class="text-gray-600 text-sm">
         Don't have account?
-        <nuxt-link
-          to="/auth/register"
-          class="text-primary-500 hover:underline font-semibold text-sm"
-        >
+        <nuxt-link to="/auth/register" class="text-primary-500 hover:underline font-semibold text-sm">
           Register
         </nuxt-link>
       </div>
@@ -77,4 +94,5 @@ const onSubmit = handleSubmit((values) => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

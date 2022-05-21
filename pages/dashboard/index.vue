@@ -6,6 +6,7 @@ import RiBarChartBoxLine from '~icons/ri/bar-chart-box-line';
 
 definePageMeta({
   layout: 'dashboard',
+  middleware: 'auth'
 });
 
 const stats = ref([
@@ -57,4 +58,5 @@ const stats = ref([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
