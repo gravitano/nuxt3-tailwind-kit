@@ -30,7 +30,7 @@ const logout = () => auth.logout()
             class="text-gray-600 hover:bg-gray-200 hover:text-indigo-500 px-2 py-2 rounded" v-slot="{ open }">
             <span :class="[open ? 'text-indigo-500' : '']" class="flex items-center gap-2">
               <IconUser class="i-ri-user-line w-5 h-5" />
-              <span class="hidden sm:inline">Admin</span>
+              <span class="hidden sm:inline"> {{ auth.user.name }} </span>
               <IconArrowDown class="i-ri-arrow-down-s-line w-5 h-5" />
             </span>
           </DropdownButton>
