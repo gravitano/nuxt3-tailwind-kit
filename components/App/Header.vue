@@ -3,22 +3,24 @@ const isOpen = ref(false);
 
 const menus = ref([
   {
-    text: 'Home',
-    to: '/',
+    text: "menu_home",
+    to: "/",
   },
   {
-    text: 'Store',
-    to: '/store',
+    text: "menu_store",
+    to: "/store",
   },
   {
-    text: 'Blog',
-    to: '/blog',
+    text: "menu_blog",
+    to: "/blog",
   },
   {
-    text: 'Dashboard',
-    to: '/dashboard',
+    text: "menu_dashboard",
+    to: "/dashboard",
   },
 ]);
+
+const langs = ["en", "id"];
 </script>
 
 <template>
@@ -33,7 +35,7 @@ const menus = ref([
           alt="Logo"
           class="max-w-full h-10"
         /> -->
-        Nuxt Tailwind Kit
+        {{ $t("app_name") }}
       </NuxtLink>
       <button
         class="appearance-none px-2 py-2 rounded sm:hidden"
@@ -73,8 +75,19 @@ const menus = ref([
             class="px-4 py-2 rounded-full w-full sm:w-auto text-gray-800 sm:text-white transition duration-200 font-medium hover:bg-white hover:text-blue-600"
             exact-active-class="bg-white !text-blue-600"
           >
-            {{ menu.text }}
+            {{ $t(menu.text) }}
           </NuxtLink>
+
+          <div>
+            <select
+              v-model="$i18n.locale"
+              class="text-white text-xs bg-transparent uppercase border border-white rounded bg-none px-2 py-1 focus:ring-0"
+            >
+              <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
+                {{ lang }}
+              </option>
+            </select>
+          </div>
         </nav>
       </div>
     </div>

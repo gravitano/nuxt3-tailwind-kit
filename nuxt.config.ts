@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       },
     ],
     ['@pinia/nuxt', { disableVuex: true }],
+    '@intlify/nuxt3',
   ],
   modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
   strapi: {
@@ -25,4 +26,10 @@ export default defineNuxtConfig({
     },
   },
   // css: ['~/windplus/styles/main.css'],
+  intlify: {
+    localeDir: 'locales', // set the `locales` directory at source directory of your Nuxt application
+    vueI18n: {
+      // ...
+    }
+  }
 });
