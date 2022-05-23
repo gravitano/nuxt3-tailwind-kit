@@ -2,45 +2,40 @@
 
 > 🚧 Work in progress
 
-## Major Dependencies
+## Features
 
-- [Nuxt 3](https://v3.nuxtjs.org/)
+- [Nuxt 3](https://v3.nuxtjs.org/) (RC.3)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Headless UI](https://headlessui.dev/)
-- [unplugin-icons](https://github.com/antfu/unplugin-icons)
-- [VueUse](https://vueuse.org/)
-- [vee-validate](https://vee-validate.logaretm.com/v4/)
-- [@nuxtjs/strapi](https://strapi.nuxtjs.org/)
-- [markdown-it](https://github.com/markdown-it/markdown-it)
+- Thousands of **on-demand** icons with [unplugin-icons](https://github.com/antfu/unplugin-icons)
+- State management with [Pinia](https://pinia.vuejs.org/)
+- Easy form validation with [vee-validate](https://vee-validate.logaretm.com/v4/)
+- Custom authentication store via [`useAuthStore`](./stores/auth.ts)
+- Internalization via [intlify/nuxt3](https://github.com/intlify/nuxt3)
 
-## Components
+## Try it Now
 
-| Component                                                                          | Description           | Status |
-| :--------------------------------------------------------------------------------- | :-------------------- | :----: |
-| [Button](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)            | Button Component      |   ✅   |
-| [Card](https://nuxt3-tailwind-kit.vercel.app/docs/components/cards)                | Card Component        |   ✅   |
-| [Collapsible](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)       | Collapsible Component |   ✅   |
-| [Dropdown](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)          | Dropdown Component    |   ✅   |
-| [Select](https://nuxt3-tailwind-kit.vercel.app/docs/components/buttons)            | Select Component      |   ✅   |
-| [Autocomplete](https://nuxt3-tailwind-kit.vercel.app/docs/components/autocomplete) | Form Component        |   ✅   |
-| [Form](https://nuxt3-tailwind-kit.vercel.app/docs/components/forms)                | Form Component        |   ✅   |
-| Header                                                                             | Header Component      |   ✅   |
-| Icons                                                                              | Icons Component       |   ✅   |
-| Stats                                                                              | Statistic Component   |   ✅   |
+### Stackblitz
 
-> Some components maybe not listed here. Check it out on `/components` folder.
+- Try on [stackblitz](https://stackblitz.com/github/gravitano/nuxt3-tailwind-kit/tree/main)
 
-## Pages
+### Online Demo
 
-| Path                                                                                  | Description         | Status |
-| :------------------------------------------------------------------------------------ | :------------------ | :----: |
-| [`/`](https://nuxt3-tailwind-kit.vercel.app/)                                         | Homepage / Dashbard |   🚧   |
-| [`/auth/login`](https://nuxt3-tailwind-kit.vercel.app/login)                          | Login               |   ✅   |
-| [`/auth/register`](https://nuxt3-tailwind-kit.vercel.app/auth/register)               | Register            |   ✅   |
-| [`/auth/forgot-password`](https://nuxt3-tailwind-kit.vercel.app/auth/forgot-password) | Forgot Password     |   ✅   |
-| [`/auth/reset-password`](https://nuxt3-tailwind-kit.vercel.app/auth/reset-password)   | Reset Password      |   ✅   |
+- Try [online demo](https://nuxt3-tailwind-kit.vercel.app/)
 
-> Some page maybe not listed here. Check it out on `/pages` folder.
+### GitHub Template
+
+[Create a repo from this template on GitHub.](https://github.com/gravitano/nuxt3-tailwind-kit/generate)
+
+### Local
+
+If you prefer to do it manually with the cleaner git history
+
+```bash
+npx degit gravitano/nuxt3-tailwind-kit my-nuxt-tailwind-app
+cd my-nuxt-tailwind-app
+yarn
+yarn dev
+```
 
 ## Development
 
