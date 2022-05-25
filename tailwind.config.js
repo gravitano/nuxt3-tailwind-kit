@@ -18,7 +18,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './node_modules/windplus/styles/**/*.{vue,js,css}',
     './node_modules/windplus/styles/*.{vue,js,css}',
-    './node_modules/windplus/styles/main.css'
+    './node_modules/windplus/styles/main.css',
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -36,13 +36,13 @@ module.exports = {
           base: 'var(--color-text-base)',
           muted: 'var(--color-text-muted)',
           icon: 'var(--color-text-icon)',
-        }
+        },
       },
       backgroundColor: {
         skin: {
           fill: 'var(--color-fill)',
           'icon-fill': 'var(--color-icon-fill)',
-        }
+        },
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
@@ -52,8 +52,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

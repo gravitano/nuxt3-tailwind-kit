@@ -6,9 +6,9 @@
       <NuxtPage />
     </div>
     <div
-      class="w-full sm:w-6/12 lg:7/12 bg-gradient-to-tr from-indigo-500 to-indigo-400 flex items-center justify-center p-6"
+      class="w-full sm:w-6/12 lg:7/12 bg-gradient-to-tr from-primary-500 to-primary-400 flex items-center justify-center p-6"
     >
-      <LoginIllustration />
+      <img src="/images/login-illustration.svg" alt="Login illustration" loading="lazy" />
     </div>
   </div>
 </template>
