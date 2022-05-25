@@ -140,9 +140,8 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
  */
 
 /* default */
-.btn,
 .btn-default {
-  @apply border-gray-400 text-gray-800 bg-white hover:bg-gray-100 dark:text-gray-900;
+  @apply border-gray-400 text-gray-700 bg-white hover:bg-gray-100 hover:text-gray-800 dark:text-gray-900;
 }
 
 /* primary */
@@ -193,47 +192,33 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
  */
 
 /* default */
-.btn.btn-outlined,
 .btn-default.btn-outlined {
-  @apply border-gray-400 text-gray-800 bg-transparent hover:bg-gray-100;
-}
-
-.btn-default.btn-outlined {
-  @apply dark:text-white dark:hover:bg-gray-800;
+  @apply border-gray-700 text-gray-700 hover:text-white bg-transparent hover:bg-gray-700
+    dark:text-white dark:hover:bg-gray-800;
 }
 
 /* primary */
 .btn-primary.btn-outlined {
-  @apply bg-transparent border-primary-500 hover:bg-primary-100  text-primary-500;
+  @apply bg-transparent border-primary-500 text-primary-500 hover:bg-primary-500  hover:text-white;
 }
-
-/* secondary */
 .btn-secondary.btn-outlined {
-  @apply bg-transparent border-secondary-500 hover:bg-secondary-100  text-secondary-500;
+  @apply bg-transparent border-secondary-500 text-secondary-500 hover:bg-secondary-500  hover:text-white;
 }
-
-/* info */
 .btn-info.btn-outlined {
-  @apply bg-transparent border-info-500 hover:bg-info-100  text-info-500;
+  @apply bg-transparent border-info-500 text-info-500 hover:bg-info-500  hover:text-white;
 }
-
-/* warning */
-.btn-warning.btn-outlined {
-  @apply bg-transparent border-warning-500 hover:bg-warning-100  text-warning-500;
-}
-
-/* error */
-.btn-error.btn-outlined {
-  @apply bg-transparent border-error-500 hover:bg-error-100  text-error-500;
-}
-
-/* success */
 .btn-success.btn-outlined {
-  @apply bg-transparent border-success-500 hover:bg-success-100  text-success-500;
+  @apply bg-transparent border-success-500 text-success-500 hover:bg-success-500  hover:text-white;
+}
+.btn-error.btn-outlined {
+  @apply bg-transparent border-error-500 text-error-500 hover:bg-error-500  hover:text-white;
+}
+.btn-warning.btn-outlined {
+  @apply bg-transparent border-warning-500 text-warning-500 hover:bg-warning-500  hover:text-white;
 }
 /* dark */
 .btn-dark.btn-outlined {
-  @apply bg-transparent border-gray-800 hover:bg-gray-100  text-gray-800 dark:text-white dark:border-gray-400 dark:hover:bg-gray-800;
+  @apply bg-transparent border-gray-800 hover:bg-gray-800 hover:text-white  text-gray-800 dark:text-white dark:border-gray-400 dark:hover:bg-gray-800;
 }
 
 /*
@@ -242,9 +227,8 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
  */
 
 /* default */
-.btn.btn-text,
 .btn-default.btn-text {
-  @apply border-gray-400 bg-transparent hover:bg-transparent hover:text-gray-600;
+  @apply text-gray-700 bg-transparent hover:bg-transparent hover:text-gray-800;
 }
 
 .btn-default.btn-text {
