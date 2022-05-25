@@ -72,6 +72,10 @@ const menus = ref([
         text: "WindPlus",
         to: "/docs/components/windplus",
       },
+      {
+        text: "Modal",
+        to: "/docs/components/modals",
+      },
     ],
   },
   {
