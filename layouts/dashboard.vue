@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Nuxt 3 Tailwind',
+  title: "Nuxt 3 Tailwind",
 });
 
 const sidebar = useSidebar();
@@ -8,11 +8,11 @@ const sidebar = useSidebar();
 
 <template>
   <main class="flex flex-col sm:flex-row">
-    <Sidebar v-model="sidebar" />
+    <DashboardSidebar v-model="sidebar" />
     <!-- <NavDrawer /> -->
 
     <div class="w-full flex-grow">
-      <Header @menu:click="sidebar = true" />
+      <DashboardHeader @menu:click="sidebar = true" />
 
       <!-- main content -->
       <div class="px-6 py-6">
