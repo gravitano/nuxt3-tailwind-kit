@@ -39,28 +39,28 @@ const bindVariant = (variant: string) => {
         class="space-x-2 space-y-2"
       >
         <h2 class="font-bold mb-2">{{ variant || 'default' }}</h2>
-        <v-btn
+        <Button
           v-for="color in colors"
           :key="color"
           :color="color"
           v-bind="bindVariant(variant)"
         >
           {{ color }}
-        </v-btn>
+        </Button>
       </div>
 
       <h2 class="font-bold mb-2">Sizes</h2>
       <div v-for="size in sizes" :key="size" class="space-x-2 space-y-2">
         <h3 class="font-bold text-sm mb-2">{{ size }}</h3>
-        <v-btn v-for="color in colors" :key="color" :color="color" :size="size">
+        <Button v-for="color in colors" :key="color" :color="color" :size="size">
           {{ color }}
-        </v-btn>
+        </Button>
       </div>
 
       <div class="space-x-2 space-y-2">
         <h2 class="font-bold mb-2">Anchor</h2>
         <div class="flex gap-2 flex-wrap">
-          <v-btn
+          <Button
             v-for="color in colors"
             :key="color"
             :color="color"
@@ -69,14 +69,14 @@ const bindVariant = (variant: string) => {
             href="https://google.com"
           >
             {{ color }}
-          </v-btn>
+          </Button>
         </div>
       </div>
 
       <div class="space-x-2 space-y-2">
         <h2 class="font-bold mb-2">Nuxt Link</h2>
         <div class="flex gap-2 flex-wrap">
-          <v-btn
+          <Button
             v-for="color in colors"
             :key="color"
             :color="color"
@@ -85,7 +85,7 @@ const bindVariant = (variant: string) => {
             :to="{ path: color }"
           >
             {{ color }}
-          </v-btn>
+          </Button>
         </div>
       </div>
 
@@ -93,7 +93,7 @@ const bindVariant = (variant: string) => {
         <h2 class="font-bold mb-2">Icon</h2>
         <div class="space-y-2" v-for="variant in iconVariants" :key="variant">
           <div v-for="size in sizes" :key="size" class="space-x-2 space-y-2">
-            <v-btn
+            <Button
               v-for="color in colors"
               :key="color"
               :color="color"
@@ -111,7 +111,7 @@ const bindVariant = (variant: string) => {
                   d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
                 />
               </svg>
-            </v-btn>
+            </Button>
           </div>
         </div>
       </div>

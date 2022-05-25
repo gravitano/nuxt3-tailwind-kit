@@ -30,8 +30,8 @@ const onSubmit = handleSubmit((values) => {
       />
 
       <template #footer>
-        <v-btn type="submit" color="primary">Submit</v-btn>
-        <v-btn text>Cancel</v-btn>
+        <Button type="submit" color="primary">Submit</Button>
+        <Button text>Cancel</Button>
       </template>
     </Card>
 
@@ -47,8 +47,8 @@ const onSubmit = handleSubmit((values) => {
         />
 
         <template #footer>
-          <v-btn type="submit" color="primary">Submit</v-btn>
-          <v-btn text>Cancel</v-btn>
+          <Button type="submit" color="primary">Submit</Button>
+          <Button text>Cancel</Button>
         </template>
       </Card>
     </form>

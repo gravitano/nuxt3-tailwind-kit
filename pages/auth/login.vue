@@ -74,9 +74,9 @@ const onSubmit = handleSubmit(async (values) => {
         </nuxt-link>
       </div>
 
-      <v-btn type="submit" color="primary" block size="lg" class="mb-2">
+      <Button type="submit" color="primary" block size="lg" class="mb-2">
         Login
-      </v-btn>
+      </Button>
 
       <!-- <button
         class="px-3 py-2.5 rounded-md mb-4 font-semibold inline-flex w-full items-center justify-center bg-primary-500 text-white border-primary-500 focus:ring focus:ring-primary-500 focus:ring-offset-1 transition duration-300 hover:bg-primary-600 hover:border-primary-600"

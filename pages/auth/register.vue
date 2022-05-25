@@ -57,9 +57,9 @@ const onSubmit = handleSubmit((values) => {
         </label>
       </div>
 
-      <v-btn type="submit" color="primary" block size="lg" class="mb-2">
+      <Button type="submit" color="primary" block size="lg" class="mb-2">
         Login
-      </v-btn>
+      </Button>
 
       <div class="text-gray-600 text-sm">
         Already have an account?

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from "vue";
 
 const props = defineProps({
   type: {
     type: String,
-    default: 'button',
+    default: "button",
   },
   color: {
     type: String,
-    default: 'default',
+    default: "default",
   },
   rounded: {
     type: Boolean,
@@ -32,17 +32,16 @@ const props = defineProps({
   },
   to: {
     type: [String, Object],
-    default: '',
+    default: "",
   },
   href: {
     type: String,
-    default: '',
+    default: "",
   },
   size: {
     type: String,
-    default: 'md',
-    validator: (v: string) =>
-      ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'].includes(v),
+    default: "md",
+    validator: (v: string) => ["xxs", "xs", "sm", "md", "lg", "xl", "2xl"].includes(v),
   },
   icon: {
     type: Boolean,
@@ -52,23 +51,21 @@ const props = defineProps({
 
 const classes = computed(() => {
   return [
-    'btn',
+    "btn",
     `btn-${props.color}`,
     `btn-${props.size}`,
     {
-      'btn-outlined': props.outlined,
-      'btn-text': props.text,
-      'btn-rounded': props.rounded,
-      'btn-block': props.block,
-      'btn-underline': props.underline,
-      'btn-icon': props.icon,
+      "btn-outlined": props.outlined,
+      "btn-text": props.text,
+      "btn-rounded": props.rounded,
+      "btn-block": props.block,
+      "btn-underline": props.underline,
+      "btn-icon": props.icon,
     },
   ];
 });
 
-const tag = computed(() =>
-  props.to ? 'nuxt-link' : props.href ? 'a' : 'button'
-);
+const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"));
 </script>
 
 <template>
