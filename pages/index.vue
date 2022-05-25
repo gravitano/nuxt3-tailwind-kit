@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-
 const { data } = await useFetch("/api/homepage", {});
-const { t } = useI18n();
-console.log(t("app_name"));
 </script>
 
 <template>

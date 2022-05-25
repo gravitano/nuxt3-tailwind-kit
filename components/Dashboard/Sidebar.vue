@@ -130,7 +130,9 @@ const menus = ref([
         to="/"
         class="py-5 w-full font-bold text-lg text-indigo-500 flex gap-2 items-center justify-between sm:justify-center"
       >
-        <div class="flex gap-2 items-center justify-center">Nuxt 3 Tailwind</div>
+        <div class="flex gap-2 items-center justify-center">
+          {{ $t("app_name") }}
+        </div>
       </nuxt-link>
       <button
         class="i-ri-close-line w-6 h-6 text inline sm:hidden"

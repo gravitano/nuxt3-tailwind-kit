@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 useHead({
-  title: "Nuxt Tailwind Kit",
+  title: t("app_name"),
 });
 
 const route = useRoute();

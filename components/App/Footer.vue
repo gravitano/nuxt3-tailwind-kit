@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
-const isHome = computed(() => route.path === '/');
+const isHome = computed(() => route.path === "/");
 </script>
 
 <template>
@@ -23,10 +23,10 @@ const isHome = computed(() => route.path === '/');
           alt="Logo"
           class="max-w-full h-10"
         /> -->
-        Nuxt Tailwind Kit
+        {{ $t("app_name") }}
       </NuxtLink>
       <div class="text-sm">
-        Nuxt Tailwind Kit by
+        {{ $t("app_name") }} by
         <a
           href="https://github.com/gravitano"
           class="font-semibold"
