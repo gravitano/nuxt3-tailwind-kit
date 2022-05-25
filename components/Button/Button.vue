@@ -142,7 +142,7 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 /* default */
 .btn,
 .btn-default {
-  @apply border-gray-500 text-gray-800 bg-white hover:bg-gray-100 dark:text-gray-900;
+  @apply border-gray-400 text-gray-800 bg-white hover:bg-gray-100 dark:text-gray-900;
 }
 
 /* primary */
@@ -195,7 +195,7 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 /* default */
 .btn.btn-outlined,
 .btn-default.btn-outlined {
-  @apply border-gray-500 text-gray-800 bg-transparent hover:bg-gray-100;
+  @apply border-gray-400 text-gray-800 bg-transparent hover:bg-gray-100;
 }
 
 .btn-default.btn-outlined {
@@ -244,7 +244,7 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 /* default */
 .btn.btn-text,
 .btn-default.btn-text {
-  @apply border-gray-500 bg-transparent hover:bg-transparent hover:text-gray-600;
+  @apply border-gray-400 bg-transparent hover:bg-transparent hover:text-gray-600;
 }
 
 .btn-default.btn-text {
