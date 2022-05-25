@@ -4,12 +4,7 @@ export default defineNuxtConfig({
   buildModules: [
     '@vueuse/nuxt',
     '@nuxtjs/strapi',
-    [
-      'unplugin-icons/nuxt',
-      {
-        /* options */
-      },
-    ],
+    ['unplugin-icons/nuxt', {}],
     ['@pinia/nuxt', { disableVuex: true }],
     '@intlify/nuxt3',
   ],

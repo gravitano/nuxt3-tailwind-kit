@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import RiMenuFill from "~icons/ri/menu-fill";
+
 const isOpen = ref(false);
 
 const menus = ref([
@@ -41,20 +43,7 @@ const menus = ref([
         aria-label="Menu"
         @click="isOpen = !isOpen"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
+        <RiMenuFill class="w-6 h-6" />
       </button>
       <div
         :class="
