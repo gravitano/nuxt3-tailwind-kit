@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useField } from 'vee-validate';
+import { useField } from "vee-validate";
 
 const props = withDefaults(
   defineProps<{
@@ -10,20 +10,18 @@ const props = withDefaults(
     type?: string;
   }>(),
   {
-    type: 'text',
+    type: "text",
   }
 );
 
-const { value, errorMessage } = useField(props.name, props.rules);
+const { name, rules } = toRefs(props);
+
+const { value, errorMessage } = useField(name, rules);
 </script>
 
 <template>
   <div class="mb-4">
-    <label
-      v-if="label"
-      class="block font-medium mb-1 text-gray-700"
-      :for="name"
-    >
+    <label v-if="label" class="block font-medium mb-1 text-gray-700" :for="name">
       {{ label }}
     </label>
     <input
