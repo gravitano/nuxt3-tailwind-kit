@@ -15,7 +15,7 @@ defineProps<{
 <template>
   <section
     id="hero"
-    class="bg-skill-fill text-white sm:h-screen grid place-items-center -mt-1 sm:mt-0"
+    class="bg-skin-fill text-white sm:h-screen grid place-items-center -mt-1 sm:mt-0"
     :class="`hero-${theme}`"
   >
     <div

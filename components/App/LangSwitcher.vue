@@ -5,7 +5,7 @@ const langs = ["en", "id"];
 <template>
   <select
     v-model="$i18n.locale"
-    class="text-white text-xs bg-transparent uppercase border border-white rounded bg-none px-2 py-1 focus:ring-0"
+    class="text-white text-xs bg-transparent uppercase border border-skin-base rounded bg-none px-2 py-1 focus:ring-0"
   >
     <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
       {{ lang }}
