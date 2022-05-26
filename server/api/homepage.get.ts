@@ -1,14 +1,21 @@
 export default defineEventHandler(() => {
   return {
     hero: {
+      theme: 'default',
       title: 'Nuxt 3 Tailwind Kit',
       description: 'Nuxt 3 Starter Kit + Tailwind CSS',
       image:
         'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80',
-      button: {
-        text: 'Get Started',
-        action: '#feature',
-      },
+      buttons: [
+        {
+          text: 'Get Started',
+          action: '#feature',
+          props: {
+            color: 'primary',
+            size: 'xl',
+          },
+        },
+      ],
     },
     about: {
       title: 'About',
