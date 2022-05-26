@@ -12,6 +12,7 @@
 - Easy form validation with [vee-validate](https://vee-validate.logaretm.com/v4/)
 - Custom authentication store via [`useAuthStore`](./stores/auth.ts)
 - Internalization via [intlify/nuxt3](https://github.com/intlify/nuxt3)
+- Includes with 20+ built-in components + themeable using CSS Variable
 
 ## Try it Now
 
