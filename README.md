@@ -33,8 +33,8 @@
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit gravitano/nuxt3-tailwind-kit my-nuxt-tailwind-app
-cd my-nuxt-tailwind-app
+npx nuxi init -t gravitano/nuxt3-tailwind-kit my-nuxt-app
+cd my-nuxt-app
 yarn
 yarn dev
 ```
