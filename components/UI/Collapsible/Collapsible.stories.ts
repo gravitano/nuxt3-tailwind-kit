@@ -7,7 +7,7 @@ export default {
   args: {
     modelValue: false,
     title: 'Item',
-    description: 'lorem ipsum dolor sit amet',
+    content: 'lorem ipsum dolor sit amet',
   },
 };
 

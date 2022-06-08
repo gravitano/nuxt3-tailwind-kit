@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, toRefs, watch } from 'vue';
+import { ref, toRefs, watch } from "vue";
 import {
   Listbox,
   ListboxButton,
   ListboxOptions,
   ListboxOption,
-} from '@headlessui/vue';
-import type { SelectItem } from './types';
-import CheckIcon from '~icons/ri/check-line';
-import SelectorIcon from '~icons/heroicons-outline/selector';
+} from "@headlessui/vue";
+import type { SelectItem } from "./types";
+import CheckIcon from "~icons/ri/check-line";
+import SelectorIcon from "~icons/heroicons-outline/selector";
 
 type Props = {
   modelValue: SelectItem;
@@ -22,14 +22,14 @@ type Props = {
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
-  placeholder: 'Choose',
+  placeholder: "Choose",
   hideCheckIcon: false,
   outlined: false,
   large: false,
   small: false,
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue"]);
 
 const { modelValue } = toRefs(props);
 
@@ -40,7 +40,7 @@ watch(modelValue, (val) => {
 });
 
 watch(selected, (val) => {
-  emit('update:modelValue', val);
+  emit("update:modelValue", val);
 });
 </script>
 
@@ -48,7 +48,24 @@ watch(selected, (val) => {
   <Listbox v-model="selected" class="w-full">
     <div class="relative mt-1">
       <ListboxButton
-        class="relative w-full py-2 pl-3 pr-10 text-left rounded-md border border-gray-300 cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-primary-300 focus-visible:border-primary-500 transition duration-300"
+        class="
+          relative
+          w-full
+          py-2
+          pl-3
+          pr-10
+          text-left
+          rounded-md
+          border border-gray-300
+          cursor-default
+          focus:outline-none
+          focus-visible:ring-2
+          focus-visible:ring-opacity-75
+          focus-visible:ring-primary-300
+          focus-visible:border-primary-500
+          transition
+          duration-300
+        "
         :class="[
           outlined
             ? 'bg-transparent border-icon-inverse text-inverse-subdued'
@@ -59,7 +76,15 @@ watch(selected, (val) => {
       >
         <span class="block truncate">{{ selected?.text || placeholder }}</span>
         <span
-          class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+          class="
+            absolute
+            inset-y-0
+            right-0
+            flex
+            items-center
+            pr-2
+            pointer-events-none
+          "
         >
           <SelectorIcon class="w-5 h-5" aria-hidden="true" />
         </span>
@@ -71,7 +96,22 @@ watch(selected, (val) => {
         leave-to-class="opacity-0"
       >
         <ListboxOptions
-          class="absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          class="
+            absolute
+            z-10
+            w-full
+            py-1
+            mt-1
+            overflow-auto
+            text-base
+            bg-white
+            rounded-md
+            shadow-lg
+            max-h-60
+            ring-1 ring-black ring-opacity-5
+            focus:outline-none
+            sm:text-sm
+          "
         >
           <ListboxOption
             v-slot="{ active, selected }"
@@ -81,7 +121,7 @@ watch(selected, (val) => {
             as="template"
           >
             <div class="px-1">
-              <li v-if="item.divider" class="border-b -mx-1"></li>
+              <li v-if="item.divider" class="border-b -mx-1 my-1"></li>
               <li
                 v-else
                 :class="[
@@ -100,7 +140,15 @@ watch(selected, (val) => {
                 </span>
                 <span
                   v-if="selected && !hideCheckIcon"
-                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
+                  class="
+                    absolute
+                    inset-y-0
+                    left-0
+                    flex
+                    items-center
+                    pl-3
+                    text-primary-500
+                  "
                 >
                   <CheckIcon class="w-5 h-5" aria-hidden="true" />
                 </span>

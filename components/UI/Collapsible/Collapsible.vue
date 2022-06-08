@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import IconArrowDown from '~icons/ri/arrow-down-s-line';
-import CollapseTransition from './CollapseTransition.vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import IconArrowDown from "~icons/ri/arrow-down-s-line";
+import CollapseTransition from "./CollapseTransition.vue";
+import { ref, toRefs, watch } from "vue";
 
 const props = withDefaults(
   defineProps<{
@@ -21,11 +22,11 @@ const props = withDefaults(
 );
 
 const emit = defineEmits([
-  'update:modelValue',
-  'change',
-  'toggle',
-  'open',
-  'close',
+  "update:modelValue",
+  "change",
+  "toggle",
+  "open",
+  "close",
 ]);
 
 const { modelValue } = toRefs(props);
@@ -36,18 +37,18 @@ watch(modelValue, (val) => {
 });
 
 watch(isOpen, (val) => {
-  emit('update:modelValue', val);
-  emit('change', val);
+  emit("update:modelValue", val);
+  emit("change", val);
 
   if (val) {
-    emit('open');
+    emit("open");
   } else {
-    emit('close');
+    emit("close");
   }
 });
 
 const toggle = () => {
-  emit('toggle');
+  emit("toggle");
   isOpen.value = !isOpen.value;
 };
 </script>
@@ -55,7 +56,20 @@ const toggle = () => {
 <template>
   <Disclosure v-slot="{ open }" as="div">
     <DisclosureButton
-      class="flex items-center justify-between w-full py-2 text-left text-15 font-semibold rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-blue-50 focus-visible:ring-opacity-75"
+      class="
+        flex
+        items-center
+        justify-between
+        w-full
+        py-2
+        text-left text-15
+        font-semibold
+        rounded-lg
+        focus:outline-none
+        focus-visible:ring
+        focus-visible:ring-blue-50
+        focus-visible:ring-opacity-75
+      "
       :class="classes?.button"
       type="button"
       @click="toggle"

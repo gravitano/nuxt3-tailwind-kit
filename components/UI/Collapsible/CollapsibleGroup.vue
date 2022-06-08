@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import Icon from '../Icon/index.vue';
-import Collapsible from './Collapsible.vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import Icon from "../Icon/index.vue";
+import Collapsible from "./Collapsible.vue";
+import { ref, toRefs, watch } from "vue";
 
 type CollapsibleItem = {
   title: string;
@@ -9,16 +10,17 @@ type CollapsibleItem = {
   isOpen?: boolean;
 };
 
-const props = defineProps<{
-  items?: CollapsibleItem[];
-  classes?: {
-    wrapper?: string;
-    button?: string;
-    title?: string;
-    panel?: string;
-  };
-  accordion?: boolean;
-}>();
+const props =
+  defineProps<{
+    items?: CollapsibleItem[];
+    classes?: {
+      wrapper?: string;
+      button?: string;
+      title?: string;
+      panel?: string;
+    };
+    accordion?: boolean;
+  }>();
 
 const { items } = toRefs(props);
 
