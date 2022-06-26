@@ -30,7 +30,7 @@
     "@vueuse/nuxt": "^8.3.0",
     "babel-loader": "^8.2.5",
     "husky": "^8.0.1",
-    "nuxt": "npm:nuxt3@latest",
+    "nuxt": "^3.0.0.rc-4",
     "swiper": "^8.1.5",
     "tailwindcss": "^3.0.24",
     "unplugin-icons": "^0.14.1",
