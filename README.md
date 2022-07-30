@@ -1,10 +1,10 @@
 # Nuxt 3 Tailwind Kit
 
-> 🚧 Work in progress
+Nuxt 3 + Tailwind Starter Kit.
 
 ## Features
 
-- [Nuxt 3](https://v3.nuxtjs.org/) (RC.3)
+- [Nuxt 3](https://v3.nuxtjs.org/) (RC.4)
 - [Nuxt Content v2](https://content.nuxtjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - Thousands of **on-demand** icons with [unplugin-icons](https://github.com/antfu/unplugin-icons)
