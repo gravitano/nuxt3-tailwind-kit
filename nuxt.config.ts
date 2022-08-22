@@ -18,12 +18,6 @@ export default defineNuxtConfig({
     version: 'v4',
     cookie: {},
   },
-  vite: {
-    optimizeDeps: {
-      include: ['markdown-it'],
-    },
-  },
-  // css: ['~/windplus/styles/main.css'],
   intlify: {
     localeDir: 'locales', // set the `locales` directory at source directory of your Nuxt application
     vueI18n: {

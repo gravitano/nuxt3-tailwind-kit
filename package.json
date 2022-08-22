@@ -9,6 +9,20 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "dependencies": {
+    "@headlessui/vue": "^1.5.0",
+    "@pinia/nuxt": "^0.4.1",
+    "@vueuse/core": "^8.3.0",
+    "highlight.js": "^11.5.1",
+    "markdown-it": "^12.3.2",
+    "markdown-it-prism": "^2.2.4",
+    "pinia": "^2.0.14",
+    "prism-themes": "^1.9.0",
+    "vee-validate": "^4.5.11",
+    "vue": "^3.2.33",
+    "windplus": "^0.0.1",
+    "yup": "^0.32.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@commitlint/cli": "^17.0.1",
@@ -36,19 +50,5 @@
     "tailwindcss": "^3.0.24",
     "unplugin-icons": "^0.14.1",
     "vue-loader": "^16.8.3"
-  },
-  "dependencies": {
-    "@headlessui/vue": "^1.5.0",
-    "@pinia/nuxt": "^0.4.1",
-    "@vueuse/core": "^8.3.0",
-    "highlight.js": "^11.5.1",
-    "markdown-it": "^12.3.2",
-    "markdown-it-prism": "^2.2.4",
-    "pinia": "^2.0.14",
-    "prism-themes": "^1.9.0",
-    "vee-validate": "^4.5.11",
-    "vue": "^3.2.33",
-    "windplus": "^0.0.1",
-    "yup": "^0.32.11"
   }
 }
