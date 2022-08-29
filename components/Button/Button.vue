@@ -146,7 +146,9 @@ const tag = computed(() => (props.to ? "nuxt-link" : props.href ? "a" : "button"
 
 /* primary */
 .btn-primary {
-  @apply border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600 text-white dark:text-white
+  @apply border-primary-600 bg-primary-600 
+    hover:bg-primary-700 hover:border-primary-700 
+    text-white dark:text-white
     focus:ring-primary-300;
 }
 
