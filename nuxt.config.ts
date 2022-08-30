@@ -7,11 +7,7 @@ export default defineNuxtConfig({
     ['unplugin-icons/nuxt', {}],
     '@intlify/nuxt3',
   ],
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/content',
-    '@pinia/nuxt',
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@pinia/nuxt'],
   strapi: {
     url: process.env.STRAPI_URL || 'https://bapi.warsono.id',
     prefix: '/api',
@@ -23,5 +19,8 @@ export default defineNuxtConfig({
     vueI18n: {
       // ...
     },
+  },
+  build: {
+    transpile: ['@intlify/nuxt3', '@intlify/vite-plugin-vue-i18n'],
   },
 });
