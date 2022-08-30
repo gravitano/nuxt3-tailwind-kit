@@ -6,7 +6,7 @@ const { find } = useStrapi4();
 
 const posts = ref<Post[]>([]);
 try {
-  const response = await find<Strapi4Response<Post>>('posts', {
+  const response = await find<Strapi4Response<Post>>('articles', {
     sort: 'publishedAt',
     populate: ['image', 'author'],
   });

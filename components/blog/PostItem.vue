@@ -10,7 +10,7 @@ defineProps<{
   <NuxtLink
     v-if="post.attributes"
     class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300"
-    :to="`/blog/posts/${post.attributes.slug}`"
+    :to="`/blog/posts/${post.id}`"
   >
     <BlogPostImage :image="post.attributes.image" />
     <div class="px-4 py-4">
@@ -19,7 +19,7 @@ defineProps<{
         {{ post.attributes.title }}
       </h3>
       <p class="text-gray-500 text-sm mt-2">
-        {{ post.attributes.excerpt || post.attributes.content.substr(0, 150) }}
+        {{ post.attributes.excerpt || post.attributes.body.substr(0, 150) }}
       </p>
       <div class="flex gap-2 items-center mt-6">
         <img

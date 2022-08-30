@@ -84,7 +84,7 @@ export interface Image {
 export interface Attributes {
   title: string;
   slug: string;
-  content: string;
+  body: string;
   excerpt: string;
   createdAt: Date;
   updatedAt: Date;
