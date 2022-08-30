@@ -4,7 +4,7 @@ import type { Strapi4Response } from '@nuxtjs/strapi';
 
 const { find } = useStrapi4();
 
-const posts = useState<Post[]>([]);
+const posts = ref<Post[]>([]);
 try {
   const response = await find<Strapi4Response<Post>>('posts', {
     sort: 'publishedAt',

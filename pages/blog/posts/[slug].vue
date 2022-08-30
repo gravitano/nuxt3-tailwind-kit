@@ -36,7 +36,7 @@ const response = await client<Strapi4Response<Post>>(`/posts/slug/${slug}`, {
 
 const post = response.data;
 
-const contents = useState('');
+const contents = ref('');
 try {
   contents.value = md.render(post.attributes.content || '');
 } catch (e) {
