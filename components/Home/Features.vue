@@ -19,7 +19,7 @@ defineProps<{
   <section
     v-for="feature in features"
     :key="feature.name"
-    class="px-4 sm:px-0 py-5 sm:py-20 bg-skin-fill text-skin-base"
+    class="px-4 xl:px-0 py-5 sm:py-20 bg-skin-fill text-skin-base"
     :class="feature.theme"
   >
     <div class="container mx-auto">

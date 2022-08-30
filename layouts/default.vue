@@ -23,4 +23,3 @@ const isFullWidth = computed(() => route.name === "index" || route.meta.fullWidt
   </div>
 </template>
 
-<style scoped></style>
