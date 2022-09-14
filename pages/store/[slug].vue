@@ -27,7 +27,17 @@
       <nav aria-label="Breadcrumb">
         <ol
           role="list"
-          class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
+          class="
+            max-w-2xl
+            mx-auto
+            px-4
+            flex
+            items-center
+            space-x-2
+            sm:px-6
+            lg:max-w-7xl
+            lg:px-8
+          "
         >
           <li v-for="breadcrumb in product.breadcrumbs" :key="breadcrumb.id">
             <div class="flex items-center">
@@ -64,10 +74,25 @@
 
       <!-- Image gallery -->
       <div
-        class="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8"
+        class="
+          mt-6
+          max-w-2xl
+          mx-auto
+          sm:px-6
+          lg:max-w-7xl
+          lg:px-8
+          lg:grid lg:grid-cols-3
+          lg:gap-x-8
+        "
       >
         <div
-          class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block"
+          class="
+            hidden
+            aspect-w-3 aspect-h-4
+            rounded-lg
+            overflow-hidden
+            lg:block
+          "
         >
           <img
             :src="product.images[0].src"
@@ -92,7 +117,12 @@
           </div>
         </div>
         <div
-          class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4"
+          class="
+            aspect-w-4 aspect-h-5
+            sm:rounded-lg
+            sm:overflow-hidden
+            lg:aspect-w-3 lg:aspect-h-4
+          "
         >
           <img
             :src="product.images[3].src"
@@ -104,11 +134,30 @@
 
       <!-- Product info -->
       <div
-        class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8"
+        class="
+          max-w-2xl
+          mx-auto
+          pt-10
+          pb-16
+          px-4
+          sm:px-6
+          lg:max-w-7xl
+          lg:pt-16
+          lg:pb-24
+          lg:px-8
+          lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr]
+          lg:gap-x-8
+        "
       >
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
           <h1
-            class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"
+            class="
+              text-2xl
+              font-extrabold
+              tracking-tight
+              text-gray-900
+              sm:text-3xl
+            "
           >
             {{ product.name }}
           </h1>
@@ -124,7 +173,8 @@
             <h3 class="sr-only">Reviews</h3>
             <div class="flex items-center">
               <div class="flex items-center">
-                <StarIcon
+                <Icon
+                  name="heroicons:star"
                   v-for="rating in [0, 1, 2, 3, 4]"
                   :key="rating"
                   :class="[
@@ -139,7 +189,13 @@
               <p class="sr-only">{{ reviews.average }} out of 5 stars</p>
               <a
                 :href="reviews.href"
-                class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                class="
+                  ml-3
+                  text-sm
+                  font-medium
+                  text-indigo-600
+                  hover:text-indigo-500
+                "
                 >{{ reviews.totalCount }} reviews</a
               >
             </div>
@@ -192,7 +248,12 @@
                 <h3 class="text-sm text-gray-900 font-medium">Size</h3>
                 <a
                   href="#"
-                  class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                  class="
+                    text-sm
+                    font-medium
+                    text-indigo-600
+                    hover:text-indigo-500
+                  "
                   >Size guide</a
                 >
               </div>
@@ -236,10 +297,23 @@
                       <span
                         v-else
                         aria-hidden="true"
-                        class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none"
+                        class="
+                          absolute
+                          -inset-px
+                          rounded-md
+                          border-2 border-gray-200
+                          pointer-events-none
+                        "
                       >
                         <svg
-                          class="absolute inset-0 w-full h-full text-gray-200 stroke-2"
+                          class="
+                            absolute
+                            inset-0
+                            w-full
+                            h-full
+                            text-gray-200
+                            stroke-2
+                          "
                           viewBox="0 0 100 100"
                           preserveAspectRatio="none"
                           stroke="currentColor"
@@ -261,7 +335,24 @@
 
             <button
               type="submit"
-              class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              class="
+                mt-10
+                w-full
+                bg-indigo-600
+                border border-transparent
+                rounded-md
+                py-3
+                px-8
+                flex
+                items-center
+                justify-center
+                text-base
+                font-medium
+                text-white
+                hover:bg-indigo-700
+                focus:outline-none
+                focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+              "
             >
               Add to bag
             </button>
@@ -269,7 +360,14 @@
         </div>
 
         <div
-          class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8"
+          class="
+            py-10
+            lg:pt-6
+            lg:pb-16
+            lg:col-start-1 lg:col-span-2
+            lg:border-r lg:border-gray-200
+            lg:pr-8
+          "
         >
           <!-- Description and details -->
           <div>
@@ -311,7 +409,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import StarIcon from '~icons/ri/star-line';
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue';
 
 const product = {

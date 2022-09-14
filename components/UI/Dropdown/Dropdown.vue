@@ -2,7 +2,6 @@
 import { Menu, MenuButton, MenuItems } from '@headlessui/vue';
 import type { DropdownItemProps } from './types';
 import DropdownItem from './DropdownItem.vue';
-import IconArrowDown from '~icons/ri/arrow-down-s-line';
 
 const props = withDefaults(
   defineProps<{
@@ -30,7 +29,11 @@ const props = withDefaults(
       <slot name="activator" :btn-props="btnProps" :label="label">
         <MenuButton as="button" v-bind="btnProps">
           {{ label }}
-          <IconArrowDown class="w-5 h-5 inline" aria-hidden="true" />
+          <Icon
+            name="heroicons:chevron-down"
+            class="w-5 h-5 inline"
+            aria-hidden="true"
+          />
         </MenuButton>
       </slot>
     </div>
@@ -44,7 +47,19 @@ const props = withDefaults(
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute z-10 p-1 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="
+          absolute
+          z-10
+          p-1
+          w-56
+          mt-2
+          origin-top-right
+          bg-white
+          rounded-md
+          shadow-lg
+          ring-1 ring-black ring-opacity-5
+          focus:outline-none
+        "
         :class="right ? 'right-0' : 'left-0'"
       >
         <slot>

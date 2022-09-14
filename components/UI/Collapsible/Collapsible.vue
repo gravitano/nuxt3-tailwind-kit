@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import IconArrowDown from "~icons/ri/arrow-down-s-line";
-import CollapseTransition from "./CollapseTransition.vue";
-import { ref, toRefs, watch } from "vue";
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import CollapseTransition from './CollapseTransition.vue';
+import { ref, toRefs, watch } from 'vue';
 
 const props = withDefaults(
   defineProps<{
@@ -22,11 +21,11 @@ const props = withDefaults(
 );
 
 const emit = defineEmits([
-  "update:modelValue",
-  "change",
-  "toggle",
-  "open",
-  "close",
+  'update:modelValue',
+  'change',
+  'toggle',
+  'open',
+  'close',
 ]);
 
 const { modelValue } = toRefs(props);
@@ -37,18 +36,18 @@ watch(modelValue, (val) => {
 });
 
 watch(isOpen, (val) => {
-  emit("update:modelValue", val);
-  emit("change", val);
+  emit('update:modelValue', val);
+  emit('change', val);
 
   if (val) {
-    emit("open");
+    emit('open');
   } else {
-    emit("close");
+    emit('close');
   }
 });
 
 const toggle = () => {
-  emit("toggle");
+  emit('toggle');
   isOpen.value = !isOpen.value;
 };
 </script>
@@ -77,7 +76,8 @@ const toggle = () => {
       <span :class="classes?.title">
         {{ title }}
       </span>
-      <IconArrowDown
+      <Icon
+        name="heroicons:chevron-down"
         :class="open ? 'transform rotate-180' : ''"
         class="w-5 h-5"
       />

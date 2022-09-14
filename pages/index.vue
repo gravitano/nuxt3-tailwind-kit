@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const { data } = await useFetch("/api/homepage", {});
+definePageMeta({
+  fullWidth: true,
+});
+
+const { data } = await useFetch('/api/home', {});
 </script>
 
 <template>

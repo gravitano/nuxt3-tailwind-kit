@@ -1,18 +1,14 @@
 <script lang="ts" setup>
-import IconMenu from "~icons/ri/menu-line";
-import IconSearch from "~icons/ri/search-line";
-import IconUser from "~icons/ri/user-line";
-import IconArrowDown from "~icons/ri/arrow-down-s-line";
-import { useAuthStore } from "~~/stores/auth";
+import { useAuthStore } from '~~/stores/auth';
 
-const emit = defineEmits(["menu:click"]);
+defineEmits(['menu:click']);
 
 const auth = useAuthStore();
 const router = useRouter();
 
 const logout = () => {
   auth.logout();
-  router.push("/auth/login");
+  router.push('/auth/login');
 };
 </script>
 
@@ -33,7 +29,17 @@ const logout = () => {
         <input
           type="search"
           placeholder="Search"
-          class="pl-10 py-2 appearance-none border-none focus:border-none focus:ring-0 rounded-lg focus:outline-none w-full"
+          class="
+            pl-10
+            py-2
+            appearance-none
+            border-none
+            focus:border-none
+            focus:ring-0
+            rounded-lg
+            focus:outline-none
+            w-full
+          "
         />
       </div>
 
@@ -42,16 +48,26 @@ const logout = () => {
           <DropdownButton
             as="button"
             type="button"
-            class="text-gray-600 hover:bg-gray-200 hover:text-indigo-500 px-2 py-2 rounded"
+            class="
+              text-gray-600
+              hover:bg-gray-200
+              hover:text-indigo-500
+              px-2
+              py-2
+              rounded
+            "
             v-slot="{ open }"
           >
             <span
               :class="[open ? 'text-indigo-500' : '']"
               class="flex items-center gap-2"
             >
-              <IconUser class="i-ri-user-line w-5 h-5" />
+              <Icon name="ri:user-line" class="w-5 h-5" />
               <span class="hidden sm:inline"> {{ auth.user.name }} </span>
-              <IconArrowDown class="i-ri-arrow-down-s-line w-5 h-5" />
+              <Icon
+                name="ri:arrow-down-s-line"
+                class="i-ri-arrow-down-s-line w-5 h-5"
+              />
             </span>
           </DropdownButton>
         </template>
@@ -64,5 +80,3 @@ const logout = () => {
     </div>
   </header>
 </template>
-
-<style scoped></style>

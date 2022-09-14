@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { ref, toRefs, watch } from "vue";
+import { ref, toRefs, watch } from 'vue';
 import {
   Listbox,
   ListboxButton,
   ListboxOptions,
   ListboxOption,
-} from "@headlessui/vue";
-import type { SelectItem } from "./types";
-import CheckIcon from "~icons/ri/check-line";
-import SelectorIcon from "~icons/heroicons-outline/selector";
+} from '@headlessui/vue';
+import type { SelectItem } from './types';
 
 type Props = {
   modelValue: SelectItem;
@@ -22,14 +20,14 @@ type Props = {
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
-  placeholder: "Choose",
+  placeholder: 'Choose',
   hideCheckIcon: false,
   outlined: false,
   large: false,
   small: false,
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const { modelValue } = toRefs(props);
 
@@ -40,7 +38,7 @@ watch(modelValue, (val) => {
 });
 
 watch(selected, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 </script>
 
@@ -86,7 +84,11 @@ watch(selected, (val) => {
             pointer-events-none
           "
         >
-          <SelectorIcon class="w-5 h-5" aria-hidden="true" />
+          <Icon
+            name="heroicons:chevron-up-down"
+            class="w-5 h-5"
+            aria-hidden="true"
+          />
         </span>
       </ListboxButton>
 
@@ -150,7 +152,11 @@ watch(selected, (val) => {
                     text-primary-500
                   "
                 >
-                  <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                  <Icon
+                    name="heroicons:check"
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                  />
                 </span>
               </li>
             </div>

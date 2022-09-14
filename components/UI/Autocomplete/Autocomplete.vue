@@ -10,9 +10,6 @@ import {
   TransitionRoot,
 } from '@headlessui/vue';
 import { useField } from 'vee-validate';
-import CheckIcon from '~icons/heroicons-outline/check';
-import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
-import XIcon from '~icons/heroicons-outline/x';
 
 type Item = {
   text: string;
@@ -93,10 +90,36 @@ const clear = () => {
     </ComboboxLabel>
     <div class="relative mt-1">
       <div
-        class="relative w-full text-left bg-white border border-gray-300 rounded cursor-default focus:outline-none focus-within:ring focus-within:ring-primary-500 focus-within:border-primary-500 focus-within:ring-opacity-50 sm:text-sm overflow-hidden transition duration-300"
+        class="
+          relative
+          w-full
+          text-left
+          bg-white
+          border border-gray-300
+          rounded
+          cursor-default
+          focus:outline-none
+          focus-within:ring
+          focus-within:ring-primary-500
+          focus-within:border-primary-500
+          focus-within:ring-opacity-50
+          sm:text-sm
+          overflow-hidden
+          transition
+          duration-300
+        "
       >
         <ComboboxInput
-          class="w-full border-none focus:ring-0 py-3 pl-3 pr-20 leading-5 text-gray-600"
+          class="
+            w-full
+            border-none
+            focus:ring-0
+            py-3
+            pl-3
+            pr-20
+            leading-5
+            text-gray-600
+          "
           :display-value="(item) => item[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"
@@ -105,13 +128,26 @@ const clear = () => {
           <button
             v-if="clearable"
             type="button"
-            class="mr-1 text-gray-400 hover:text-gray-700 hover:bg-gray-200 rounded-full p-1 transition duration-300"
+            class="
+              mr-1
+              text-gray-400
+              hover:text-gray-700
+              hover:bg-gray-200
+              rounded-full
+              p-1
+              transition
+              duration-300
+            "
             @click="clear"
           >
-            <XIcon class="w-6 h-6" aria-hidden="true" />
+            <Icon name="heroicons:x-mark" class="w-6 h-6" aria-hidden="true" />
           </button>
           <ComboboxButton>
-            <ChevronDownIcon class="w-6 h-6 text-gray-400" aria-hidden="true" />
+            <Icon
+              name="heroicons:chevron-down"
+              class="w-6 h-6 text-gray-400"
+              aria-hidden="true"
+            />
           </ComboboxButton>
         </div>
       </div>
@@ -122,7 +158,22 @@ const clear = () => {
         @after-leave="query = ''"
       >
         <ComboboxOptions
-          class="absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          class="
+            absolute
+            z-10
+            w-full
+            py-1
+            mt-1
+            overflow-auto
+            text-base
+            bg-white
+            rounded-md
+            shadow-lg
+            max-h-60
+            ring-1 ring-black ring-opacity-5
+            focus:outline-none
+            sm:text-sm
+          "
         >
           <div
             v-if="filteredItems.length === 0 && query === ''"
@@ -163,9 +214,17 @@ const clear = () => {
               </span>
               <span
                 v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
+                class="
+                  absolute
+                  inset-y-0
+                  left-0
+                  flex
+                  items-center
+                  pl-3
+                  text-primary-500
+                "
               >
-                <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                <Icon name="ri:check-line" class="w-5 h-5" aria-hidden="true" />
               </span>
             </li>
           </ComboboxOption>

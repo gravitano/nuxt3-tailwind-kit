@@ -1,41 +1,53 @@
 <script setup lang="ts">
-import RiMenuFill from "~icons/ri/menu-fill";
-
 const isOpen = ref(false);
 
 const menus = ref([
   {
-    text: "menu_home",
-    to: "/",
+    text: 'menu_home',
+    to: '/',
   },
   {
-    text: "menu_store",
-    to: "/store",
+    text: 'menu_store',
+    to: '/store',
   },
   {
-    text: "menu_blog",
-    to: "/blog",
+    text: 'menu_blog',
+    to: '/blog',
   },
   {
-    text: "menu_dashboard",
-    to: "/dashboard",
+    text: 'menu_dashboard',
+    to: '/dashboard',
   },
 ]);
 </script>
 
 <template>
-  <header class="navbar-default bg-skin-fill text-skin-base py-3 border-b sticky top-0">
+  <header
+    class="
+      navbar-default
+      bg-skin-fill
+      text-skin-base
+      py-3
+      border-b
+      sticky
+      top-0
+    "
+  >
     <div
-      class="container mx-auto pl-4 pr-2 sm:px-0 flex flex-row items-center gap-4 justify-between"
+      class="
+        container
+        mx-auto
+        pl-4
+        pr-2
+        sm:px-0
+        flex flex-row
+        items-center
+        gap-4
+        justify-between
+      "
     >
       <NuxtLink to="/" class="font-bold text-skin-muted text-lg">
-        <!-- <img
-          loading="lazy"
-          src="/logo.svg"
-          alt="Logo"
-          class="max-w-full h-10"
-        /> -->
-        {{ $t("app_name") }}
+        {{ $t('app_name') }}
       </NuxtLink>
       <button
         class="appearance-none px-2 py-2 rounded sm:hidden"
@@ -43,7 +55,7 @@ const menus = ref([
         aria-label="Menu"
         @click="isOpen = !isOpen"
       >
-        <RiMenuFill class="w-6 h-6" />
+        <Icon name="ri:menu-line" class="w-6 h-6" />
       </button>
       <div
         :class="
@@ -53,13 +65,34 @@ const menus = ref([
         "
       >
         <nav
-          class="flex flex-col sm:relative w-full items-start sm:flex-row sm:justify-end sm:gap-1 sm:items-center"
+          class="
+            flex flex-col
+            sm:relative
+            w-full
+            items-start
+            sm:flex-row
+            sm:justify-end
+            sm:gap-1
+            sm:items-center
+          "
         >
           <NuxtLink
             v-for="menu in menus"
             :key="menu.text"
             :to="menu.to"
-            class="px-4 py-2 rounded-full w-full sm:w-auto text-skin-base hover:text-skin-hover hover:bg-skin-fill-hover transition duration-200 font-medium"
+            class="
+              px-4
+              py-2
+              rounded-full
+              w-full
+              sm:w-auto
+              text-skin-base
+              hover:text-skin-hover
+              hover:bg-skin-fill-hover
+              transition
+              duration-200
+              font-medium
+            "
             exact-active-class="bg-skin-fill-active text-skin-active"
           >
             {{ $t(menu.text) }}
@@ -67,7 +100,11 @@ const menus = ref([
 
           <div>
             <AppLangSwitcher
-              class="text-skin-base hover:bg-skin-fill-hover hover:text-skin-hover"
+              class="
+                text-skin-base
+                hover:bg-skin-fill-hover
+                hover:text-skin-hover
+              "
             />
           </div>
         </nav>

@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-import IconHome from "~icons/ri/home2-line";
-import IconPosts from "~icons/ri/book2-line";
-import IconPages from "~icons/ri/book-line";
-
 const props = withDefaults(
   defineProps<{
     modelValue?: boolean;
@@ -14,7 +10,7 @@ const props = withDefaults(
 
 const { modelValue } = toRefs(props);
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const isOpen = ref(props.modelValue);
 
@@ -27,88 +23,46 @@ watch(
 );
 
 watch(isOpen, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 
 const menus = ref([
   {
-    icon: markRaw(IconHome),
-    text: "Dashboard",
-    to: "/",
+    icon: 'ri:dashboard-line',
+    text: 'Dashboard',
+    to: '/',
   },
   {
-    text: "Components",
-    icon: markRaw(IconPosts),
+    text: 'Pages',
+    icon: 'ri:flag-line',
     children: [
       {
-        text: "Buttons",
-        to: "/docs/components/buttons",
+        text: 'Login',
+        to: '/auth/login',
       },
       {
-        text: "Collapsible",
-        to: "/docs/components/collapsibles",
+        text: 'Register',
+        to: '/auth/register',
       },
       {
-        text: "Card",
-        to: "/docs/components/cards",
+        text: 'Forgot Password',
+        to: '/auth/forgot-password',
       },
       {
-        text: "Dropdown",
-        to: "/docs/components/dropdowns",
+        text: 'Reset Password',
+        to: '/auth/reset-password',
       },
       {
-        text: "Select",
-        to: "/docs/components/selects",
+        text: 'Counter',
+        to: '/counter',
       },
       {
-        text: "Autocomplete",
-        to: "/docs/components/autocompletes",
+        text: 'Content',
+        to: '/content',
       },
       {
-        text: "Forms",
-        to: "/docs/components/forms",
-      },
-      {
-        text: "WindPlus",
-        to: "/docs/components/windplus",
-      },
-      {
-        text: "Modal",
-        to: "/docs/components/modals",
-      },
-    ],
-  },
-  {
-    text: "Pages",
-    icon: markRaw(IconPages),
-    children: [
-      {
-        text: "Login",
-        to: "/auth/login",
-      },
-      {
-        text: "Register",
-        to: "/auth/register",
-      },
-      {
-        text: "Forgot Password",
-        to: "/auth/forgot-password",
-      },
-      {
-        text: "Reset Password",
-        to: "/auth/reset-password",
-      },
-      {
-        text: "Counter",
-        to: "/counter",
-      },
-      {
-        text: "Content",
-        to: "/content",
-      },
-      {
-        text: "Blog",
-        to: "/blog",
+        text: 'Blog',
+        to: '/blog',
       },
     ],
   },
@@ -119,19 +73,56 @@ const menus = ref([
   <ModalBackdrop v-if="isOpen" @click="isOpen = false" />
 
   <aside
-    class="px-2 w-10/12 sm:w-[300px] border-r h-screen fixed sm:sticky top-0 border-gray-200 pb-2 bg-white z-10 flex-col transition-all duration-300 transform sm:transform-none"
+    class="
+      px-2
+      w-10/12
+      sm:w-[300px]
+      border-r
+      h-screen
+      fixed
+      sm:sticky
+      top-0
+      border-gray-200
+      pb-2
+      bg-white
+      z-10
+      flex-col
+      transition-all
+      duration-300
+      transform
+      sm:transform-none
+    "
     :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <!-- nav header -->
     <div
-      class="flex justify-between gap-2 items-center px-4 border-b border-gray-200 -mx-2 sm:border-none"
+      class="
+        flex
+        justify-between
+        gap-2
+        items-center
+        px-4
+        border-b border-gray-200
+        -mx-2
+        sm:border-none
+      "
     >
       <nuxt-link
         to="/"
-        class="py-5 w-full font-bold text-lg text-indigo-500 flex gap-2 items-center justify-between sm:justify-center"
+        class="
+          py-5
+          w-full
+          font-bold
+          text-lg text-indigo-500
+          flex
+          gap-2
+          items-center
+          justify-between
+          sm:justify-center
+        "
       >
         <div class="flex gap-2 items-center justify-center">
-          {{ $t("app_name") }}
+          {{ $t('app_name') }}
         </div>
       </nuxt-link>
       <button
@@ -142,7 +133,11 @@ const menus = ref([
 
     <!-- menu -->
     <ul class="flex-grow">
-      <DashboardSidebarItem v-for="menu in menus" :key="menu.text" :menu="menu" />
+      <DashboardSidebarItem
+        v-for="menu in menus"
+        :key="menu.text"
+        :menu="menu"
+      />
     </ul>
   </aside>
 </template>
