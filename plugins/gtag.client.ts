@@ -5,7 +5,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   nuxtApp.vueApp.use(VueGtag, {
     config: {
-      pageTrackerScreenviewEnabled: true,
       id: config.public.gaId,
     },
   }, nuxtApp.$router);
