@@ -21,6 +21,7 @@
     "prism-themes": "^1.9.0",
     "vee-validate": "^4.6.7",
     "vue": "^3.2.37",
+    "vue-gtag": "^2.0.1",
     "windplus": "^0.0.2",
     "yup": "^0.32.11"
   },

@@ -43,4 +43,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    public: {
+      gaId: ''
+    }
+  }
 });
