@@ -4,14 +4,14 @@ Nuxt 3 + Tailwind Starter Kit.
 
 ## Features
 
-- [Nuxt 3](https://v3.nuxtjs.org/) (RC.8)
+- [Nuxt 3](https://v3.nuxtjs.org/) (RC.10)
 - [Nuxt Content v2](https://content.nuxtjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Nuxt Icon](https://github.com/nuxt-modules/icon)
 - State management with [Pinia](https://pinia.vuejs.org/)
 - Easy form validation with [vee-validate](https://vee-validate.logaretm.com/v4/)
 - Custom authentication store via [`useAuthStore`](./stores/auth.ts)
-- Internalization via [intlify/nuxt3](https://github.com/intlify/nuxt3)
+- Internalization via [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
 
 ## Try it Now
 
