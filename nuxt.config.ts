@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt';
-
 export default defineNuxtConfig({
   buildModules: ['@vueuse/nuxt', '@nuxtjs/strapi'],
   modules: [
@@ -45,7 +43,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      gaId: ''
-    }
-  }
+      gaId: '',
+    },
+  },
 });

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { MenuItem } from '@headlessui/vue';
-import { RouterLink } from 'vue-router';
-import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
@@ -21,7 +19,7 @@ const props = withDefaults(
 const computedComponent = computed(() => {
   if (props.href) return 'a';
 
-  return props.to ? RouterLink : 'button';
+  return props.to ? resolveComponent('NuxtLink') : 'button';
 });
 
 const toProps = computed(() => {
