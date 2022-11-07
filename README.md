@@ -4,7 +4,7 @@ Nuxt 3 + Tailwind Starter Kit.
 
 ## Features
 
-- [Nuxt 3](https://v3.nuxtjs.org/) (RC.12)
+- [Nuxt 3](https://v3.nuxtjs.org/) (RC.13)
 - [Nuxt Content v2](https://content.nuxtjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Nuxt Icon](https://github.com/nuxt-modules/icon)
