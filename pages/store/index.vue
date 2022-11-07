@@ -1,7 +1,7 @@
 <script setup>
-const { data } = await useFetch('/api/store/products', {});
-const products = data.value.products;
-const header = data.value.header;
+const { data } = await useFetch('/api/store/products', {})
+const products = data.value.products
+const header = data.value.header
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const header = data.value.header;
             :src="product.imageSrc"
             :alt="product.imageAlt"
             class="w-full h-full object-center object-cover group-hover:opacity-75"
-          />
+          >
         </div>
         <h3 class="mt-4 text-sm text-gray-700">
           {{ product.name }}

@@ -1,22 +1,22 @@
 <script setup lang="ts">
-type Classes = {
-  wrapper?: string;
-  header?: string;
-  body?: string;
-  footer?: string;
-};
+interface Classes {
+  wrapper?: string
+  header?: string
+  body?: string
+  footer?: string
+}
 
 const props = withDefaults(
   defineProps<{
-    title?: string;
-    body?: string;
-    bordered?: boolean;
-    classes?: Classes;
-    hideHeader?: boolean;
-    hideFooter?: boolean;
-    headerClass?: string;
-    bodyClass?: string;
-    footerClass?: string;
+    title?: string
+    body?: string
+    bordered?: boolean
+    classes?: Classes
+    hideHeader?: boolean
+    hideFooter?: boolean
+    headerClass?: string
+    bodyClass?: string
+    footerClass?: string
   }>(),
   {
     bordered: false,
@@ -26,8 +26,8 @@ const props = withDefaults(
       body: '',
       footer: '',
     }),
-  }
-);
+  },
+)
 </script>
 
 <template>

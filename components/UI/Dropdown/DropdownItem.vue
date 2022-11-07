@@ -1,47 +1,47 @@
 <script setup lang="ts">
-import { MenuItem } from '@headlessui/vue';
+import { MenuItem } from '@headlessui/vue'
 
 const props = withDefaults(
   defineProps<{
-    text?: string;
-    to?: string;
-    href?: string;
-    icon?: any;
-    iconClass?: string;
-    newTab?: boolean;
-    divider?: boolean;
+    text?: string
+    to?: string
+    href?: string
+    icon?: any
+    iconClass?: string
+    newTab?: boolean
+    divider?: boolean
   }>(),
   {
     iconClass: 'w-5 h-5',
-  }
-);
+  },
+)
 
 const computedComponent = computed(() => {
-  if (props.href) return 'a';
+  if (props.href)
+    return 'a'
 
-  return props.to ? resolveComponent('NuxtLink') : 'button';
-});
+  return props.to ? resolveComponent('NuxtLink') : 'button'
+})
 
 const toProps = computed(() => {
-  return props.to ? { to: props.to } : {};
-});
+  return props.to ? { to: props.to } : {}
+})
 
 const hrefProps = computed(() => {
-  return props.href ? { href: props.href } : {};
-});
+  return props.href ? { href: props.href } : {}
+})
 </script>
 
 <template>
   <MenuItem v-slot="{ active }">
-    <div v-if="divider" class="border-b my-1 -mx-1"></div>
+    <div v-if="divider" class="border-b my-1 -mx-1" />
     <component
-      v-else
       :is="computedComponent"
+      v-else
       :target="href && newTab ? '_blank' : undefined"
       :rel="href && newTab ? 'noopener' : null"
-      :class="[
+      class="group flex gap-2 rounded-md items-center w-full px-2 py-2" :class="[
         active ? 'bg-gray-200' : 'text-gray-900',
-        'group flex gap-2 rounded-md items-center w-full px-2 py-2',
       ]"
       v-bind="{ ...hrefProps, ...toProps, ...$attrs }"
     >

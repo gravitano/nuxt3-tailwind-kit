@@ -1,3 +1,7 @@
 {
-  "i18n-ally.localesPaths": []
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

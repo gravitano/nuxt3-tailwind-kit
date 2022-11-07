@@ -1,15 +1,15 @@
 <script setup lang="ts">
 defineProps<{
-  title: string;
-  description: string;
-  email: string;
-  phone: string;
-  website: string;
+  title: string
+  description: string
+  email: string
+  phone: string
+  website: string
   form: {
-    title: string;
-    description: string;
-  };
-}>();
+    title: string
+    description: string
+  }
+}>()
 </script>
 
 <template>
@@ -114,50 +114,42 @@ defineProps<{
 
           <form>
             <div class="mb-4">
-              <label for="name" class="mb-1 block font-semibold text-white"
-                >Name</label
-              >
+              <label for="name" class="mb-1 block font-semibold text-white">Name</label>
               <input
                 class="px-3 py-2 border w-full rounded-md"
                 name="name"
                 label="Name"
                 placeholder="Your name"
-              />
+              >
             </div>
             <div class="mb-4">
-              <label for="email" class="mb-1 block font-semibold text-white"
-                >Email</label
-              >
+              <label for="email" class="mb-1 block font-semibold text-white">Email</label>
               <input
                 class="px-3 py-2 border w-full rounded-md"
                 name="email"
                 label="Email"
                 placeholder="Your email"
-              />
+              >
             </div>
             <div class="mb-4">
-              <label for="phone" class="mb-1 block font-semibold text-white"
-                >Phone Number</label
-              >
+              <label for="phone" class="mb-1 block font-semibold text-white">Phone Number</label>
               <input
                 class="px-3 py-2 border w-full rounded-md"
                 type="tel"
                 name="phone"
                 label="Phone Number"
                 placeholder="Your phone number"
-              />
+              >
             </div>
             <div class="mb-4">
-              <label for="message" class="mb-1 block font-semibold text-white"
-                >Message</label
-              >
+              <label for="message" class="mb-1 block font-semibold text-white">Message</label>
               <textarea
                 rows="4"
                 class="px-3 py-2 border w-full rounded-md"
                 name="message"
                 label="Message"
                 placeholder="Your message"
-              ></textarea>
+              />
             </div>
 
             <button

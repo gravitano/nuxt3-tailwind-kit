@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const langs = ['en', 'id'];
+const langs = ['en', 'id']
 
-const { locale } = useI18n();
+const { locale } = useI18n()
 </script>
 
 <template>

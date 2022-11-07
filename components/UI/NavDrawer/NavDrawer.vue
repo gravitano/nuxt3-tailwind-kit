@@ -3,11 +3,17 @@
     <!-- list -->
     <div class="list list-hover flex-grow">
       <div class="px-2 py-1">
-        <div class="nav-drawer-title">Application</div>
-        <div class="nav-drawer-subtitle">SubText</div>
+        <div class="nav-drawer-title">
+          Application
+        </div>
+        <div class="nav-drawer-subtitle">
+          SubText
+        </div>
       </div>
-      <div class="border-b my-1 -mx-2"></div>
-      <div class="list-header text-xs py-1 uppercase pl-3">Main Menu</div>
+      <div class="border-b my-1 -mx-2" />
+      <div class="list-header text-xs py-1 uppercase pl-3">
+        Main Menu
+      </div>
       <!-- list item -->
       <a href="#" class="list-group-item gap-4">
         <div class="list-group-item-icon">
@@ -78,7 +84,7 @@
       </a>
       <!-- ./list item -->
       <!-- child list -->
-      <div class="list list-child collapse" id="collapseTeam">
+      <div id="collapseTeam" class="list list-child collapse">
         <!-- list item -->
         <a href="#" class="list-group-item gap-4">
           <div class="list-group-item-icon">
@@ -156,7 +162,7 @@
       </a>
       <!-- ./list item -->
       <!-- child list -->
-      <div class="list list-child collapse" id="collapseProjects">
+      <div id="collapseProjects" class="list list-child collapse">
         <!-- list item -->
         <a href="#" class="list-group-item gap-4">
           <div class="list-group-item-icon">
@@ -259,7 +265,9 @@
     </div>
     <!-- ./list -->
     <div class="nav-drawer-append">
-      <button class="btn btn-error btn-block">Logout</button>
+      <button class="btn btn-error btn-block">
+        Logout
+      </button>
     </div>
   </div>
 </template>

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 useHead({
-  title: t("app_name"),
-});
+  title: t('app_name'),
+})
 
-const route = useRoute();
-const isFullWidth = computed(() => route.name === "index" || route.meta.fullWidth);
+const route = useRoute()
+const isFullWidth = computed(() => route.name === 'index' || route.meta.fullWidth)
 </script>
 
 <template>

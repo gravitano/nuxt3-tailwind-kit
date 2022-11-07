@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 useHead({
-  title: t("app_name"),
-});
+  title: t('app_name'),
+})
 
-const sidebar = useSidebar();
+const sidebar = useSidebar()
 </script>
 
 <template>

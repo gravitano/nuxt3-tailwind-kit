@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MenuButton } from '@headlessui/vue';
+import { MenuButton } from '@headlessui/vue'
 </script>
 
 <template>

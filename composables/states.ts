@@ -1,1 +1,1 @@
-export const useSidebar = () => useState<boolean>('sidebar', () => false);
+export const useSidebar = () => useState<boolean>('sidebar', () => false)

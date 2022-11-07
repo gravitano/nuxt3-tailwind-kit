@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItems } from '@headlessui/vue';
-import type { DropdownItemProps } from './types';
-import DropdownItem from './DropdownItem.vue';
+import { Menu, MenuButton, MenuItems } from '@headlessui/vue'
+import type { DropdownItemProps } from './types'
+import DropdownItem from './DropdownItem.vue'
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: boolean;
-    btnProps?: Record<string, any>;
-    label?: string;
-    right?: boolean;
-    items?: DropdownItemProps[];
+    modelValue?: boolean
+    btnProps?: Record<string, any>
+    label?: string
+    right?: boolean
+    items?: DropdownItemProps[]
   }>(),
   {
     modelValue: false,
@@ -19,8 +19,8 @@ const props = withDefaults(
     label: 'Options',
     right: false,
     items: () => [],
-  }
-);
+  },
+)
 </script>
 
 <template>

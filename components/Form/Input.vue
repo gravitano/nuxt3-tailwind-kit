@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { useField } from "vee-validate";
+import { useField } from 'vee-validate'
 
 const props = withDefaults(
   defineProps<{
-    label?: string;
-    name?: string;
-    rules?: string;
-    placeholder?: string;
-    type?: string;
+    label?: string
+    name?: string
+    rules?: string
+    placeholder?: string
+    type?: string
   }>(),
   {
-    type: "text",
-  }
-);
+    type: 'text',
+  },
+)
 
-const { name, rules } = toRefs(props);
+const { name, rules } = toRefs(props)
 
-const { value, errorMessage } = useField(name, rules);
+const { value, errorMessage } = useField(name, rules)
 </script>
 
 <template>
@@ -25,9 +25,9 @@ const { value, errorMessage } = useField(name, rules);
       {{ label }}
     </label>
     <input
+      :id="name"
       v-model="value"
       :type="type"
-      :id="name"
       :placeholder="placeholder"
       class="rounded-md w-full focus:ring transition duration-300"
       :class="[
@@ -35,7 +35,7 @@ const { value, errorMessage } = useField(name, rules);
           ? 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500'
           : 'border-gray-300 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
       ]"
-    />
+    >
     <div v-if="errorMessage" class="text-error-500 text-sm mt-1">
       {{ errorMessage }}
     </div>

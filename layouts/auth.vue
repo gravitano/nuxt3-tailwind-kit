@@ -8,7 +8,7 @@
     <div
       class="w-full sm:w-6/12 lg:7/12 bg-gradient-to-tr from-primary-500 to-primary-400 flex items-center justify-center p-6"
     >
-      <img src="/images/login-illustration.svg" alt="Login illustration" loading="lazy" />
+      <img src="/images/login-illustration.svg" alt="Login illustration" loading="lazy">
     </div>
   </div>
 </template>

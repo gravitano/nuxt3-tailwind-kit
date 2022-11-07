@@ -1,17 +1,17 @@
-import type { Story } from '@storybook/vue3';
-import Dropdown from './Dropdown.vue';
-import DropdownItem from './DropdownItem.vue';
-import type { DropdownItemProps } from './types';
+import type { Story } from '@storybook/vue3'
+import Dropdown from './Dropdown.vue'
+import DropdownItem from './DropdownItem.vue'
+import type { DropdownItemProps } from './types'
 
-const icons = ['calendar', 'attachment', 'download', 'clock', 'document'];
+const icons = ['calendar', 'attachment', 'download', 'clock', 'document']
 
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({ length }, (_, v) => ({
     text: `Item ${v + 1}`,
     icon: icons[Math.floor(Math.random() * icons.length)],
-  }));
+  }))
 
-const items = [...genItems(2), { divider: true }, ...genItems(3)];
+const items = [...genItems(2), { divider: true }, ...genItems(3)]
 
 export default {
   title: 'Components/Dropdown',
@@ -25,29 +25,29 @@ export default {
     label: 'Options',
     items,
   },
-};
+}
 
 const Template: Story = (args, { argTypes }) => ({
   components: { Dropdown },
   setup() {
-    return { args, argTypes };
+    return { args, argTypes }
   },
   template: `
     <div class="flex justify-center">
       <Dropdown v-bind="args"/>
     </div>
   `,
-});
+})
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}
 
-export const Right = Template.bind({});
+export const Right = Template.bind({})
 Right.args = {
   right: true,
-};
+}
 
-export const RouterLink = Template.bind({});
+export const RouterLink = Template.bind({})
 RouterLink.args = {
   items: [
     {
@@ -55,9 +55,9 @@ RouterLink.args = {
       to: '/home',
     },
   ],
-};
+}
 
-export const Href = Template.bind({});
+export const Href = Template.bind({})
 Href.args = {
   items: [
     {
@@ -70,12 +70,12 @@ Href.args = {
       newTab: true,
     },
   ],
-};
+}
 
 export const Slots: Story = (args, { argTypes }) => ({
   components: { Dropdown, DropdownItem },
   setup() {
-    return { args, argTypes };
+    return { args, argTypes }
   },
   template: `
     <div class="flex justify-center">
@@ -89,4 +89,4 @@ export const Slots: Story = (args, { argTypes }) => ({
       </Dropdown>
     </div>
   `,
-});
+})

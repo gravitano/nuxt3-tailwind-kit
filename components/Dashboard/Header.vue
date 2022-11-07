@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import { useAuthStore } from '~~/stores/auth';
+import { useAuthStore } from '~~/stores/auth'
 
-defineEmits(['menu:click']);
+defineEmits(['menu:click'])
 
-const auth = useAuthStore();
-const router = useRouter();
+const auth = useAuthStore()
+const router = useRouter()
 
 const logout = () => {
-  auth.logout();
-  router.push('/auth/login');
-};
+  auth.logout()
+  router.push('/auth/login')
+}
 </script>
 
 <template>
   <header class="bg-white border-b border-gray-200">
     <div class="pr-6 pl-3 py-3 flex gap-2 items-center justify-between">
       <button
-        @click="$emit('menu:click')"
         class="flex-shrink-0 px-4 py-2 rounded inline sm:hidden"
+        @click="$emit('menu:click')"
       >
         <icon-menu class="w-5 h-5" />
       </button>
@@ -40,12 +40,13 @@ const logout = () => {
             focus:outline-none
             w-full
           "
-        />
+        >
       </div>
 
       <Dropdown right>
         <template #activator>
           <DropdownButton
+            v-slot="{ open }"
             as="button"
             type="button"
             class="
@@ -56,7 +57,6 @@ const logout = () => {
               py-2
               rounded
             "
-            v-slot="{ open }"
           >
             <span
               :class="[open ? 'text-indigo-500' : '']"
@@ -74,8 +74,10 @@ const logout = () => {
 
         <DropdownItem>Profile</DropdownItem>
         <DropdownItem>Setting</DropdownItem>
-        <DropdownItem divider></DropdownItem>
-        <DropdownItem @click="logout">Logout</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem @click="logout">
+          Logout
+        </DropdownItem>
       </Dropdown>
     </div>
   </header>

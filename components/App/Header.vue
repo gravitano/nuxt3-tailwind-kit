@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const isOpen = ref(false);
+const isOpen = ref(false)
 
 const menus = ref([
   {
@@ -18,7 +18,7 @@ const menus = ref([
     text: 'menu_dashboard',
     to: '/dashboard',
   },
-]);
+])
 </script>
 
 <template>

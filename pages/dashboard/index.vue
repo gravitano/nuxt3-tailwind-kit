@@ -2,7 +2,7 @@
 definePageMeta({
   layout: 'dashboard',
   middleware: 'auth',
-});
+})
 
 const stats = ref([
   {
@@ -29,14 +29,18 @@ const stats = ref([
     icon: 'ri:line-chart-line',
     color: 'bg-emerald-500',
   },
-]);
+])
 </script>
 
 <template>
   <div>
     <div class="mb-5">
-      <nuxt-link class="font-semibold text-2xl" to="/"> Dashboard </nuxt-link>
-      <div class="text-gray-500">Overview & summary</div>
+      <nuxt-link class="font-semibold text-2xl" to="/">
+        Dashboard
+      </nuxt-link>
+      <div class="text-gray-500">
+        Overview & summary
+      </div>
     </div>
 
     <!-- stats -->

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const props =
-  defineProps<{
-    icon?: any;
-    appendIcon?: any;
-    text?: string;
-    child?: boolean;
-    parent?: boolean;
-  }>();
+const props
+  = defineProps<{
+    icon?: any
+    appendIcon?: any
+    text?: string
+    child?: boolean
+    parent?: boolean
+  }>()
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const props =
       w-full
     "
   >
-    <div v-if="child" class="w-5"></div>
+    <div v-if="child" class="w-5" />
     <Icon v-else-if="icon" class="w-5 h-5" :name="icon" />
     <span class="flex-grow">
       <slot>{{ text }}</slot>

@@ -1,8 +1,8 @@
 <!--
-  This example requires Tailwind CSS v2.0+ 
-  
+  This example requires Tailwind CSS v2.0+
+
   This example requires some changes to your config:
-  
+
   ```
   // tailwind.config.js
   module.exports = {
@@ -21,6 +21,68 @@
   }
   ```
 -->
+<script setup>
+import { ref } from 'vue'
+import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue'
+
+const product = {
+  name: 'Basic Tee 6-Pack',
+  price: '$192',
+  href: '#',
+  breadcrumbs: [
+    { id: 1, name: 'Men', href: '#' },
+    { id: 2, name: 'Clothing', href: '#' },
+  ],
+  images: [
+    {
+      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+      alt: 'Two each of gray, white, and black shirts laying flat.',
+    },
+    {
+      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
+      alt: 'Model wearing plain black basic tee.',
+    },
+    {
+      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+      alt: 'Model wearing plain gray basic tee.',
+    },
+    {
+      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+      alt: 'Model wearing plain white basic tee.',
+    },
+  ],
+  colors: [
+    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
+    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
+    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
+  ],
+  sizes: [
+    { name: 'XXS', inStock: false },
+    { name: 'XS', inStock: true },
+    { name: 'S', inStock: true },
+    { name: 'M', inStock: true },
+    { name: 'L', inStock: true },
+    { name: 'XL', inStock: true },
+    { name: '2XL', inStock: true },
+    { name: '3XL', inStock: true },
+  ],
+  description:
+    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
+  highlights: [
+    'Hand cut and sewn locally',
+    'Dyed with our proprietary colors',
+    'Pre-washed & pre-shrunk',
+    'Ultra-soft 100% cotton',
+  ],
+  details:
+    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+}
+const reviews = { href: '#', average: 4, totalCount: 117 }
+
+const selectedColor = ref(product.colors[0])
+const selectedSize = ref(product.sizes[2])
+</script>
+
 <template>
   <div class="bg-white">
     <div class="pt-6">
@@ -98,7 +160,7 @@
             :src="product.images[0].src"
             :alt="product.images[0].alt"
             class="w-full h-full object-center object-cover"
-          />
+          >
         </div>
         <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
           <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
@@ -106,14 +168,14 @@
               :src="product.images[1].src"
               :alt="product.images[1].alt"
               class="w-full h-full object-center object-cover"
-            />
+            >
           </div>
           <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
             <img
               :src="product.images[2].src"
               :alt="product.images[2].alt"
               class="w-full h-full object-center object-cover"
-            />
+            >
           </div>
         </div>
         <div
@@ -128,7 +190,7 @@
             :src="product.images[3].src"
             :alt="product.images[3].alt"
             class="w-full h-full object-center object-cover"
-          />
+          >
         </div>
       </div>
 
@@ -165,28 +227,35 @@
 
         <!-- Options -->
         <div class="mt-4 lg:mt-0 lg:row-span-3">
-          <h2 class="sr-only">Product information</h2>
-          <p class="text-3xl text-gray-900">{{ product.price }}</p>
+          <h2 class="sr-only">
+            Product information
+          </h2>
+          <p class="text-3xl text-gray-900">
+            {{ product.price }}
+          </p>
 
           <!-- Reviews -->
           <div class="mt-6">
-            <h3 class="sr-only">Reviews</h3>
+            <h3 class="sr-only">
+              Reviews
+            </h3>
             <div class="flex items-center">
               <div class="flex items-center">
                 <Icon
-                  name="heroicons:star"
                   v-for="rating in [0, 1, 2, 3, 4]"
                   :key="rating"
-                  :class="[
+                  name="heroicons:star"
+                  class="h-5 w-5 flex-shrink-0" :class="[
                     reviews.average > rating
                       ? 'text-gray-900'
                       : 'text-gray-200',
-                    'h-5 w-5 flex-shrink-0',
                   ]"
                   aria-hidden="true"
                 />
               </div>
-              <p class="sr-only">{{ reviews.average }} out of 5 stars</p>
+              <p class="sr-only">
+                {{ reviews.average }} out of 5 stars
+              </p>
               <a
                 :href="reviews.href"
                 class="
@@ -196,15 +265,16 @@
                   text-indigo-600
                   hover:text-indigo-500
                 "
-                >{{ reviews.totalCount }} reviews</a
-              >
+              >{{ reviews.totalCount }} reviews</a>
             </div>
           </div>
 
           <form class="mt-10">
             <!-- Colors -->
             <div>
-              <h3 class="text-sm text-gray-900 font-medium">Color</h3>
+              <h3 class="text-sm text-gray-900 font-medium">
+                Color
+              </h3>
 
               <RadioGroup v-model="selectedColor" class="mt-4">
                 <RadioGroupLabel class="sr-only">
@@ -212,18 +282,17 @@
                 </RadioGroupLabel>
                 <div class="flex items-center space-x-3">
                   <RadioGroupOption
-                    as="template"
                     v-for="color in product.colors"
                     :key="color.name"
-                    :value="color"
                     v-slot="{ active, checked }"
+                    as="template"
+                    :value="color"
                   >
                     <div
-                      :class="[
+                      class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none" :class="[
                         color.selectedClass,
                         active && checked ? 'ring ring-offset-1' : '',
                         !active && checked ? 'ring-2' : '',
-                        '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none',
                       ]"
                     >
                       <RadioGroupLabel as="span" class="sr-only">
@@ -231,9 +300,8 @@
                       </RadioGroupLabel>
                       <span
                         aria-hidden="true"
-                        :class="[
+                        class="h-8 w-8 border border-black border-opacity-10 rounded-full" :class="[
                           color.class,
-                          'h-8 w-8 border border-black border-opacity-10 rounded-full',
                         ]"
                       />
                     </div>
@@ -245,7 +313,9 @@
             <!-- Sizes -->
             <div class="mt-10">
               <div class="flex items-center justify-between">
-                <h3 class="text-sm text-gray-900 font-medium">Size</h3>
+                <h3 class="text-sm text-gray-900 font-medium">
+                  Size
+                </h3>
                 <a
                   href="#"
                   class="
@@ -254,8 +324,7 @@
                     text-indigo-600
                     hover:text-indigo-500
                   "
-                  >Size guide</a
-                >
+                >Size guide</a>
               </div>
 
               <RadioGroup v-model="selectedSize" class="mt-4">
@@ -266,20 +335,19 @@
                   class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4"
                 >
                   <RadioGroupOption
-                    as="template"
                     v-for="size in product.sizes"
                     :key="size.name"
+                    v-slot="{ active, checked }"
+                    as="template"
                     :value="size"
                     :disabled="!size.inStock"
-                    v-slot="{ active, checked }"
                   >
                     <div
-                      :class="[
+                      class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6" :class="[
                         size.inStock
                           ? 'bg-white shadow-sm text-gray-900 cursor-pointer'
                           : 'bg-gray-50 text-gray-200 cursor-not-allowed',
                         active ? 'ring-2 ring-indigo-500' : '',
-                        'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6',
                       ]"
                     >
                       <RadioGroupLabel as="span">
@@ -287,10 +355,9 @@
                       </RadioGroupLabel>
                       <span
                         v-if="size.inStock"
-                        :class="[
+                        class="absolute -inset-px rounded-md pointer-events-none" :class="[
                           active ? 'border' : 'border-2',
                           checked ? 'border-indigo-500' : 'border-transparent',
-                          'absolute -inset-px rounded-md pointer-events-none',
                         ]"
                         aria-hidden="true"
                       />
@@ -371,15 +438,21 @@
         >
           <!-- Description and details -->
           <div>
-            <h3 class="sr-only">Description</h3>
+            <h3 class="sr-only">
+              Description
+            </h3>
 
             <div class="space-y-6">
-              <p class="text-base text-gray-900">{{ product.description }}</p>
+              <p class="text-base text-gray-900">
+                {{ product.description }}
+              </p>
             </div>
           </div>
 
           <div class="mt-10">
-            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+            <h3 class="text-sm font-medium text-gray-900">
+              Highlights
+            </h3>
 
             <div class="mt-4">
               <ul role="list" class="pl-4 list-disc text-sm space-y-2">
@@ -395,10 +468,14 @@
           </div>
 
           <div class="mt-10">
-            <h2 class="text-sm font-medium text-gray-900">Details</h2>
+            <h2 class="text-sm font-medium text-gray-900">
+              Details
+            </h2>
 
             <div class="mt-4 space-y-6">
-              <p class="text-sm text-gray-600">{{ product.details }}</p>
+              <p class="text-sm text-gray-600">
+                {{ product.details }}
+              </p>
             </div>
           </div>
         </div>
@@ -406,65 +483,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue';
-
-const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
-  href: '#',
-  breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
-  ],
-  images: [
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-      alt: 'Two each of gray, white, and black shirts laying flat.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-      alt: 'Model wearing plain black basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-      alt: 'Model wearing plain gray basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-      alt: 'Model wearing plain white basic tee.',
-    },
-  ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
-  sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
-  ],
-  description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-  highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-};
-const reviews = { href: '#', average: 4, totalCount: 117 };
-
-const selectedColor = ref(product.colors[0]);
-const selectedSize = ref(product.sizes[2]);
-</script>

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 defineProps<{
-  color: string;
-  icon: any;
-  count: string | number;
-  text: string;
-}>();
+  color: string
+  icon: any
+  count: string | number
+  text: string
+}>()
 </script>
 
 <template>
@@ -15,7 +15,7 @@ defineProps<{
       class="rounded-full w-10 h-10 flex items-center justify-center text-white flex-shrink-0"
       :class="color"
     >
-      <component class="w-5 h-5" :is="icon" />
+      <component :is="icon" class="w-5 h-5" />
     </div>
     <div>
       <h3 class="font-semibold text-xl truncate">

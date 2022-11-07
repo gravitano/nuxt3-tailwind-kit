@@ -1,43 +1,43 @@
 <script lang="ts" setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import Icon from "../Icon/index.vue";
-import Collapsible from "./Collapsible.vue";
-import { ref, toRefs, watch } from "vue";
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+import { ref, toRefs, watch } from 'vue'
+import Icon from '../Icon/index.vue'
+import Collapsible from './Collapsible.vue'
 
-type CollapsibleItem = {
-  title: string;
-  content: string;
-  isOpen?: boolean;
-};
+interface CollapsibleItem {
+  title: string
+  content: string
+  isOpen?: boolean
+}
 
-const props =
-  defineProps<{
-    items?: CollapsibleItem[];
+const props
+  = defineProps<{
+    items?: CollapsibleItem[]
     classes?: {
-      wrapper?: string;
-      button?: string;
-      title?: string;
-      panel?: string;
-    };
-    accordion?: boolean;
-  }>();
+      wrapper?: string
+      button?: string
+      title?: string
+      panel?: string
+    }
+    accordion?: boolean
+  }>()
 
-const { items } = toRefs(props);
+const { items } = toRefs(props)
 
-const children = ref(props.items);
+const children = ref(props.items)
 
 watch(items, (val) => {
-  children.value = val;
-});
+  children.value = val
+})
 
 const onToggle = (item: CollapsibleItem) => {
   if (props.accordion) {
     children.value.forEach((child) => {
-      child.isOpen = false;
-    });
-    item.isOpen = true;
+      child.isOpen = false
+    })
+    item.isOpen = true
   }
-};
+}
 </script>
 
 <template>

@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { ref, toRefs, watch } from 'vue';
+import { ref, toRefs, watch } from 'vue'
 import {
   Listbox,
   ListboxButton,
-  ListboxOptions,
   ListboxOption,
-} from '@headlessui/vue';
-import type { SelectItem } from './types';
+  ListboxOptions,
+} from '@headlessui/vue'
+import type { SelectItem } from './types'
 
-type Props = {
-  modelValue: SelectItem;
-  items: SelectItem[];
-  placeholder?: string;
-  hideCheckIcon?: boolean;
-  outlined?: boolean;
-  large?: boolean;
-  small?: boolean;
-};
+interface Props {
+  modelValue: SelectItem
+  items: SelectItem[]
+  placeholder?: string
+  hideCheckIcon?: boolean
+  outlined?: boolean
+  large?: boolean
+  small?: boolean
+}
 
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
@@ -25,21 +25,21 @@ const props = withDefaults(defineProps<Props>(), {
   outlined: false,
   large: false,
   small: false,
-});
+})
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue'])
 
-const { modelValue } = toRefs(props);
+const { modelValue } = toRefs(props)
 
-const selected = ref<SelectItem | undefined>(modelValue.value);
+const selected = ref<SelectItem | undefined>(modelValue.value)
 
 watch(modelValue, (val) => {
-  selected.value = val;
-});
+  selected.value = val
+})
 
 watch(selected, (val) => {
-  emit('update:modelValue', val);
-});
+  emit('update:modelValue', val)
+})
 </script>
 
 <template>
@@ -116,32 +116,30 @@ watch(selected, (val) => {
           "
         >
           <ListboxOption
-            v-slot="{ active, selected }"
             v-for="item in items"
+            v-slot="{ active, selected: selectedOption }"
             :key="item.text"
             :value="item"
             as="template"
           >
             <div class="px-1">
-              <li v-if="item.divider" class="border-b -mx-1 my-1"></li>
+              <li v-if="item.divider" class="border-b -mx-1 my-1" />
               <li
                 v-else
-                :class="[
-                  'cursor-default select-none relative py-2 pr-4 rounded',
+                class="cursor-default select-none relative py-2 pr-4 rounded" :class="[
                   active ? 'bg-gray-100' : 'text-gray-900',
                   !hideCheckIcon ? 'pl-10' : 'pl-4',
                 ]"
               >
                 <span
-                  :class="[
-                    selected ? 'font-medium text-primary-500' : 'font-normal',
-                    'block truncate',
+                  class="block truncate" :class="[
+                    selectedOption ? 'font-medium text-primary-500' : 'font-normal',
                   ]"
                 >
                   {{ item.text }}
                 </span>
                 <span
-                  v-if="selected && !hideCheckIcon"
+                  v-if="selectedOption && !hideCheckIcon"
                   class="
                     absolute
                     inset-y-0

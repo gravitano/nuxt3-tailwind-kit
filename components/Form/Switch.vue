@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { Switch } from "@headlessui/vue";
-import { useField } from "vee-validate";
+import { Switch } from '@headlessui/vue'
+import { useField } from 'vee-validate'
 
 const props = withDefaults(
   defineProps<{
-    name: string;
-    rules?: string;
-    srText?: string;
-    modelValue?: boolean;
+    name: string
+    rules?: string
+    srText?: string
+    modelValue?: boolean
   }>(),
   {
-    srText: "",
+    srText: '',
     modelValue: false,
-  }
-);
+  },
+)
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value: boolean): void;
-}>();
+  (e: 'update:modelValue', value: boolean): void
+}>()
 
-const { name, rules } = toRefs(props);
+const { name, rules } = toRefs(props)
 
 const { value: enabled, errorMessage } = useField<boolean>(name, rules, {
   initialValue: props.modelValue,
-});
+})
 
-watch(enabled, (val) => emit("update:modelValue", val));
+watch(enabled, val => emit('update:modelValue', val))
 </script>
 
 <template>

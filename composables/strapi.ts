@@ -1,7 +1,7 @@
-import { Image } from '~~/types';
+import type { Image } from '~~/types'
 
 export const getStrapiUrl = (image: Image) => {
-  const config = useRuntimeConfig();
+  const config = useRuntimeConfig()
 
-  return config.strapi.url + image.data.attributes.url;
-};
+  return config.strapi.url + image.data.attributes.url
+}

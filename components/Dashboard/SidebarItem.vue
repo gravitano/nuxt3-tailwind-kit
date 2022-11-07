@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 defineProps<{
-  menu: Record<string, any>;
-}>();
+  menu: Record<string, any>
+}>()
 
-const isOpen = ref(false);
+const isOpen = ref(false)
 </script>
 
 <template>

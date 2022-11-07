@@ -5,7 +5,9 @@
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
         <div class="px-4 sm:px-0">
-          <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
+          <h3 class="text-lg font-medium leading-6 text-gray-900">
+            Profile
+          </h3>
           <p class="mt-1 text-sm text-gray-600">
             This information will be displayed publicly so be careful what you
             share.
@@ -31,12 +33,12 @@
                       http://
                     </span>
                     <input
+                      id="company-website"
                       type="text"
                       name="company-website"
-                      id="company-website"
                       class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
                       placeholder="www.example.com"
-                    />
+                    >
                   </div>
                 </div>
               </div>
@@ -122,9 +124,11 @@
                           name="file-upload"
                           type="file"
                           class="sr-only"
-                        />
+                        >
                       </label>
-                      <p class="pl-1">or drag and drop</p>
+                      <p class="pl-1">
+                        or drag and drop
+                      </p>
                     </div>
                     <p class="text-xs text-gray-500">
                       PNG, JPG, GIF up to 10MB
@@ -174,53 +178,49 @@
                   <label
                     for="first-name"
                     class="block text-sm font-medium text-gray-700"
-                    >First name</label
-                  >
+                  >First name</label>
                   <input
+                    id="first-name"
                     type="text"
                     name="first-name"
-                    id="first-name"
                     autocomplete="given-name"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                   <label
                     for="last-name"
                     class="block text-sm font-medium text-gray-700"
-                    >Last name</label
-                  >
+                  >Last name</label>
                   <input
+                    id="last-name"
                     type="text"
                     name="last-name"
-                    id="last-name"
                     autocomplete="family-name"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
                   <label
                     for="email-address"
                     class="block text-sm font-medium text-gray-700"
-                    >Email address</label
-                  >
+                  >Email address</label>
                   <input
+                    id="email-address"
                     type="text"
                     name="email-address"
-                    id="email-address"
                     autocomplete="email"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
                   <label
                     for="country"
                     class="block text-sm font-medium text-gray-700"
-                    >Country</label
-                  >
+                  >Country</label>
                   <select
                     id="country"
                     name="country"
@@ -237,60 +237,56 @@
                   <label
                     for="street-address"
                     class="block text-sm font-medium text-gray-700"
-                    >Street address</label
-                  >
+                  >Street address</label>
                   <input
+                    id="street-address"
                     type="text"
                     name="street-address"
-                    id="street-address"
                     autocomplete="street-address"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                   <label
                     for="city"
                     class="block text-sm font-medium text-gray-700"
-                    >City</label
-                  >
+                  >City</label>
                   <input
+                    id="city"
                     type="text"
                     name="city"
-                    id="city"
                     autocomplete="address-level2"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                   <label
                     for="region"
                     class="block text-sm font-medium text-gray-700"
-                    >State / Province</label
-                  >
+                  >State / Province</label>
                   <input
+                    id="region"
                     type="text"
                     name="region"
-                    id="region"
                     autocomplete="address-level1"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
 
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                   <label
                     for="postal-code"
                     class="block text-sm font-medium text-gray-700"
-                    >ZIP / Postal code</label
-                  >
+                  >ZIP / Postal code</label>
                   <input
+                    id="postal-code"
                     type="text"
                     name="postal-code"
-                    id="postal-code"
                     autocomplete="postal-code"
                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -342,12 +338,10 @@
                         name="comments"
                         type="checkbox"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                      />
+                      >
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="comments" class="font-medium text-gray-700"
-                        >Comments</label
-                      >
+                      <label for="comments" class="font-medium text-gray-700">Comments</label>
                       <p class="text-gray-500">
                         Get notified when someones posts a comment on a posting.
                       </p>
@@ -360,12 +354,10 @@
                         name="candidates"
                         type="checkbox"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                      />
+                      >
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="candidates" class="font-medium text-gray-700"
-                        >Candidates</label
-                      >
+                      <label for="candidates" class="font-medium text-gray-700">Candidates</label>
                       <p class="text-gray-500">
                         Get notified when a candidate applies for a job.
                       </p>
@@ -378,12 +370,10 @@
                         name="offers"
                         type="checkbox"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-                      />
+                      >
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="offers" class="font-medium text-gray-700"
-                        >Offers</label
-                      >
+                      <label for="offers" class="font-medium text-gray-700">Offers</label>
                       <p class="text-gray-500">
                         Get notified when a candidate accepts or rejects an
                         offer.
@@ -408,7 +398,7 @@
                       name="push-notifications"
                       type="radio"
                       class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                    />
+                    >
                     <label
                       for="push-everything"
                       class="ml-3 block text-sm font-medium text-gray-700"
@@ -422,7 +412,7 @@
                       name="push-notifications"
                       type="radio"
                       class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                    />
+                    >
                     <label
                       for="push-email"
                       class="ml-3 block text-sm font-medium text-gray-700"
@@ -436,7 +426,7 @@
                       name="push-notifications"
                       type="radio"
                       class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
-                    />
+                    >
                     <label
                       for="push-nothing"
                       class="ml-3 block text-sm font-medium text-gray-700"

@@ -1,30 +1,30 @@
 <script lang="ts" setup>
 const props = withDefaults(
   defineProps<{
-    modelValue?: boolean;
+    modelValue?: boolean
   }>(),
   {
     modelValue: false,
-  }
-);
+  },
+)
 
-const { modelValue } = toRefs(props);
+const emit = defineEmits(['update:modelValue'])
 
-const emit = defineEmits(['update:modelValue']);
+const { modelValue } = toRefs(props)
 
-const isOpen = ref(props.modelValue);
+const isOpen = ref(props.modelValue)
 
 watch(
   modelValue,
   (val) => {
-    isOpen.value = val;
+    isOpen.value = val
   },
-  { immediate: true }
-);
+  { immediate: true },
+)
 
 watch(isOpen, (val) => {
-  emit('update:modelValue', val);
-});
+  emit('update:modelValue', val)
+})
 
 const menus = ref([
   {
@@ -66,7 +66,7 @@ const menus = ref([
       },
     ],
   },
-]);
+])
 </script>
 
 <template>
@@ -128,7 +128,7 @@ const menus = ref([
       <button
         class="i-ri-close-line w-6 h-6 text inline sm:hidden"
         @click="isOpen = false"
-      ></button>
+      />
     </div>
 
     <!-- menu -->

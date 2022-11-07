@@ -1,11 +1,11 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-const primary = colors.blue;
-const secondary = colors.pink;
-const info = colors.sky;
-const warning = colors.amber;
-const success = colors.emerald;
-const error = colors.red;
+const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+const primary = colors.blue
+const secondary = colors.pink
+const info = colors.sky
+const warning = colors.amber
+const success = colors.emerald
+const error = colors.red
 
 module.exports = {
   content: [
@@ -42,7 +42,7 @@ module.exports = {
       },
       backgroundColor: {
         skin: {
-          fill: 'var(--color-fill)',
+          'fill': 'var(--color-fill)',
           'fill-active': 'var(--color-fill-active)',
           'fill-hover': 'var(--color-fill-hover)',
           'icon-fill': 'var(--color-icon-fill)',
@@ -57,4 +57,4 @@ module.exports = {
     extend: {},
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-};
+}

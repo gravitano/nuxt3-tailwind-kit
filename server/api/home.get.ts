@@ -118,8 +118,8 @@ export default defineEventHandler(() => {
       website: 'domain.tld',
       form: {
         title: 'Contact Us',
-        description: `Have question? Submit your question on this form bellow and we'll be in touch.`,
+        description: 'Have question? Submit your question on this form bellow and we\'ll be in touch.',
       },
     },
-  };
-});
+  }
+})

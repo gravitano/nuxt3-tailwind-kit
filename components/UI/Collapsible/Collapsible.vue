@@ -1,24 +1,24 @@
 <script lang="ts" setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import CollapseTransition from './CollapseTransition.vue';
-import { ref, toRefs, watch } from 'vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+import { ref, toRefs, watch } from 'vue'
+import CollapseTransition from './CollapseTransition.vue'
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: boolean;
-    title: string;
-    content?: string;
+    modelValue?: boolean
+    title: string
+    content?: string
     classes?: {
-      wrapper?: string;
-      button?: string;
-      title?: string;
-      panel?: string;
-    };
+      wrapper?: string
+      button?: string
+      title?: string
+      panel?: string
+    }
   }>(),
   {
     modelValue: false,
-  }
-);
+  },
+)
 
 const emit = defineEmits([
   'update:modelValue',
@@ -26,30 +26,29 @@ const emit = defineEmits([
   'toggle',
   'open',
   'close',
-]);
+])
 
-const { modelValue } = toRefs(props);
-const isOpen = ref(modelValue.value);
+const { modelValue } = toRefs(props)
+const isOpen = ref(modelValue.value)
 
 watch(modelValue, (val) => {
-  isOpen.value = val;
-});
+  isOpen.value = val
+})
 
 watch(isOpen, (val) => {
-  emit('update:modelValue', val);
-  emit('change', val);
+  emit('update:modelValue', val)
+  emit('change', val)
 
-  if (val) {
-    emit('open');
-  } else {
-    emit('close');
-  }
-});
+  if (val)
+    emit('open')
+  else
+    emit('close')
+})
 
 const toggle = () => {
-  emit('toggle');
-  isOpen.value = !isOpen.value;
-};
+  emit('toggle')
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>

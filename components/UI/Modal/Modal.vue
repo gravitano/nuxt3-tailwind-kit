@@ -1,67 +1,67 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 import {
-  TransitionRoot,
-  TransitionChild,
   Dialog,
   DialogPanel,
   DialogTitle,
-} from "@headlessui/vue";
+  TransitionChild,
+  TransitionRoot,
+} from '@headlessui/vue'
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: boolean;
-    title?: string;
-    headerClass?: string;
-    bodyClass?: string;
-    footerClass?: string;
-    titleClass?: string;
-    panelClass?: string;
-    xButton?: boolean;
-    closeText?: string;
-    closeProps?: Record<string, any>;
-    confirm?: boolean;
-    confirmText?: string;
-    confirmProps?: Record<string, any>;
-    activator?: string;
-    activatorProps?: Record<string, any>;
+    modelValue?: boolean
+    title?: string
+    headerClass?: string
+    bodyClass?: string
+    footerClass?: string
+    titleClass?: string
+    panelClass?: string
+    xButton?: boolean
+    closeText?: string
+    closeProps?: Record<string, any>
+    confirm?: boolean
+    confirmText?: string
+    confirmProps?: Record<string, any>
+    activator?: string
+    activatorProps?: Record<string, any>
   }>(),
   {
     modelValue: false,
-    closeText: "Close",
-    confirmText: "OK",
+    closeText: 'Close',
+    confirmText: 'OK',
     closeProps: () => ({}),
     confirmProps: () => ({}),
     activatorProps: () => ({}),
-  }
-);
+  },
+)
 
 const emit = defineEmits<{
-  (e: "update:modelValue", value: boolean): void;
-  (e: "confirm", payload: { close: () => void }): void;
-}>();
+  (e: 'update:modelValue', value: boolean): void
+  (e: 'confirm', payload: { close: () => void }): void
+}>()
 
-const isOpen = ref(props.modelValue);
+const isOpen = ref(props.modelValue)
 
 function closeModal() {
-  isOpen.value = false;
+  isOpen.value = false
 }
 
 function openModal() {
-  isOpen.value = true;
+  isOpen.value = true
 }
 
 function handleConfirm() {
-  emit("confirm", {
+  emit('confirm', {
     close: closeModal,
-  });
+  })
 }
 </script>
 
 <template>
   <ClientOnly>
     <slot name="activator" :open="openModal" :on="{ click: openModal }">
-      <Button v-if="activator" @click="openModal" v-bind="activatorProps">
+      <Button v-if="activator" v-bind="activatorProps" @click="openModal">
         <slot name="activatorText">
           {{ activator }}
         </slot>
@@ -69,7 +69,7 @@ function handleConfirm() {
     </slot>
 
     <TransitionRoot appear :show="isOpen" as="template">
-      <Dialog as="div" @close="closeModal" class="relative z-10">
+      <Dialog as="div" class="relative z-10" @close="closeModal">
         <TransitionChild
           as="template"
           enter="duration-300 ease-out"
@@ -128,15 +128,15 @@ function handleConfirm() {
 
                 <div class="px-4 pb-3 flex gap-2 justify-end" :class="footerClass">
                   <slot name="footer" :close="closeModal">
-                    <Button type="button" @click="closeModal" v-bind="closeProps">
+                    <Button type="button" v-bind="closeProps" @click="closeModal">
                       {{ closeText }}
                     </Button>
                     <Button
                       v-if="confirm"
                       type="button"
                       color="primary"
-                      @click="handleConfirm"
                       v-bind="confirmProps"
+                      @click="handleConfirm"
                     >
                       {{ confirmText }}
                     </Button>

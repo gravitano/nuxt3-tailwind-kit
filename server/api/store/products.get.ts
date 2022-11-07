@@ -40,7 +40,7 @@ const staticProducts = [
       'Hand holding black machined steel mechanical pencil with brass tip and top.',
   },
   // More products...
-];
+]
 
 export default defineEventHandler(() => {
   return {
@@ -53,7 +53,7 @@ export default defineEventHandler(() => {
     products: staticProducts,
     header: {
       title: 'Store',
-      description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam accusantium, tenetur porro eum amet incidunt nemo, dolore ducimus vitae ipsa corporis obcaecati rem reprehenderit doloremque aliquid, aperiam officiis debitis commodi.`,
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam accusantium, tenetur porro eum amet incidunt nemo, dolore ducimus vitae ipsa corporis obcaecati rem reprehenderit doloremque aliquid, aperiam officiis debitis commodi.',
     },
-  };
-});
+  }
+})

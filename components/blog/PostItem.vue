@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Post } from '~/types';
+import type { Post } from '~/types'
 
 defineProps<{
-  post: Post;
-}>();
+  post: Post
+}>()
 </script>
 
 <template>
@@ -28,9 +28,11 @@ defineProps<{
           class="max-w-full rounded-full"
           width="40"
           height="40"
-        />
+        >
         <div class="space-y-0.5">
-          <div class="font-medium text-sm">Author Name</div>
+          <div class="font-medium text-sm">
+            Author Name
+          </div>
           <div class="text-xs text-gray-500">
             {{ new Date(post.attributes.publishedAt).toDateString() }}
           </div>

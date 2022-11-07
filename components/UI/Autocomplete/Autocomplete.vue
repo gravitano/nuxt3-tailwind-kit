@@ -1,34 +1,36 @@
 <script setup lang="ts">
-import { ref, computed, toRefs, watch } from 'vue';
+import { computed, ref, toRefs, watch } from 'vue'
 import {
   Combobox,
-  ComboboxInput,
   ComboboxButton,
-  ComboboxOptions,
-  ComboboxOption,
+  ComboboxInput,
   ComboboxLabel,
+  ComboboxOption,
+  ComboboxOptions,
   TransitionRoot,
-} from '@headlessui/vue';
-import { useField } from 'vee-validate';
+} from '@headlessui/vue'
+import { useField } from 'vee-validate'
 
-type Item = {
-  text: string;
-  value: string | number;
-};
+interface Item {
+  text: string
+  value: string | number
 
-type Props = {
-  modelValue?: Item | string | null;
-  searchBy?: string;
-  displayText?: string;
-  placeholder?: string;
-  label?: string;
-  items: Item[];
-  name?: string;
-  rules?: string;
-  clearable?: boolean;
-  notFoundText?: string;
-  noDataText?: string;
-};
+  [x: string]: any
+}
+
+interface Props {
+  modelValue?: Item | string
+  searchBy?: string
+  displayText?: string
+  placeholder?: string
+  label?: string
+  items: Item[]
+  name?: string
+  rules?: string
+  clearable?: boolean
+  notFoundText?: string
+  noDataText?: string
+}
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: undefined,
@@ -37,50 +39,50 @@ const props = withDefaults(defineProps<Props>(), {
   placeholder: 'Search...',
   label: '',
   rules: '',
+  name: '',
   items: () => [],
   noDataText: 'No data.',
   notFoundText: 'Nothing found.',
-});
+})
 
-const emit = defineEmits(['update:modelValue', 'update:query']);
+const emit = defineEmits(['update:modelValue', 'update:query'])
 
-const { modelValue, searchBy, items, name, rules } = toRefs(props);
+const { modelValue, searchBy, items, name, rules } = toRefs(props)
 const { value: selected, errorMessage } = useField(name, rules, {
   initialValue: modelValue.value,
-});
-const query = ref('');
+})
+const query = ref('')
 
 watch(modelValue, (val) => {
-  selected.value = val;
-});
+  selected.value = val
+})
 
 watch(selected, (val) => {
-  emit('update:modelValue', val);
-});
+  emit('update:modelValue', val)
+})
 
 watch(query, (val) => {
-  emit('update:query', val);
+  emit('update:query', val)
 
-  if (val === '') {
-    selected.value = '';
-  }
-});
+  if (val === '')
+    selected.value = ''
+})
 
 const filteredItems = computed(() =>
   query.value === ''
     ? items.value
-    : items.value.filter((item) =>
-        item[searchBy.value]
-          .toLowerCase()
-          .replace(/\s+/g, '')
-          .includes(query.value.toLowerCase().replace(/\s+/g, ''))
-      )
-);
+    : items.value.filter(item =>
+      item[searchBy.value]
+        .toLowerCase()
+        .replace(/\s+/g, '')
+        .includes(query.value.toLowerCase().replace(/\s+/g, '')),
+    ),
+)
 
 const clear = () => {
-  selected.value = '';
-  query.value = '';
-};
+  selected.value = ''
+  query.value = ''
+}
 </script>
 
 <template>
@@ -120,7 +122,7 @@ const clear = () => {
             leading-5
             text-gray-600
           "
-          :display-value="(item) => item[displayText] || ''"
+          :display-value="(item: any) => item[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"
         />
@@ -192,7 +194,7 @@ const clear = () => {
           <ComboboxOption
             v-for="(item, idx) in filteredItems"
             :key="idx"
-            v-slot="{ selected, active }"
+            v-slot="{ selected: selectedOption, active }"
             as="template"
             :value="item"
           >
@@ -206,14 +208,14 @@ const clear = () => {
               <span
                 class="block truncate"
                 :class="{
-                  'font-medium text-primary-500': selected,
-                  'font-normal': !selected,
+                  'font-medium text-primary-500': selectedOption,
+                  'font-normal': !selectedOption,
                 }"
               >
                 {{ item[displayText] }}
               </span>
               <span
-                v-if="selected"
+                v-if="selectedOption"
                 class="
                   absolute
                   inset-y-0
@@ -232,5 +234,7 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <div class="text-error text-sm mt-1">{{ errorMessage }}</div>
+  <div class="text-error text-sm mt-1">
+    {{ errorMessage }}
+  </div>
 </template>

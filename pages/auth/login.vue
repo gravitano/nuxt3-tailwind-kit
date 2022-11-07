@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import { useForm } from 'vee-validate';
-import { object, string } from 'yup';
-import { useAuthStore } from '~~/stores/auth';
+import { useForm } from 'vee-validate'
+import { object, string } from 'yup'
+import { useAuthStore } from '~~/stores/auth'
 
 useHead({
   title: 'Login',
-});
+})
 
 definePageMeta({
   layout: 'auth',
-  middleware: 'guest'
-});
+  middleware: 'guest',
+})
 
 const { handleSubmit } = useForm({
   validationSchema: object({
     email: string().required().email().label('Email'),
     password: string().required().label('Password'),
   }),
-});
+})
 
 const auth = useAuthStore()
 const router = useRouter()
@@ -30,7 +30,7 @@ const onSubmit = handleSubmit(async (values) => {
   const { data, error: err } = await useFetch('/api/auth/login', {
     method: 'post',
     body: values,
-  });
+  })
 
   const token = data.value.data.token
   const user = data.value.data.user
@@ -40,20 +40,23 @@ const onSubmit = handleSubmit(async (values) => {
   auth.user = user
   auth.loggedIn = true
 
-  if (!err.value && !data.value.error) {
+  if (!err.value && !data.value.error)
     router.push((route.query as any).next || '/')
-  } else {
+  else
     error.value = err.value || data.value.error?.message
-  }
-});
+})
 </script>
 
 <template>
   <div class="flex items-center justify-center h-full">
     <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
       <div class="mb-4 space-y-1">
-        <h1 class="text-4xl font-bold">Login</h1>
-        <p class="text-gray-500">Please enter your credentials</p>
+        <h1 class="text-4xl font-bold">
+          Login
+        </h1>
+        <p class="text-gray-500">
+          Please enter your credentials
+        </p>
       </div>
 
       <div v-if="error" class="alert alert-error mb-4">
@@ -65,8 +68,10 @@ const onSubmit = handleSubmit(async (values) => {
 
       <div class="mb-4 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">
-          <input type="checkbox"
-            class="w-4 h-4 rounded text-primary-500 focus:ring-primary-500 transition duration-300" />
+          <input
+            type="checkbox"
+            class="w-4 h-4 rounded text-primary-500 focus:ring-primary-500 transition duration-300"
+          >
           Remember me
         </label>
         <nuxt-link to="/auth/forgot-password" class="text-primary-500 hover:underline font-semibold text-sm">

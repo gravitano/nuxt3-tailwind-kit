@@ -1,5 +1,5 @@
-import { Story } from '@storybook/vue3';
-import Autocomplete from './Autocomplete.vue';
+import type { Story } from '@storybook/vue3'
+import Autocomplete from './Autocomplete.vue'
 
 const items = [
   { id: 1, text: 'Wade Cooper' },
@@ -8,7 +8,7 @@ const items = [
   { id: 4, text: 'Tom Cook' },
   { id: 5, text: 'Tanya Fox' },
   { id: 6, text: 'Hellen Schmidt' },
-];
+]
 
 export default {
   title: 'Components/Autocomplete',
@@ -24,18 +24,18 @@ export default {
     noDataText: 'No data.',
     notFoundText: 'Nothing found.',
   },
-};
+}
 
-const Template: Story = (args) => ({
+const Template: Story = args => ({
   // Components used in your story `template` are defined in the `components` object
   components: { Autocomplete },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return { args };
+    return { args }
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<Autocomplete v-bind="args"/>`,
-});
+  template: '<Autocomplete v-bind="args"/>',
+})
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}

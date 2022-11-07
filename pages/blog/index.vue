@@ -1,25 +1,29 @@
 <script setup lang="ts">
-import type { Post } from '~/types';
-import type { Strapi4Response } from '@nuxtjs/strapi';
+import type { Strapi4Response } from '@nuxtjs/strapi'
+import type { Post } from '~/types'
 
-const { find } = useStrapi4();
+const { find } = useStrapi4()
 
-const posts = ref<Post[]>([]);
+const posts = ref<Post[]>([])
 try {
   const response = await find<Strapi4Response<Post>>('articles', {
     sort: 'publishedAt',
     populate: ['image', 'author'],
-  });
+  })
 
-  posts.value = response.data;
-} catch (e) {
-  console.log(e);
+  posts.value = response.data
+}
+catch (e) {
+  // eslint-disable-next-line no-console
+  console.log(e)
 }
 </script>
 
 <template>
   <div>
-    <h1 class="text-3xl mb-2 mt-2 font-semibold">Blog</h1>
+    <h1 class="text-3xl mb-2 mt-2 font-semibold">
+      Blog
+    </h1>
     <h2 class="text-lg mb-8 font-normal text-gray-600 dark:text-gray-400">
       Latest Posts
     </h2>

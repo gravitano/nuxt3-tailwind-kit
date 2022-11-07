@@ -1,18 +1,18 @@
 <script setup lang="ts">
 defineProps<{
   features: {
-    name: string;
-    description: string;
-    image: string;
-    imagePosition: string;
-    imageAlt: string;
+    name: string
+    description: string
+    image: string
+    imagePosition: string
+    imageAlt: string
     items: {
-      title: string;
-      description: string;
-    }[];
-    theme?: string;
-  }[];
-}>();
+      title: string
+      description: string
+    }[]
+    theme?: string
+  }[]
+}>()
 </script>
 
 <template>
@@ -86,7 +86,7 @@ defineProps<{
             :src="feature.image"
             :alt="feature.imageAlt"
             class="max-w-full lg:max-w-md mx-auto rounded-lg border"
-          />
+          >
         </div>
       </div>
     </div>

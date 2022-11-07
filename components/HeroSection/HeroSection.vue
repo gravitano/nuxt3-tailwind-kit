@@ -1,15 +1,15 @@
 <script setup lang="ts">
 defineProps<{
-  title: string;
-  description: string;
-  image: string;
+  title: string
+  description: string
+  image: string
   buttons?: {
-    text: string;
-    action?: string;
-    props?: Record<string, any>;
-  }[];
-  theme?: string;
-}>();
+    text: string
+    action?: string
+    props?: Record<string, any>
+  }[]
+  theme?: string
+}>()
 </script>
 
 <template>
@@ -35,7 +35,7 @@ defineProps<{
         </div>
       </div>
       <div class="w-full sm:w-6/12 flex justify-end p-6 sm:p-0">
-        <img loading="lazy" :src="image" alt="" class="w-auto max-w-full rounded-lg" />
+        <img loading="lazy" :src="image" alt="" class="w-auto max-w-full rounded-lg">
       </div>
     </div>
   </section>
