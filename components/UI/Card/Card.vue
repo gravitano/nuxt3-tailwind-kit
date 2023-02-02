@@ -6,7 +6,7 @@ interface Classes {
   footer?: string
 }
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     title?: string
     body?: string
@@ -39,31 +39,31 @@ const props = withDefaults(
       :classes="[classes.header, headerClass]"
       :hide-header="hideHeader"
     >
-      <CardHeader
+      <UICardHeader
         v-if="!hideHeader"
         :title="title"
         :bordered="bordered"
         :class="[classes.header, headerClass]"
       >
         <slot name="header" />
-      </CardHeader>
+      </UICardHeader>
     </slot>
-    <CardBody :class="[classes.body, bodyClass]" :bordered="bordered">
+    <UICardBody :class="[classes.body, bodyClass]" :bordered="bordered">
       <slot :classes="[classes.body, bodyClass]" :bordered="bordered" />
-    </CardBody>
+    </UICardBody>
     <slot
       name="footerWrapper"
       :classes="[classes.footer, footerClass]"
       :bordered="bordered"
       :hide-footer="hideFooter"
     >
-      <CardFooter
+      <UICardFooter
         v-if="!hideFooter"
         :class="[classes.footer, footerClass]"
         :bordered="bordered"
       >
         <slot name="footer" />
-      </CardFooter>
+      </UICardFooter>
     </slot>
   </div>
 </template>

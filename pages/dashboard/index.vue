@@ -53,10 +53,10 @@ const stats = ref([
     </div>
 
     <!-- card -->
-    <Card title="Hello World">
+    <UICard title="Hello World">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sit esse
       voluptatem et deserunt earum explicabo aut quis laboriosam nostrum
       quisquam sequi maxime est vitae, vero reiciendis veniam repudiandae fugit!
-    </Card>
+    </UICard>
   </div>
 </template>

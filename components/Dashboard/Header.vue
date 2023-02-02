@@ -19,12 +19,13 @@ const logout = () => {
         class="flex-shrink-0 px-4 py-2 rounded inline sm:hidden"
         @click="$emit('menu:click')"
       >
-        <icon-menu class="w-5 h-5" />
+        <Icon name="ri:menu-line" class="w-5 h-5" />
       </button>
 
       <div class="relative sm:w-3/12">
-        <icon-search
-          class="i-ri-search-line text-gray-400 absolute left-3 w-5 h-5 top-2.5"
+        <Icon
+          name="ri-search-line"
+          class="text-gray-400 absolute left-3 w-5 h-5 top-2.5"
         />
         <input
           type="search"
@@ -43,9 +44,9 @@ const logout = () => {
         >
       </div>
 
-      <Dropdown right>
+      <UIDropdown right>
         <template #activator>
-          <DropdownButton
+          <UIDropdownButton
             v-slot="{ open }"
             as="button"
             type="button"
@@ -63,22 +64,22 @@ const logout = () => {
               class="flex items-center gap-2"
             >
               <Icon name="ri:user-line" class="w-5 h-5" />
-              <span class="hidden sm:inline"> {{ auth.user.name }} </span>
+              <span class="hidden sm:inline"> {{ auth.user?.name }} </span>
               <Icon
                 name="ri:arrow-down-s-line"
                 class="i-ri-arrow-down-s-line w-5 h-5"
               />
             </span>
-          </DropdownButton>
+          </UIDropdownButton>
         </template>
 
-        <DropdownItem>Profile</DropdownItem>
-        <DropdownItem>Setting</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem @click="logout">
+        <UIDropdownItem>Profile</UIDropdownItem>
+        <UIDropdownItem>Setting</UIDropdownItem>
+        <UIDropdownItem divider />
+        <UIDropdownItem @click="logout">
           Logout
-        </DropdownItem>
-      </Dropdown>
+        </UIDropdownItem>
+      </UIDropdown>
     </div>
   </header>
 </template>
