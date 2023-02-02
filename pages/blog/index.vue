@@ -1,22 +1,9 @@
 <script setup lang="ts">
-import type { Strapi4Response } from '@nuxtjs/strapi'
-import type { Post } from '~/types'
+import type { Post } from '~~/types'
 
-const { find } = useStrapi4()
-
-const posts = ref<Post[]>([])
-try {
-  const response = await find<Strapi4Response<Post>>('articles', {
-    sort: 'publishedAt',
-    populate: ['image', 'author'],
-  })
-
-  posts.value = response.data
-}
-catch (e) {
-  // eslint-disable-next-line no-console
-  console.log(e)
-}
+const { data, pending, error } = useLazyFetch<{
+  posts: Post[]
+}>('https://dummyjson.com/posts')
 </script>
 
 <template>
@@ -28,8 +15,14 @@ catch (e) {
       Latest Posts
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <BlogPostItem v-for="post in posts" :key="post.id" :post="post" />
+    <div v-if="pending" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div v-for="i in 12" :key="i" class="bg-gray-300 h-56 animate-pulse rounded-lg" />
+    </div>
+    <div v-else-if="error">
+      {{ error }}
+    </div>
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <BlogPostItem v-for="post in data?.posts" :key="post.id" :post="post" />
     </div>
   </div>
 </template>

@@ -8,18 +8,19 @@ defineProps<{
 
 <template>
   <NuxtLink
-    v-if="post.attributes"
     class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300"
     :to="`/blog/posts/${post.id}`"
   >
-    <BlogPostImage :image="post.attributes.image" />
+    <BlogPostImage v-if="post.image" :image="post.image" />
     <div class="px-4 py-4">
-      <span class="font-semibold text-blue-600 text-sm">Article</span>
+      <span class="font-semibold text-blue-600 text-sm">
+        {{ post.tags[0] }}
+      </span>
       <h3 class="font-semibold text-lg mt-2 text-gray-800">
-        {{ post.attributes.title }}
+        {{ post.title }}
       </h3>
       <p class="text-gray-500 text-sm mt-2">
-        {{ post.attributes.excerpt || post.attributes.body.substr(0, 150) }}
+        {{ post.body.substr(0, 150) }}
       </p>
       <div class="flex gap-2 items-center mt-6">
         <img
@@ -34,7 +35,7 @@ defineProps<{
             Author Name
           </div>
           <div class="text-xs text-gray-500">
-            {{ new Date(post.attributes.publishedAt).toDateString() }}
+            Reactions: {{ post.reactions }}
           </div>
         </div>
       </div>
