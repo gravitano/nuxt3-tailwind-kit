@@ -29,6 +29,8 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@nuxtjs/fontaine": "^0.2.4",
+    "@nuxtjs/google-fonts": "^3.0.0-1",
     "@antfu/eslint-config": "^0.35.1",
     "@babel/core": "^7.20.12",
     "@commitlint/cli": "^17.4.2",

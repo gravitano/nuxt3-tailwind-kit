@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-icon',
     '@nuxtjs/i18n',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/fontaine',
   ],
   i18n: {
     locales: ['en', 'id'],
@@ -38,6 +40,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gaId: '',
+    },
+  },
+  googleFonts: {
+    prefetch: true,
+    preconnect: true,
+    families: {
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 })
