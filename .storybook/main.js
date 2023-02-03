@@ -1,5 +1,4 @@
-const { mergeConfig } = require('vite');
-const Icons = require('unplugin-icons/vite');
+// const { mergeConfig } = require('vite');
 
 module.exports = {
   stories: [
@@ -18,13 +17,10 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  async viteFinal(config, { configType }) {
-    return mergeConfig(config, {
-      plugins: [
-        Icons({
-          /* options */
-        }),
-      ],
-    });
-  },
+  // async viteFinal(config, { configType }) {
+  //   return mergeConfig(config, {
+  //     plugins: [
+  //     ],
+  //   });
+  // },
 };
