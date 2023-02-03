@@ -1,18 +1,12 @@
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt', '@nuxtjs/strapi',
+    '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@pinia/nuxt',
     'nuxt-icon',
     '@nuxtjs/i18n',
   ],
-  strapi: {
-    url: process.env.STRAPI_URL || 'https://bapi.warsono.id',
-    prefix: '/api',
-    version: 'v4',
-    cookie: {},
-  },
   i18n: {
     locales: ['en', 'id'],
     defaultLocale: 'en',
