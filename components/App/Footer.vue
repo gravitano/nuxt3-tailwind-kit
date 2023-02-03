@@ -5,8 +5,7 @@ const isHome = computed(() => route.path === '/')
 
 <template>
   <footer
-    class="px-4 sm:px-0"
-    :class="isHome ? 'bg-blue-700 text-white' : 'mt-10 text-black'"
+    class="px-4 sm:px-0 bg-gray-800 text-white"
   >
     <div
       class="container py-4 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"

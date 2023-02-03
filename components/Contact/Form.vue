@@ -13,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-  <div id="contact" c class="px-4 xl:px-0 py-6 sm:py-20 bg-blue-600">
+  <div id="contact" c class="px-4 xl:px-0 py-6 sm:py-20 bg-gradient-to-tr from-blue-600 via-indigo-600 to-teal-600">
     <div class="container mx-auto">
       <div class="flex flex-col sm:flex-row justify-between gap-10 sm:gap-20">
         <div class="w-full sm:w-6/12">
