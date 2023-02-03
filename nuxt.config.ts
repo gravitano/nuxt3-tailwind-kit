@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
-  buildModules: ['@vueuse/nuxt', '@nuxtjs/strapi'],
   modules: [
+    '@vueuse/nuxt', '@nuxtjs/strapi',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@pinia/nuxt',

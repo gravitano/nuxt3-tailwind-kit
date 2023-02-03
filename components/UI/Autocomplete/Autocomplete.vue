@@ -1,153 +1,118 @@
 <script setup lang="ts">
-import { computed, ref, toRefs, watch } from 'vue'
+import type { PropType } from 'vue'
+import { computed, ref } from 'vue'
 import {
   Combobox,
   ComboboxButton,
   ComboboxInput,
-  ComboboxLabel,
   ComboboxOption,
   ComboboxOptions,
   TransitionRoot,
 } from '@headlessui/vue'
-import { useField } from 'vee-validate'
 
-interface Item {
-  text: string
+interface Item extends Record<string, any> {
   value: string | number
-
-  [x: string]: any
+  text: string
 }
 
-interface Props {
-  modelValue?: Item | string
-  searchBy?: string
-  displayText?: string
-  placeholder?: string
-  label?: string
-  items: Item[]
-  name?: string
-  rules?: string
-  clearable?: boolean
-  notFoundText?: string
-  noDataText?: string
-}
+type ModelValue = Item | Item[] | undefined | null
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: undefined,
-  searchBy: 'text',
-  displayText: 'text',
-  placeholder: 'Search...',
-  label: '',
-  rules: '',
-  name: '',
-  items: () => [],
-  noDataText: 'No data.',
-  notFoundText: 'Nothing found.',
+const props = defineProps({
+  modelValue: {
+    type: Object as PropType<ModelValue>,
+  },
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
+  placeholder: {
+    type: String,
+    default: '',
+  },
+  items: {
+    type: Array as PropType<Item[]>,
+    default: () => [] as Item[],
+  },
+  itemText: {
+    type: String,
+    default: 'text',
+  },
+  itemValue: {
+    type: String,
+    default: 'value',
+  },
 })
 
-const emit = defineEmits(['update:modelValue', 'update:query'])
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: ModelValue | ModelValue[]): void
+}>()
 
-const { modelValue, searchBy, items, name, rules } = toRefs(props)
-const { value: selected, errorMessage } = useField(name, rules, {
-  initialValue: modelValue.value,
-})
+const defaultValue = props.multiple ? [props.modelValue].filter(Boolean) : props.modelValue
+const selected = ref<ModelValue | ModelValue[]>(defaultValue)
 const query = ref('')
-
-watch(modelValue, (val) => {
-  selected.value = val
-})
-
-watch(selected, (val) => {
-  emit('update:modelValue', val)
-})
-
-watch(query, (val) => {
-  emit('update:query', val)
-
-  if (val === '')
-    selected.value = ''
-})
 
 const filteredItems = computed(() =>
   query.value === ''
-    ? items.value
-    : items.value.filter(item =>
-      item[searchBy.value]
+    ? props.items
+    : props.items.filter(item =>
+      item[props.itemText]
         .toLowerCase()
         .replace(/\s+/g, '')
         .includes(query.value.toLowerCase().replace(/\s+/g, '')),
     ),
 )
 
-const clear = () => {
-  selected.value = ''
-  query.value = ''
+const removeSelected = (idx: number) => {
+  if (props.multiple)
+    (selected.value as ModelValue[])?.splice(idx, 1)
 }
+
+const clear = () => {
+  if (props.multiple)
+    selected.value = []
+  else
+    selected.value = null
+}
+
+watch(selected, (val) => {
+  emit('update:modelValue', val)
+})
 </script>
 
 <template>
-  <Combobox v-model="selected" class="mb-4" as="div">
-    <ComboboxLabel v-if="label" class="mb-2 font-medium">
-      {{ label }}
-    </ComboboxLabel>
+  <Combobox v-model="selected" :multiple="multiple">
     <div class="relative mt-1">
       <div
-        class="
-          relative
-          w-full
-          text-left
-          bg-white
-          border border-gray-300
-          rounded
-          cursor-default
-          focus:outline-none
-          focus-within:ring
-          focus-within:ring-primary-500
-          focus-within:border-primary-500
-          focus-within:ring-opacity-50
-          sm:text-sm
-          overflow-hidden
-          transition
-          duration-300
-        "
+        class="relative w-full border cursor-default overflow-hidden rounded-lg bg-white text-left shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
       >
+        <ul v-if="multiple && (selected as ModelValue[])?.length > 0" class="flex flex-wrap gap-2 items-center mx-1 mt-1">
+          <li v-for="(item, idx) in selected" :key="idx" class="rounded-lg flex items-center gap-2 shrink-0 bg-gray-100 px-2 py-0.5">
+            <span class="text-sm">{{ item[itemText] }}</span>
+            <button title="Remove item" class="text-lg rounded-full text-gray-500 hover:text-gray-700" type="button" @click="removeSelected(idx)">
+              <Icon name="heroicons:x-mark-20-solid" class="h-5 w-5 " />
+            </button>
+          </li>
+        </ul>
         <ComboboxInput
-          class="
-            w-full
-            border-none
-            focus:ring-0
-            py-3
-            pl-3
-            pr-20
-            leading-5
-            text-gray-600
-          "
-          :display-value="(item: any) => item[displayText] || ''"
+          class="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+          :display-value="(item) => (item as Item)?.[itemText]"
           :placeholder="placeholder"
           @change="query = $event.target.value"
         />
-        <div class="absolute inset-y-0 right-0 flex items-center pr-4">
-          <button
-            v-if="clearable"
-            type="button"
-            class="
-              mr-1
-              text-gray-400
-              hover:text-gray-700
-              hover:bg-gray-200
-              rounded-full
-              p-1
-              transition
-              duration-300
-            "
-            @click="clear"
-          >
-            <Icon name="heroicons:x-mark" class="w-6 h-6" aria-hidden="true" />
+        <div
+          class="absolute inset-y-0 right-0 flex items-center pr-2"
+        >
+          <button v-if="multiple ? (selected as ModelValue[])?.length > 0 : selected" type="button" aria-label="Clear" @click="clear">
+            <Icon
+              name="heroicons:x-mark-20-solid"
+              class="h-5 w-5 text-gray-400"
+              aria-hidden="true"
+            />
           </button>
           <ComboboxButton>
             <Icon
-              name="heroicons:chevron-down"
-              class="w-6 h-6 text-gray-400"
+              name="heroicons:chevron-down-20-solid"
+              class="h-5 w-5 text-gray-400"
               aria-hidden="true"
             />
           </ComboboxButton>
@@ -160,73 +125,40 @@ const clear = () => {
         @after-leave="query = ''"
       >
         <ComboboxOptions
-          class="
-            absolute
-            z-10
-            w-full
-            py-1
-            mt-1
-            overflow-auto
-            text-base
-            bg-white
-            rounded-md
-            shadow-lg
-            max-h-60
-            ring-1 ring-black ring-opacity-5
-            focus:outline-none
-            sm:text-sm
-          "
+          class="absolute mt-1 z-10 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
         >
           <div
-            v-if="filteredItems.length === 0 && query === ''"
-            class="cursor-default select-none relative py-2 px-4 text-gray-700"
-          >
-            {{ noDataText }}
-          </div>
-
-          <div
             v-if="filteredItems.length === 0 && query !== ''"
-            class="cursor-default select-none relative py-2 px-4 text-gray-700"
+            class="relative cursor-default select-none py-2 px-4 text-gray-700"
           >
-            {{ notFoundText }}
+            Nothing found.
           </div>
 
           <ComboboxOption
-            v-for="(item, idx) in filteredItems"
-            :key="idx"
-            v-slot="{ selected: selectedOption, active }"
+            v-for="item in filteredItems"
+            :key="item.id"
+            v-slot="{ selected, active }"
             as="template"
             :value="item"
           >
             <li
-              class="cursor-default select-none relative py-2 pl-10 pr-4"
+              class="relative cursor-default select-none py-2 pl-10 pr-4"
               :class="{
-                'bg-gray-100': active,
+                'bg-gray-100 text-gray-900': active,
                 'text-gray-900': !active,
               }"
             >
               <span
                 class="block truncate"
-                :class="{
-                  'font-medium text-primary-500': selectedOption,
-                  'font-normal': !selectedOption,
-                }"
+                :class="{ 'font-medium': selected, 'font-normal': !selected }"
               >
-                {{ item[displayText] }}
+                {{ item[itemText] }}
               </span>
               <span
-                v-if="selectedOption"
-                class="
-                  absolute
-                  inset-y-0
-                  left-0
-                  flex
-                  items-center
-                  pl-3
-                  text-primary-500
-                "
+                v-if="selected"
+                class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
               >
-                <Icon name="ri:check-line" class="w-5 h-5" aria-hidden="true" />
+                <Icon name="heroicons:check-20-solid" class="h-5 w-5" aria-hidden="true" />
               </span>
             </li>
           </ComboboxOption>
@@ -234,7 +166,4 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <div class="text-error text-sm mt-1">
-    {{ errorMessage }}
-  </div>
 </template>

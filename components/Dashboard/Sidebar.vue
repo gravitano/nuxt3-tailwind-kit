@@ -33,6 +33,16 @@ const menus = ref([
     to: '/',
   },
   {
+    text: 'Components',
+    icon: 'ic:round-settings-input-component',
+    children: [
+      {
+        text: 'Autocomplete',
+        to: '/components/autocomplete',
+      },
+    ],
+  },
+  {
     text: 'Pages',
     icon: 'ri:flag-line',
     children: [

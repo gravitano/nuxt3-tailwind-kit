@@ -15,14 +15,6 @@ export default {
   component: Autocomplete,
   args: {
     items,
-    modelValue: false,
-    searchBy: 'text',
-    displayText: 'text',
-    placeholder: 'Search...',
-    label: '',
-    rules: '',
-    noDataText: 'No data.',
-    notFoundText: 'Nothing found.',
   },
 }
 
@@ -39,3 +31,8 @@ const Template: Story = args => ({
 
 export const Default = Template.bind({})
 Default.args = {}
+
+export const Multiple = Template.bind({})
+Multiple.args = {
+  multiple: true,
+}
