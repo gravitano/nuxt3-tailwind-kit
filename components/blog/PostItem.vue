@@ -26,7 +26,7 @@ const minutesRead = Math.floor(Math.random() * 10) + 1
 
 <template>
   <NuxtLink
-    class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+    class="bg-white flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300"
     :to="`/blog/posts/${post.id}`"
     :title="post.title"
   >
@@ -36,16 +36,16 @@ const minutesRead = Math.floor(Math.random() * 10) + 1
       width="100%"
       class="h-[150px] w-full object-cover bg-gray-100"
     />
-    <div class="px-4 py-4">
+    <div class="px-4 py-4 flex flex-col flex-1">
       <span class="font-semibold text-blue-600 text-sm">
         {{ post.tags[0] }}
       </span>
-      <h3 class="font-semibold text-lg mt-2 text-gray-800 truncate">
+      <h3 class="font-semibold text-lg mt-2 text-gray-800">
         {{ post.title }}
       </h3>
-      <p class="text-gray-500 text-sm mt-2 line-clamp-3">
+      <div class="text-gray-500 text-sm mt-2 flex-1 line-clamp-3">
         {{ post.body.substr(0, 150) }}
-      </p>
+      </div>
       <div class="flex gap-3 items-center mt-6">
         <img
           loading="lazy"

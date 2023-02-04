@@ -11,7 +11,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="p-4 xl:p-0">
     <div class="text-center py-10 md:max-w-xl md:mx-auto">
       <h1 class="text-3xl mb-3 mt-2 font-semibold tracking-normal text-gray-800">
         Blog
