@@ -4,7 +4,7 @@
 <template>
   <footer>
     <div
-      class="container py-5 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
+      class="container text-center md:text-left px-4 py-5 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
     >
       <NuxtLink
         to="/"
