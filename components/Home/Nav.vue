@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { Bars3Icon } from '@heroicons/vue/24/outline'
+import type { NavigationItem } from '~~/types'
 
 defineProps<{
-  navigation: {
-    name: string
-    href: string
-  }[]
+  navigation: NavigationItem[]
 }>()
 
 const mobileMenu = useMobileMenu()
@@ -23,9 +21,12 @@ const mobileMenu = useMobileMenu()
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="text-sm font-semibold leading-6 text-gray-900">
-        {{ item.name }}
-      </NuxtLink>
+      <template v-for="item in navigation" :key="item.title">
+        <UIMenus v-if="item.children" :items="item.children" :title="item.title" :to="item.to" />
+        <NuxtLink v-else :to="item.to" class="text-sm font-semibold leading-6 text-gray-900">
+          {{ item.title }}
+        </NuxtLink>
+      </template>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <NuxtLink to="/auth/login" class="text-sm font-semibold leading-6 text-gray-900">
