@@ -31,7 +31,7 @@ const placementClass: Record<MenuPlacement, string> = {
   'left': 'left-0',
   'right': 'right-0',
   'bottom-right': 'bottom-0 right-0',
-  'right-child': '-right-[105%] -top-2',
+  'right-child': 'right-auto top-9 lg:-right-[105%] lg:-top-2',
 }
 
 const route = useRoute()
