@@ -21,6 +21,7 @@ specifiers:
   '@storybook/builder-vite': ^0.4.0
   '@storybook/testing-library': ^0.0.13
   '@storybook/vue3': ^6.5.16
+  '@tailwindcss/aspect-ratio': ^0.4.2
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
   '@vueuse/core': ^9.12.0
@@ -78,6 +79,7 @@ devDependencies:
   '@storybook/builder-vite': 0.4.0_eslint@8.33.0
   '@storybook/testing-library': 0.0.13
   '@storybook/vue3': 6.5.16_fb12e1484fb833a622c5c4da68c9a0d5
+  '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
   '@vueuse/nuxt': 9.12.0_nuxt@3.1.1+vue@3.2.47
@@ -4833,6 +4835,14 @@ packages:
       tslib: 2.5.0
     dev: true
 
+  /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4
+    dev: true
+
   /@tailwindcss/forms/0.5.3_tailwindcss@3.2.4:
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
     peerDependencies:
@@ -8941,7 +8951,7 @@ packages:
       eslint-scope: 7.1.1
       eslint-utils: 3.0.0_eslint@8.4.1
       eslint-visitor-keys: 3.3.0
-      espree: 9.2.0
+      espree: 9.4.1
       esquery: 1.4.0
       esutils: 2.0.3
       fast-deep-equal: 3.1.3
