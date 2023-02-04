@@ -1,35 +1,24 @@
 <script setup lang="ts">
-const route = useRoute()
-const isHome = computed(() => route.path === '/')
 </script>
 
 <template>
   <footer
-    class="px-4 sm:px-0 bg-gray-800 text-white"
+    class="px-4 sm:px-0 bg-neutral-800 text-white"
   >
     <div
       class="container py-4 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
-      :class="isHome ? '' : 'border-t'"
     >
       <NuxtLink
         to="/"
-        class="font-semibold text-lg"
-        :class="isHome ? 'text-white' : 'text-gray-800'"
+        class="font-semibold text-lg text-white"
       >
-        <!-- <img
-          loading="lazy"
-          src="/logo.svg"
-          alt="Logo"
-          class="max-w-full h-10"
-        /> -->
         {{ $t("app_name") }}
       </NuxtLink>
       <div class="text-sm">
         {{ $t("app_name") }} by
         <a
           href="https://github.com/gravitano"
-          class="font-semibold"
-          :class="isHome ? 'text-white' : 'text-gray-800'"
+          class="font-semibold text-white"
         >
           Warsono
         </a>
