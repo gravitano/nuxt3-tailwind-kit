@@ -4,43 +4,65 @@ import type { Post } from '~/types'
 defineProps<{
   post: Post
 }>()
+
+const users = [
+  'John Doe',
+  'Jane Doe',
+  'John Smith',
+  'Jane Smith',
+  'Amanda Doe',
+  'Ame Smith',
+  'Joe Doe',
+]
+
+const author = users[Math.floor(Math.random() * users.length)]
+
+const publishedAt = new Date(
+  Math.floor(Math.random() * (Date.now() - 1000000000)) + 1000000000,
+)
+
+const minutesRead = Math.floor(Math.random() * 10) + 1
 </script>
 
 <template>
   <NuxtLink
     class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300"
     :to="`/blog/posts/${post.id}`"
+    :title="post.title"
   >
-    <BlogPostImage v-if="post.image" :image="post.image" />
+    <BlogPostImage
+      :src="`https://source.unsplash.com/random?${post.tags.join(',')}`"
+      height="150"
+      width="100%"
+      class="h-[150px] w-full object-cover bg-gray-50"
+    />
     <div class="px-4 py-4">
       <span class="font-semibold text-blue-600 text-sm">
         {{ post.tags[0] }}
       </span>
-      <h3 class="font-semibold text-lg mt-2 text-gray-800">
+      <h3 class="font-semibold text-lg mt-2 text-gray-800 truncate">
         {{ post.title }}
       </h3>
-      <p class="text-gray-500 text-sm mt-2">
+      <p class="text-gray-500 text-sm mt-2 line-clamp-3">
         {{ post.body.substr(0, 150) }}
       </p>
-      <div class="flex gap-2 items-center mt-6">
+      <div class="flex gap-3 items-center mt-6">
         <img
           loading="lazy"
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+          :src="`https://source.unsplash.com/random/40x40/?person&sig=${post.id}`"
           class="max-w-full rounded-full"
           width="40"
           height="40"
         >
         <div class="space-y-0.5">
           <div class="font-medium text-sm">
-            Author Name
+            {{ author }}
           </div>
           <div class="text-xs text-gray-500">
-            Reactions: {{ post.reactions }}
+            {{ postDate(publishedAt) }} &middot; {{ minutesRead }} mins read
           </div>
         </div>
       </div>
     </div>
   </NuxtLink>
 </template>
-
-<style scoped></style>

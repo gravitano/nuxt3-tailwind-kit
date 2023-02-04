@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import type { Image } from '~~/types'
-
 defineProps<{
-  image: Image
+  src: string
   alt?: string
 }>()
 </script>
 
 <template>
-  <img :src="getStrapiUrl(image)" :alt="alt">
+  <img :src="src" :alt="alt">
 </template>
-
