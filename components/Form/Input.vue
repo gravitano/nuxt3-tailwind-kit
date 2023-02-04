@@ -10,6 +10,7 @@ const props = withDefaults(
     type?: string
   }>(),
   {
+    name: '',
     type: 'text',
   },
 )
