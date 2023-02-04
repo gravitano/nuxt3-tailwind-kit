@@ -27,9 +27,9 @@ useHead({
   <div v-else-if="error">
     {{ error }}
   </div>
-  <div v-else-if="post" class="mx-auto py-10">
-    <div class="text-center mb-10 max-w-xl mx-auto py-10">
-      <h1 class="text-4xl text-blue-600 font-bold mb-5">
+  <div v-else-if="post" class="mx-auto py-5 lg:py-10 px-6">
+    <div class="text-center mb-5 lg:mb-10 max-w-xl mx-auto py-5 lg:py-10">
+      <h1 class="text-3xl lg:text-4xl text-blue-600 font-bold mb-5">
         {{ post.title }}
       </h1>
       <div class="text-sm dark:text-gray-500 text-gray-500">
