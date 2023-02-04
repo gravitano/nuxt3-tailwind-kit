@@ -51,7 +51,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      titleTemplate: chunk => (chunk ? `${chunk} - Nuxt Tailwind Kit` : 'Nuxt Tailwind Kit'),
+      titleTemplate: '%s - Nuxt Tailwind Kit',
     },
   },
 })
