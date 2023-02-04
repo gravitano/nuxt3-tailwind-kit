@@ -5,13 +5,14 @@ import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Store', href: '/store' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 const mobileMenuOpen = ref(false)
+
+const isHome = useRoute().path === '/'
 </script>
 
 <template>
@@ -42,10 +43,14 @@ const mobileMenuOpen = ref(false)
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
+          <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="text-sm font-semibold leading-6 text-gray-900">
+            {{ item.name }}
+          </NuxtLink>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+          <NuxtLink to="/auth/login" class="text-sm font-semibold leading-6 text-gray-900">
+            Log in <span aria-hidden="true">&rarr;</span>
+          </NuxtLink>
         </div>
       </nav>
       <Dialog as="div" :open="mobileMenuOpen" @close="mobileMenuOpen = false">
@@ -73,7 +78,7 @@ const mobileMenuOpen = ref(false)
         </DialogPanel>
       </Dialog>
     </div>
-    <main>
+    <main v-if="isHome">
       <div class="relative px-6 lg:px-8">
         <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div class="hidden sm:mb-8 sm:flex sm:justify-center">
