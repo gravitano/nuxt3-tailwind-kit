@@ -34,7 +34,7 @@ const minutesRead = Math.floor(Math.random() * 10) + 1
       :src="`https://source.unsplash.com/random?${post.tags.join(',')}`"
       height="150"
       width="100%"
-      class="h-[150px] w-full object-cover bg-gray-50"
+      class="h-[150px] w-full object-cover bg-gray-100"
     />
     <div class="px-4 py-4">
       <span class="font-semibold text-blue-600 text-sm">
