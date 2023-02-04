@@ -22,6 +22,8 @@ const modules = [Navigation, Pagination, A11y]
 
 <template>
   <div>
+    <PageHeader title="Swiper" subtitle="Swiper example" />
+
     <Swiper
       :modules="modules"
       :slides-per-view="1"
@@ -56,14 +58,14 @@ const modules = [Navigation, Pagination, A11y]
 
     <div class="custom-swiper relative mt-10 bg-blue-50">
       <button
-        class="swiper-btn-prev btn btn-primary rounded-full z-10 absolute top-1/2 left-2 transform -translate-y-1/2"
+        class="swiper-btn-prev btn btn-icon shadow-md btn-primary rounded-full z-10 absolute top-1/2 -left-5 transform -translate-y-1/2"
       >
-        Prev
+        <Icon class="w-5 h-5" name="heroicons:chevron-left-20-solid" />
       </button>
       <button
-        class="swiper-btn-next btn btn-primary rounded-full z-10 absolute top-1/2 right-2 transform -translate-y-1/2"
+        class="swiper-btn-next btn btn-icon shadow-md btn-primary rounded-full z-10 absolute top-1/2 -right-5 transform -translate-y-1/2"
       >
-        Next
+        <Icon class="w-5 h-5" name="heroicons:chevron-right-20-solid" />
       </button>
 
       <Swiper

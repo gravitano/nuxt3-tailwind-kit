@@ -1,6 +1,5 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'dashboard',
 })
 
 const items = [
@@ -17,18 +16,19 @@ const selectedMultiple = ref()
 </script>
 
 <template>
-  <h3 class="font-semibold">
-    Default
-  </h3>
-  <UIAutocomplete v-model="selected" :items="items" placeholder="Search..." class="mb-4" />
+  <div class="space-y-4">
+    <PageHeader title="Autocomplete" subtitle="Autocomplete component" />
 
-  <h3 class="font-semibold">
-    Multiple
-  </h3>
-  <UIAutocomplete v-model="selectedMultiple" :items="items" placeholder="Multiple..." multiple />
+    <UICard hide-footer title="Autocomplete">
+      <UIAutocomplete v-model="selected" :items="items" placeholder="Search..." class="mb-4" />
+    </UICard>
 
-  <h3 class="font-semibold mt-10">
-    Debug
-  </h3>
-  <pre>{{ { selected, selectedMultiple } }}</pre>
+    <UICard hide-footer title="Multiple">
+      <UIAutocomplete v-model="selectedMultiple" :items="items" placeholder="Multiple..." multiple />
+    </UICard>
+
+    <UICard hide-footer title="Debug">
+      <pre class="text-sm">{{ { selected, selectedMultiple } }}</pre>
+    </UICard>
+  </div>
 </template>
