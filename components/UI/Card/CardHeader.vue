@@ -17,5 +17,3 @@ const props = withDefaults(
     </slot>
   </h3>
 </template>
-
-<style scoped></style>

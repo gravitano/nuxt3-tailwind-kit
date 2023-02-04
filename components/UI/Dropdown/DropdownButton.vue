@@ -8,4 +8,4 @@ import { MenuButton } from '@headlessui/vue'
   </MenuButton>
 </template>
 
-<style scoped></style>
+

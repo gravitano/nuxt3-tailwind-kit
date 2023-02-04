@@ -14,5 +14,3 @@ const props = withDefaults(
     <slot />
   </div>
 </template>
-
-<style scoped></style>

@@ -68,4 +68,4 @@ withDefaults(
   </div>
 </template>
 
-<style scoped></style>
+
