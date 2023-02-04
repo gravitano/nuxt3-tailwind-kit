@@ -4,7 +4,9 @@ definePageMeta({
 
 const items = [
   {
-    to: '#',
+    header: 'Header Menu',
+  },
+  {
     title: 'Edit',
     icon: 'ic:round-edit',
     shortcuts: [
@@ -13,12 +15,17 @@ const items = [
     ],
   },
   {
-    to: '#',
     title: 'Remove',
     icon: 'ic:round-close',
     shortcuts: [
       'ctrl + w',
     ],
+    onClick() {
+      alert('Removed')
+    },
+  },
+  {
+    divider: true,
   },
   {
     title: 'Child Menu',

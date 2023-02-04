@@ -4,11 +4,14 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right' | 'right-child'
 
 interface MenuItem {
-  title: string
-  to: string
+  divider?: boolean
+  header?: string
+  title?: string
+  to?: string
   placement?: MenuPlacement
   icon?: string
   shortcuts?: string[]
+  onClick?: (close: () => void) => void
   children?: MenuItem[]
 }
 
@@ -35,6 +38,8 @@ const route = useRoute()
 const isActive = props.to ? route.path === props.to : false
 
 const menuPlacement = props.isChild ? 'right-child' : props.placement
+
+const NuxtLink = resolveComponent('NuxtLink')
 </script>
 
 <template>
@@ -68,11 +73,20 @@ const menuPlacement = props.isChild ? 'right-child' : props.placement
         <div class="flex flex-col">
           <slot>
             <template v-for="item in items" :key="item.title">
+              <div v-if="item.divider" class="border-t my-1 -mx-1" />
+              <div v-else-if="item.header" class="text-gray-500 select-none font-medium text-sm px-3 py-2">
+                {{ item.header }}
+              </div>
               <UIMenus
-                v-if="item.children" :title="item.title" :to="item.to" :items="item.children" :placement="item.placement"
+                v-else-if="item.children" :title="item.title" :to="item.to" :items="item.children" :placement="item.placement"
                 is-child
               />
-              <NuxtLink v-else :to="item.to" class="flex items-center gap-2 px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100" @click="close">
+              <component
+                :is="item.to ? NuxtLink : 'button'" v-else :to="item.to"
+                :type="item.to ? undefined : 'button'"
+                class="flex items-center gap-2 text-left px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100"
+                @click="item.onClick ? item.onClick(close) : close()"
+              >
                 <Icon v-if="item.icon" :name="item.icon" class="w-5 h-5" />
                 <span class="flex-1">{{ item.title }}</span>
                 <div v-if="item.shortcuts?.length" class="flex gap-1 items-center">
@@ -80,7 +94,7 @@ const menuPlacement = props.isChild ? 'right-child' : props.placement
                     <span class="text-xs bg-gray-200 px-2 rounded py-1 text-gray-900">{{ shortcut }}</span>
                   </template>
                 </div>
-              </NuxtLink>
+              </component>
             </template>
           </slot>
         </div>
