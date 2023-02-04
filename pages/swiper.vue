@@ -5,9 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-definePageMeta({
-  fullWidth: true,
-})
+definePageMeta({})
 
 const onSwiper = (swiper) => {
   // eslint-disable-next-line no-console
