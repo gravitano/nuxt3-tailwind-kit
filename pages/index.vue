@@ -1,23 +1,17 @@
 <script setup lang="ts">
 definePageMeta({
-  fullWidth: true,
+  layout: 'landing',
 })
-
-const { data } = await useFetch('/api/home', {})
 </script>
 
 <template>
   <div>
-    <HeroSection v-bind="data.hero" />
+    <HomeHero />
 
-    <HomeAbout v-bind="data.about" />
+    <HomeFeatureTwoColumn />
 
-    <SectionHeader v-bind="data.feature" id="feature" />
+    <HomeFeatureGrid />
 
-    <HomeFeatures :features="data.features" />
-
-    <HomeQuote v-bind="data.quote" />
-
-    <ContactForm v-bind="data.contact" />
+    <HomeCta />
   </div>
 </template>

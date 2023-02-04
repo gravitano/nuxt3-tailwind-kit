@@ -6,6 +6,7 @@ specifiers:
   '@commitlint/cli': ^17.4.2
   '@commitlint/config-conventional': ^17.4.2
   '@headlessui/vue': ^1.7.8
+  '@heroicons/vue': ^2.0.14
   '@iconify/json': ^2.2.15
   '@nuxt/content': ^2.4.3
   '@nuxtjs/fontaine': ^0.2.4
@@ -45,6 +46,7 @@ specifiers:
 
 dependencies:
   '@headlessui/vue': 1.7.8_vue@3.2.47
+  '@heroicons/vue': 2.0.14_vue@3.2.47
   '@nuxtjs/i18n': 8.0.0-beta.9_vue@3.2.47
   '@pinia/nuxt': 0.4.6_vue@3.2.47
   '@vueuse/core': 9.12.0_vue@3.2.47
@@ -2350,6 +2352,14 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       vue: ^3.2.0
+    dependencies:
+      vue: 3.2.47
+    dev: false
+
+  /@heroicons/vue/2.0.14_vue@3.2.47:
+    resolution: {integrity: sha512-pA1MLZPX0pyZdaQ5OHD/ILE8V/JCXyWvY2BQig7ZnYO7ZFap9sp969Qasn+1VWxnzB5BLWWcYu80OJPCboWo+g==}
+    peerDependencies:
+      vue: '>= 3'
     dependencies:
       vue: 3.2.47
     dev: false

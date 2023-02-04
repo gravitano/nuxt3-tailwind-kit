@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.8",
+    "@heroicons/vue": "^2.0.14",
     "@nuxtjs/i18n": "next",
     "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^9.12.0",
@@ -29,14 +30,14 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@nuxtjs/fontaine": "^0.2.4",
-    "@nuxtjs/google-fonts": "^3.0.0-1",
     "@antfu/eslint-config": "^0.35.1",
     "@babel/core": "^7.20.12",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@iconify/json": "^2.2.15",
     "@nuxt/content": "^2.4.3",
+    "@nuxtjs/fontaine": "^0.2.4",
+    "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
