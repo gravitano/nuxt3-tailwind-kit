@@ -12,10 +12,10 @@ const isFullWidth = computed(() => route.name === 'index' || route.meta.fullWidt
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <AppHeader />
 
-    <div :class="isFullWidth ? '' : 'container mx-auto px-4 sm:px-0 py-4'">
+    <div class="flex-1" :class="isFullWidth ? '' : 'container mx-auto px-4 sm:px-0 py-4'">
       <slot />
     </div>
 
