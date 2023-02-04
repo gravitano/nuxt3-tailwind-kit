@@ -2,6 +2,10 @@
 definePageMeta({
   layout: 'landing',
 })
+
+useHead({
+  title: 'Home',
+})
 </script>
 
 <template>

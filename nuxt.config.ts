@@ -49,4 +49,9 @@ export default defineNuxtConfig({
       Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
+  app: {
+    head: {
+      titleTemplate: chunk => (chunk ? `${chunk} - Nuxt Tailwind Kit` : 'Nuxt Tailwind Kit'),
+    },
+  },
 })
