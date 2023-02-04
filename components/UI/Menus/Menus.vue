@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
-type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right'
+type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right' | 'right-child'
+
+interface MenuItem {
+  title: string
+  to: string
+  placement?: MenuPlacement
+  icon?: string
+  shortcuts?: string[]
+  children?: MenuItem[]
+}
 
 const props = withDefaults(defineProps<{
-  title: string
+  title?: string
   to?: string
-  items: {
-    title: string
-    to: string
-  }[]
+  items?: MenuItem[]
   placement?: MenuPlacement
+  isChild?: boolean
 }>(), {
   placement: 'bottom',
 })
@@ -21,23 +28,27 @@ const placementClass: Record<MenuPlacement, string> = {
   'left': 'left-0',
   'right': 'right-0',
   'bottom-right': 'bottom-0 right-0',
+  'right-child': '-right-[105%] -top-2',
 }
 
 const route = useRoute()
 const isActive = props.to ? route.path === props.to : false
+
+const menuPlacement = props.isChild ? 'right-child' : props.placement
 </script>
 
 <template>
-  <Popover class="relative">
+  <Popover class="relative inline">
     <slot name="activator">
       <PopoverButton
         class="text-sm font-semibold leading-6 text-gray-900"
         :class="{
           'text-primary-600': isActive,
+          'flex justify-between items-center px-3 text-sm rounded py-2 leading-normal block hover:bg-gray-100 font-normal w-full text-left text-gray-600': isChild,
         }"
       >
         {{ title }}
-        <Icon name="heroicons:chevron-down-20-solid" />
+        <Icon v-if="items?.length" :name="isChild ? 'heroicons:chevron-right-20-solid' : 'heroicons:chevron-down-20-solid'" />
       </PopoverButton>
     </slot>
     <transition
@@ -49,15 +60,28 @@ const isActive = props.to ? route.path === props.to : false
       leave-to-class="translate-y-1 opacity-0"
     >
       <PopoverPanel
+        v-if="items?.length"
         v-slot="{ close }"
         class="absolute mt-2 z-20 bg-white shadow-md p-1 w-56 rounded-md"
-        :class="placementClass[placement]"
+        :class="placementClass[menuPlacement]"
       >
         <div class="flex flex-col">
           <slot>
-            <NuxtLink v-for="item in items" :key="item.title" :to="item.to" class="px-3 text-sm rounded py-2 block hover:bg-gray-100" href="/analytics" @click="close">
-              {{ item.title }}
-            </NuxtLink>
+            <template v-for="item in items" :key="item.title">
+              <UIMenus
+                v-if="item.children" :title="item.title" :to="item.to" :items="item.children" :placement="item.placement"
+                is-child
+              />
+              <NuxtLink v-else :to="item.to" class="flex items-center gap-2 px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100" @click="close">
+                <Icon v-if="item.icon" :name="item.icon" class="w-5 h-5" />
+                <span class="flex-1">{{ item.title }}</span>
+                <div v-if="item.shortcuts?.length" class="flex gap-1 items-center">
+                  <template v-for="(shortcut, index) in item.shortcuts" :key="index">
+                    <span class="text-xs bg-gray-200 px-2 rounded py-1 text-gray-900">{{ shortcut }}</span>
+                  </template>
+                </div>
+              </NuxtLink>
+            </template>
           </slot>
         </div>
       </PopoverPanel>

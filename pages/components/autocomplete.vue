@@ -3,12 +3,12 @@ definePageMeta({
 })
 
 const items = [
-  { id: 1, text: 'Wade Cooper' },
-  { id: 2, text: 'Arlene Mccoy' },
-  { id: 3, text: 'Devon Webb' },
-  { id: 4, text: 'Tom Cook' },
-  { id: 5, text: 'Tanya Fox' },
-  { id: 6, text: 'Hellen Schmidt' },
+  { value: 1, text: 'Wade Cooper' },
+  { value: 2, text: 'Arlene Mccoy' },
+  { value: 3, text: 'Devon Webb' },
+  { value: 4, text: 'Tom Cook' },
+  { value: 5, text: 'Tanya Fox' },
+  { value: 6, text: 'Hellen Schmidt' },
 ]
 
 const selected = ref()

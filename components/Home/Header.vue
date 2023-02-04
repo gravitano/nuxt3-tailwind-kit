@@ -26,6 +26,10 @@ const navigation: NavigationItem[] = [
         title: 'Swiper',
         to: '/swiper',
       },
+      {
+        title: 'Menus',
+        to: '/components/menus',
+      },
     ],
   },
 ]
