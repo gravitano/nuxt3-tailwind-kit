@@ -10,8 +10,6 @@ useHead({
 
 <template>
   <div>
-    <HomeHeader />
-
     <HomeFeatureTwoColumn />
 
     <HomeFeatureGrid />

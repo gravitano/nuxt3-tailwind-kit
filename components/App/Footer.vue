@@ -2,27 +2,25 @@
 </script>
 
 <template>
-  <footer
-    class="px-4 sm:px-0 bg-neutral-800 text-white"
-  >
+  <footer>
     <div
-      class="container py-4 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
+      class="container py-5 mx-auto flex flex-col sm:flex-row justify-between gap-2 sm:items-center"
     >
       <NuxtLink
         to="/"
-        class="font-semibold text-lg text-white"
+        class="font-semibold text-lg"
       >
         {{ $t("app_name") }}
       </NuxtLink>
-      <div class="text-sm">
-        {{ $t("app_name") }} by
+      <div class="text-sm text-gray-600">
+        <span class="font-medium text-gray-800">{{ $t("app_name") }}</span>
+        by
         <a
           href="https://github.com/gravitano"
-          class="font-semibold text-white"
+          class="font-medium hover:underline text-gray-800"
         >
           Warsono
-        </a>
-        . All rights reserved
+        </a>. All rights reserved.
       </div>
     </div>
   </footer>
