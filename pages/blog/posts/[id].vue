@@ -2,14 +2,14 @@
 import type { Post } from '~~/types'
 
 const route = useRoute()
-const { data: post, pending, error } = useLazyFetch<Post>(`https://dummyjson.com/posts/${route.params.id}`)
+const { data: post, pending, error } = await useLazyFetch<Post>(`https://dummyjson.com/posts/${route.params.id}`)
 
 const author = 'John Doe'
 const publishedAt = new Date('2021-01-01')
 const readingTime = 5
 
 useHead({
-  title: post.value?.title,
+  title: `${post.value?.title} | Blog`,
 })
 </script>
 
@@ -27,9 +27,9 @@ useHead({
   <div v-else-if="error">
     {{ error }}
   </div>
-  <div v-else-if="post" class="mx-auto py-4">
-    <div class="text-center mb-10 max-w-xl mx-auto">
-      <h1 class="text-4xl text-blue-600 font-bold mb-4">
+  <div v-else-if="post" class="mx-auto py-10">
+    <div class="text-center mb-10 max-w-xl mx-auto py-10">
+      <h1 class="text-4xl text-blue-600 font-bold mb-5">
         {{ post.title }}
       </h1>
       <div class="text-sm dark:text-gray-500 text-gray-500">
