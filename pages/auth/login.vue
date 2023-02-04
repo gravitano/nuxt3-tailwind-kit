@@ -49,15 +49,8 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <div class="flex items-center justify-center h-full">
-    <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
-      <div class="mb-4 space-y-1">
-        <h1 class="text-4xl font-bold">
-          Login
-        </h1>
-        <p class="text-gray-500">
-          Please enter your credentials
-        </p>
-      </div>
+    <form class="rounded-lg px-10 py-8 w-full max-w-md mx-auto" @submit="onSubmit">
+      <AuthHeader title="Login" subtitle="Please enter your credentials" />
 
       <div v-if="error" class="alert alert-error mb-4">
         {{ error }}
@@ -66,7 +59,7 @@ const onSubmit = handleSubmit(async (values) => {
       <FormInput name="email" label="Email" placeholder="Email" />
       <FormInput name="password" label="Password" placeholder="Password" type="password" />
 
-      <div class="mb-4 flex gap-2 justify-between items-center">
+      <div class="mb-5 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">
           <input
             type="checkbox"
@@ -79,7 +72,7 @@ const onSubmit = handleSubmit(async (values) => {
         </nuxt-link>
       </div>
 
-      <Button type="submit" color="primary" block size="lg" class="mb-2">
+      <Button type="submit" color="primary" block class="mb-5">
         Login
       </Button>
 

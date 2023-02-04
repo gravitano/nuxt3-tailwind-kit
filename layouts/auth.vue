@@ -1,14 +1,12 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="flex flex-col sm:flex-row sm:h-screen">
-    <div class="w-full sm:w-6/12 lg:5/12 p-6 bg-white">
-      <slot />
-    </div>
-    <div
-      class="w-full sm:w-6/12 lg:7/12 bg-gradient-to-tr from-primary-500 to-primary-400 flex items-center justify-center p-6"
-    >
-      <img src="/images/login-illustration.svg" alt="Login illustration" loading="lazy">
+  <div class="h-screen flex items-center justify-center w-full">
+    <div class="lg:w-[400px]">
+      <Logo class="flex justify-center mb-5" />
+      <div class="bg-white rounded-xl shadow-md">
+        <slot />
+      </div>
     </div>
   </div>
 </template>

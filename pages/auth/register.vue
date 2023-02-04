@@ -27,14 +27,7 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div class="flex items-center justify-center h-full">
     <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
-      <div class="mb-4 space-y-1">
-        <h1 class="text-4xl font-bold">
-          Register
-        </h1>
-        <p class="text-gray-500">
-          Please enter your credentials
-        </p>
-      </div>
+      <AuthHeader title="Register" subtitle="Please enter your credentials" />
 
       <FormInput name="name" label="Name" placeholder="Name" />
       <FormInput name="email" label="Email" placeholder="Email" />
@@ -45,7 +38,7 @@ const onSubmit = handleSubmit((values) => {
         type="password"
       />
 
-      <div class="mb-4 flex gap-2 justify-between items-center">
+      <div class="mb-5 flex gap-2 justify-between items-center">
         <label class="flex flex-wrap gap-2 items-center text-sm">
           <input
             type="checkbox"
@@ -62,7 +55,7 @@ const onSubmit = handleSubmit((values) => {
         </label>
       </div>
 
-      <Button type="submit" color="primary" block size="lg" class="mb-2">
+      <Button type="submit" color="primary" block class="mb-5">
         Login
       </Button>
 

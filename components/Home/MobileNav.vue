@@ -17,10 +17,7 @@ const mobileMenu = useMobileMenu()
     <Dialog as="div" :open="mobileMenu" @close="mobileMenu = false">
       <DialogPanel focus="true" class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
         <div class="flex items-center justify-between">
-          <NuxtLink to="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-          </NuxtLink>
+          <Logo />
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenu = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
