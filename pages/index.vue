@@ -10,7 +10,7 @@ useHead({
 
 <template>
   <div>
-    <HomeHero />
+    <HomeHeader />
 
     <HomeFeatureTwoColumn />
 
