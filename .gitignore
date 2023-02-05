@@ -4,3 +4,4 @@ node_modules
 nuxt.d.ts
 .output
 .DS_Store
+.idea
