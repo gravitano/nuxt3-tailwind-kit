@@ -52,12 +52,12 @@ const items = [
   <div class="space-y-4">
     <PageHeader title="Menus" subtitle="Menus component" />
 
-    <UICard hide-footer title="Menus">
+    <Card hide-footer title="Menus">
       <div class="flex flex-row gap-4">
-        <UIMenus title="Home" />
-        <UIMenus title="About" />
-        <UIMenus title="Multi Level Menu" :items="items" />
+        <Menus title="Home" />
+        <Menus title="About" />
+        <Menus title="Multi Level Menu" :items="items" />
       </div>
-    </UICard>
+    </Card>
   </div>
 </template>

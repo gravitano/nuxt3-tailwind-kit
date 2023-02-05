@@ -77,7 +77,7 @@ const NuxtLink = resolveComponent('NuxtLink')
               <div v-else-if="item.header" class="text-gray-500 select-none font-medium text-sm px-3 py-2">
                 {{ item.header }}
               </div>
-              <UIMenus
+              <Menus
                 v-else-if="item.children" :title="item.title" :to="item.to" :items="item.children" :placement="item.placement"
                 is-child
               />

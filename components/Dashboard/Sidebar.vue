@@ -80,7 +80,7 @@ const menus = ref([
 </script>
 
 <template>
-  <UIModalBackdrop v-if="isOpen" @click="isOpen = false" />
+  <ModalBackdrop v-if="isOpen" @click="isOpen = false" />
 
   <aside
     class="

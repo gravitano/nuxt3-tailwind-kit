@@ -19,16 +19,16 @@ const selectedMultiple = ref()
   <div class="space-y-4">
     <PageHeader title="Autocomplete" subtitle="Autocomplete component" />
 
-    <UICard hide-footer title="Autocomplete">
-      <UIAutocomplete v-model="selected" :items="items" placeholder="Search..." class="mb-4" />
-    </UICard>
+    <Card hide-footer title="Autocomplete">
+      <Autocomplete v-model="selected" :items="items" placeholder="Search..." class="mb-4" />
+    </Card>
 
-    <UICard hide-footer title="Multiple">
-      <UIAutocomplete v-model="selectedMultiple" :items="items" placeholder="Multiple..." multiple />
-    </UICard>
+    <Card hide-footer title="Multiple">
+      <Autocomplete v-model="selectedMultiple" :items="items" placeholder="Multiple..." multiple />
+    </Card>
 
-    <UICard hide-footer title="Debug">
+    <Card hide-footer title="Debug">
       <pre class="text-sm">{{ { selected, selectedMultiple } }}</pre>
-    </UICard>
+    </Card>
   </div>
 </template>
