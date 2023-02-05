@@ -56,7 +56,7 @@ const onSubmit = handleSubmit((values) => {
       </div>
 
       <Button type="submit" color="primary" block class="mb-5">
-        Login
+        Register
       </Button>
 
       <div class="text-gray-600 text-sm">
