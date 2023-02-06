@@ -1,12 +1,12 @@
 # Installation
 
-Get this template ready by installing it via `nuxi`:
+To get this template, use `nuxi`:
 
 ```
 npx nuxi init -t gh:gravitano/nuxt3-tailwind-kit my-app
 cd my-app
-yarn
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 ## Development
@@ -16,13 +16,13 @@ We recommend to look at the [documentation](https://v3.nuxtjs.org).
 Make sure to install the dependencies
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Production
@@ -30,7 +30,7 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
