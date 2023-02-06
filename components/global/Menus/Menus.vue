@@ -74,7 +74,7 @@ const NuxtLink = resolveComponent('NuxtLink')
           <slot>
             <template v-for="item in items" :key="item.title">
               <div v-if="item.divider" class="border-t my-1 -mx-1" />
-              <div v-else-if="item.header" class="text-gray-500 select-none font-medium text-sm px-3 py-2">
+              <div v-else-if="item.header" class="text-gray-700 select-none font-semibold text-sm px-3 py-2">
                 {{ item.header }}
               </div>
               <Menus
