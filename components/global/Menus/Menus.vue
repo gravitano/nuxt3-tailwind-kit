@@ -1,23 +1,14 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import MenusItem from './MenusItem.vue'
 
-type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right' | 'right-child'
+export type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right' | 'right-child'
 
-interface MenuItem {
-  divider?: boolean
-  header?: string
-  title?: string
-  to?: string
-  placement?: MenuPlacement
-  icon?: string
-  shortcut?: string
-  onClick?: (close: () => void) => void
-  children?: MenuItem[]
-}
+type MenuItem = InstanceType<typeof MenusItem>['$props']
 
 const props = withDefaults(defineProps<{
   title?: string
-  to?: string
+  to?: MenuItem['to']
   items?: MenuItem[]
   placement?: MenuPlacement
   isChild?: boolean
@@ -36,10 +27,7 @@ const placementClass: Record<MenuPlacement, string> = {
 
 const route = useRoute()
 const isActive = props.to ? route.path === props.to : false
-
 const menuPlacement = props.isChild ? 'right-child' : props.placement
-
-const NuxtLink = resolveComponent('NuxtLink')
 </script>
 
 <template>
@@ -49,7 +37,7 @@ const NuxtLink = resolveComponent('NuxtLink')
         class="text-sm font-semibold leading-6 text-gray-900"
         :class="{
           'text-primary-600': isActive,
-          'flex justify-between items-center px-3 text-sm rounded py-2 leading-normal block hover:bg-gray-100 font-normal w-full text-left text-gray-600': isChild,
+          'flex justify-between items-center px-3 text-sm rounded py-2 leading-normal hover:bg-gray-100 font-normal w-full text-left text-gray-600': isChild,
         }"
       >
         {{ title }}
@@ -81,18 +69,11 @@ const NuxtLink = resolveComponent('NuxtLink')
                 v-else-if="item.children" :title="item.title" :to="item.to" :items="item.children" :placement="item.placement"
                 is-child
               />
-              <component
-                :is="item.to ? NuxtLink : 'button'" v-else :to="item.to"
-                :type="item.to ? undefined : 'button'"
-                class="flex items-center gap-2 text-left px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100"
+              <MenusItem
+                v-else
+                v-bind="item"
                 @click="item.onClick ? item.onClick(close) : close()"
-              >
-                <Icon v-if="item.icon" :name="item.icon" class="w-5 h-5" />
-                <span class="flex-1">{{ item.title }}</span>
-                <div v-if="item.shortcut" class="flex gap-1 items-center">
-                  <span class="text-gray-400">{{ item.shortcut }}</span>
-                </div>
-              </component>
+              />
             </template>
           </slot>
         </div>
