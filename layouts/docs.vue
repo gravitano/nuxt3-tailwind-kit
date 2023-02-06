@@ -38,7 +38,10 @@ const menus = [
               </p>
               <ul class="ml-1">
                 <li v-for="child in item.items" :key="child.title">
-                  <NuxtLink class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 text-sm" :to="child.path">
+                  <NuxtLink
+                    class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 text-sm" :to="child.path"
+                    exact-active-class="border-l-gray-500 !text-gray-900 font-medium"
+                  >
                     {{ child.title }}
                   </NuxtLink>
                 </li>
