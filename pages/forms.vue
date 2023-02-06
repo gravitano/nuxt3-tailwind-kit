@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+//
+</script>
 
 <template>
   <PageHeader title="Forms" subtitle="Forms example" />

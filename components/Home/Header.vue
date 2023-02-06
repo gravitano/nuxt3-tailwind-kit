@@ -10,14 +10,11 @@ const navigation: NavigationItem[] = [
   { title: 'Home', to: '/' },
   { title: 'Store', to: '/store' },
   { title: 'Blog', to: '/blog' },
+  { title: 'Components', to: '/components/autocomplete' },
   {
-    title: 'Components',
-    to: '/components',
+    title: 'Examples',
+    to: '/examples',
     children: [
-      {
-        title: 'AutoComplete',
-        to: '/components/autocomplete',
-      },
       {
         title: 'Forms',
         to: '/forms',
@@ -25,10 +22,6 @@ const navigation: NavigationItem[] = [
       {
         title: 'Swiper',
         to: '/swiper',
-      },
-      {
-        title: 'Menus',
-        to: '/components/menus',
       },
     ],
   },
