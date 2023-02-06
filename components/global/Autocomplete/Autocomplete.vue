@@ -85,11 +85,11 @@ watch(selected, (val) => {
       <div
         class="relative w-full border cursor-default overflow-hidden rounded-lg bg-white text-left shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
       >
-        <ul v-if="multiple && (selected as ModelValue[])?.length > 0" class="flex flex-wrap gap-2 items-center mx-1 mt-1">
-          <li v-for="(item, idx) in selected" :key="idx" class="rounded-lg flex items-center gap-2 shrink-0 bg-gray-100 px-2 py-0.5">
+        <ul v-if="multiple && (selected as ModelValue[])?.length > 0" class="flex flex-wrap gap-2 items-center mx-1.5 mt-1.5">
+          <li v-for="(item, idx) in selected" :key="idx" class="rounded-lg flex items-center gap-2 shrink-0 bg-gray-100 pl-3 pr-2">
             <span class="text-sm">{{ item[itemText] }}</span>
             <button title="Remove item" class="text-lg rounded-full text-gray-500 hover:text-gray-700" type="button" @click="removeSelected(idx)">
-              <Icon name="heroicons:x-mark-20-solid" class="h-5 w-5 " />
+              <Icon name="heroicons:x-mark-20-solid" class="h-4 w-4" />
             </button>
           </li>
         </ul>
