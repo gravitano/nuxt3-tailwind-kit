@@ -5,14 +5,22 @@ Autocomplete component based on Headless UI `Combobox` component. Support multip
 ## Basic Usage
 
 ::live-preview
-  <Autocomplete placeholder="Choose..." :items="[
-  { value: 1, text: 'Wade Cooper' },
-  { value: 2, text: 'Arlene Mccoy' },
-  { value: 3, text: 'Devon Webb' },
-  { value: 4, text: 'Tom Cook' },
-  { value: 5, text: 'Tanya Fox' },
-  { value: 6, text: 'Hellen Schmidt' },
-]" />
+  ::autocomplete
+  ---
+  placeholder: Choose...
+  items:
+    - text: Item 1
+      value: 1
+    - text: Item 2
+      value: 2
+    - text: Item 3
+      value: 3
+    - text: Item 4
+      value: 4
+    - text: Item 5
+      value: 5
+  ---
+  ::
 ::
 
 ::code-block
@@ -35,14 +43,23 @@ Autocomplete component based on Headless UI `Combobox` component. Support multip
 ## Multiple
 
 ::live-preview
-  <Autocomplete multiple placeholder="Choose..." :items="[
-  { value: 1, text: 'Wade Cooper' },
-  { value: 2, text: 'Arlene Mccoy' },
-  { value: 3, text: 'Devon Webb' },
-  { value: 4, text: 'Tom Cook' },
-  { value: 5, text: 'Tanya Fox' },
-  { value: 6, text: 'Hellen Schmidt' },
-]" />
+  ::autocomplete
+  ---
+  placeholder: Choose...
+  multiple: true
+  items:
+    - text: Item 1
+      value: 1
+    - text: Item 2
+      value: 2
+    - text: Item 3
+      value: 3
+    - text: Item 4
+      value: 4
+    - text: Item 5
+      value: 5
+  ---
+  ::
 ::
 
 ::code-block

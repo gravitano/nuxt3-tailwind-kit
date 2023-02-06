@@ -142,7 +142,7 @@ watch(selected, (val) => {
             :value="item"
           >
             <li
-              class="relative cursor-default select-none py-2 pl-10 pr-4 list-none"
+              class="relative cursor-default select-none py-2 pl-10 pr-4"
               :class="{
                 'bg-gray-100 text-gray-900': active,
                 'text-gray-900': !active,
