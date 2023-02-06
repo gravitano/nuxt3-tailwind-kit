@@ -2,7 +2,9 @@
 
 Menus components. Based on Headless UI Popover component. Support multi level sub menus.
 
-## Demo
+## Usage
+
+Use `<Menus />` component to create menu.
 
 ::live-preview
   ::nav{class="space-x-3"}

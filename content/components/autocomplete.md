@@ -2,7 +2,9 @@
 
 Autocomplete component based on Headless UI `Combobox` component. Support multiple selection.
 
-## Basic Usage
+## Usage
+
+Use `<Autocomplete />` component to create autocomplete input.
 
 ::live-preview
   ::autocomplete
@@ -41,6 +43,8 @@ Autocomplete component based on Headless UI `Combobox` component. Support multip
 ::
 
 ## Multiple
+
+Use `multiple` prop to enable multiple selection to the autocomplete component.
 
 ::live-preview
   ::autocomplete
