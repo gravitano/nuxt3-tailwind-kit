@@ -23,7 +23,7 @@ const NuxtLink = resolveComponent('NuxtLink')
   <component
     :is="to ? NuxtLink : 'button'" :to="to"
     :type="to ? undefined : 'button'"
-    class="flex items-center gap-2 text-left px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100"
+    class="flex items-center no-underline gap-2 text-left px-3 text-gray-600 text-sm rounded py-2 w-full hover:bg-gray-100"
   >
     <Icon v-if="icon" :name="icon" class="w-5 h-5" />
     <span class="flex-1">{{ title }}</span>
