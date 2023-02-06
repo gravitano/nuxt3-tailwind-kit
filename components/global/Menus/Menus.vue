@@ -10,7 +10,7 @@ interface MenuItem {
   to?: string
   placement?: MenuPlacement
   icon?: string
-  shortcuts?: string[]
+  shortcut?: string
   onClick?: (close: () => void) => void
   children?: MenuItem[]
 }
@@ -89,10 +89,8 @@ const NuxtLink = resolveComponent('NuxtLink')
               >
                 <Icon v-if="item.icon" :name="item.icon" class="w-5 h-5" />
                 <span class="flex-1">{{ item.title }}</span>
-                <div v-if="item.shortcuts?.length" class="flex gap-1 items-center">
-                  <template v-for="(shortcut, index) in item.shortcuts" :key="index">
-                    <span class="text-xs bg-gray-200 px-2 rounded py-1 text-gray-900">{{ shortcut }}</span>
-                  </template>
+                <div v-if="item.shortcut" class="flex gap-1 items-center">
+                  <span class="text-gray-400">{{ item.shortcut }}</span>
                 </div>
               </component>
             </template>

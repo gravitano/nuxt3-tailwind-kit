@@ -9,17 +9,12 @@ const items = [
   {
     title: 'Edit',
     icon: 'ic:round-edit',
-    shortcuts: [
-      'alt + e',
-      'ctrl + 1',
-    ],
+    shortcut: 'ctrl + e',
   },
   {
     title: 'Remove',
     icon: 'ic:round-close',
-    shortcuts: [
-      'ctrl + w',
-    ],
+    shortcut: 'alt + r',
     onClick() {
       alert('Removed')
     },
