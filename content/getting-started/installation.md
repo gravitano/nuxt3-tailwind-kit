@@ -2,7 +2,7 @@
 
 To get this template, use `nuxi`:
 
-```
+```bash
 npx nuxi init -t gh:gravitano/nuxt3-tailwind-kit my-app
 cd my-app
 pnpm install
