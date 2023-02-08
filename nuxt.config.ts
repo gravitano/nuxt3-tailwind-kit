@@ -49,4 +49,12 @@ export default defineNuxtConfig({
       Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
+  content: {
+    highlight: {
+      theme: {
+        default: 'github-dark',
+      }
+    },
+    preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini']
+  }
 })
