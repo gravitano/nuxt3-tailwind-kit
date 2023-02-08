@@ -1,18 +1,14 @@
 export default defineNuxtConfig({
-  buildModules: ['@vueuse/nuxt', '@nuxtjs/strapi'],
   modules: [
+    '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@pinia/nuxt',
     'nuxt-icon',
     '@nuxtjs/i18n',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/fontaine',
   ],
-  strapi: {
-    url: process.env.STRAPI_URL || 'https://bapi.warsono.id',
-    prefix: '/api',
-    version: 'v4',
-    cookie: {},
-  },
   i18n: {
     locales: ['en', 'id'],
     defaultLocale: 'en',
@@ -44,6 +40,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gaId: '',
+    },
+  },
+  googleFonts: {
+    prefetch: true,
+    preconnect: true,
+    families: {
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 })

@@ -20,5 +20,3 @@ const isOpen = ref(false)
     </ul>
   </li>
 </template>
-
-<style scoped></style>

@@ -32,7 +32,7 @@ Nuxt 3 + Tailwind Starter Kit.
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx nuxi init -t gravitano/nuxt3-tailwind-kit my-nuxt-app
+npx nuxi init -t gh:gravitano/nuxt3-tailwind-kit my-nuxt-app
 cd my-nuxt-app
 pnpm
 pnpm dev

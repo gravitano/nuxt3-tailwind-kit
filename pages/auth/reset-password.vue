@@ -27,14 +27,10 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div class="flex items-center justify-center h-full">
     <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
-      <div class="mb-4 space-y-1">
-        <h1 class="text-4xl font-bold">
-          Forgot Password
-        </h1>
-        <p class="text-gray-500">
-          Please enter your email
-        </p>
-      </div>
+      <AuthHeader
+        title="Reset Password"
+        subtitle="Please enter your new password"
+      />
 
       <FormInput name="email" label="Email" placeholder="Email" />
       <FormInput name="password" label="Password" placeholder="Password" />
@@ -44,11 +40,9 @@ const onSubmit = handleSubmit((values) => {
         placeholder="Password Confirmation"
       />
 
-      <Button type="submit" color="primary" block size="lg" class="mb-2">
+      <Button type="submit" color="primary" block>
         Submit
       </Button>
     </form>
   </div>
 </template>
-
-<style scoped></style>

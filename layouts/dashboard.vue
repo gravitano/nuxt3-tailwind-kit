@@ -20,10 +20,8 @@ const sidebar = useSidebar()
 
       <!-- main content -->
       <div class="px-6 py-6">
-        <NuxtPage />
+        <slot />
       </div>
     </div>
   </main>
 </template>
-
-<style></style>
