@@ -110,10 +110,27 @@ const items = [
 
 ## Props
 
-| Prop | Type | Default Value |
-|----|----|----|
-| `title` | `string` | `''` |
-| `to` | `string \| RouteLocation` | `''` |
-| `items` | `MenuItem[]` | `[]` |
-| `isChild` | `boolean` | `false` |
-| `placement` | `string` | `''` |
+| Prop        | Type                      | Default Value |
+| ----------- | ------------------------- | ------------- |
+| `title`     | `string`                  | `''`          |
+| `to`        | `string \| RouteLocation` | `''`          |
+| `items`     | `MenuItem[]`              | `[]`          |
+| `isChild`   | `boolean`                 | `false`       |
+| `placement` | `MenuPlacement`           | `''`          |
+
+## Event
+
+None.
+
+## Types
+
+```ts
+export type MenuPlacement = 'top' | 'bottom' | 'left' | 'right' | 'bottom-right' | 'right-child'
+
+type MenuItem = InstanceType<typeof MenusItem>['$props']
+```
+
+## Sub Components
+
+- [MenusItem](/components/menus-item)
+
