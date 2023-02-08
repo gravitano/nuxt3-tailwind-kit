@@ -54,6 +54,7 @@ watch(selected, (val) => {
           pr-10
           text-left
           rounded-md
+          shadow-sm
           border border-gray-300
           cursor-default
           focus:outline-none
@@ -68,8 +69,11 @@ watch(selected, (val) => {
           outlined
             ? 'bg-transparent border-icon-inverse text-inverse-subdued'
             : 'bg-white',
-          small ? 'py-2 text-sm' : '',
-          large ? 'py-3' : '',
+          {
+            'text-xs': small,
+            'text-sm': !small && !large,
+            'text-lg': large,
+          }
         ]"
       >
         <span class="block truncate">{{ selected?.text || placeholder }}</span>
