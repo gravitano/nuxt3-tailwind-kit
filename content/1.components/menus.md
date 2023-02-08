@@ -1,6 +1,6 @@
 # Menus
 
-Menus components. Based on Headless UI Popover component. Support multi level sub menus.
+Menus components. Based on Headless UI `Popover` component. Support multi level sub menus.
 
 ## Usage
 
