@@ -1,33 +1,4 @@
 <script setup lang="ts">
-const menus = [
-  {
-    title: 'Getting Started',
-    items: [
-      {
-        title: 'Installation',
-        path: '/getting-started/installation',
-      },
-    ],
-  },
-  {
-    title: 'Components',
-    items: [
-      {
-        title: 'Autocomplete',
-        path: '/components/autocomplete',
-      },
-      {
-        title: 'Menus',
-        path: '/components/menus',
-      },
-      {
-        title: 'MenusItem',
-        path: '/components/menus-item',
-      },
-    ],
-  },
-]
-
 const showSidebar = ref(true)
 const isMobile = useMediaQuery('(max-width: 640px)')
 
