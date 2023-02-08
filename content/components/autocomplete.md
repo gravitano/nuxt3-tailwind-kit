@@ -44,7 +44,11 @@ const selected = ref();
 </script>
 
 <template>
-  <Autocomplete v-model="selected" placeholder="Choose..." :items="items" />
+  <Autocomplete
+    v-model="selected"
+    placeholder="Choose..."
+    :items="items"
+  />
 </template>
 ```
 
@@ -93,7 +97,12 @@ const selected = ref();
 </script>
 
 <template>
-  <Autocomplete v-model="selected" placeholder="Choose..." :items="items" multiple />
+  <Autocomplete
+    v-model="selected"
+    placeholder="Choose..."
+    :items="items"
+    multiple
+  />
 </template>
 ```
 
@@ -114,7 +123,7 @@ const selected = ref();
 
 | Name                | Payload     | Description                              |
 | ------------------- | ----------- | ---------------------------------------- |
-| `update:modelValue` | `{value: ModelValue | ModelValue[]}` | Triggered when `modelValue` prop changed |
+| `update:modelValue` | `{value: ModelValue \| ModelValue[]}` | Triggered when `modelValue` prop changed |
 
 ## Types
 
