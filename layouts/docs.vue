@@ -20,6 +20,10 @@ const menus = [
         title: 'Menus',
         path: '/components/menus',
       },
+      {
+        title: 'MenusItem',
+        path: '/components/menus-item',
+      },
     ],
   },
 ]
