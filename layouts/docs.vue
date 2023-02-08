@@ -27,14 +27,37 @@ const menus = [
     ],
   },
 ]
+
+const showSidebar = ref(true)
+const isMobile = useMediaQuery('(max-width: 640px)')
+
+watchEffect(() => {
+  if (isMobile.value) {
+    showSidebar.value = false
+  } else {
+    showSidebar.value = true
+  }
+})
+
+const onMenuClick = () => {
+  if (isMobile.value) {
+    showSidebar.value = false
+  }
+}
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col lg:min-h-screen">
     <HomeHeader hide-hero />
-    <div class="flex-1 container mx-auto z-0 flex gap-6">
-      <div class="px-4 py-6 w-[280px] min-h-screen overflow-y-auto">
-        <ul class="space-y-3">
+    <div class="flex-1 flex-col lg:flex-row container mx-auto z-0 flex gap-6">
+      <div class="lg:px-4 lg:py-6 px-3 shadow-md lg:shadow-none pt-1 pb-3 bg-white lg:bg-transparent lg:w-[280px] lg:min-h-screen overflow-y-auto">
+          <div class="sticky lg:hidden top-0 flex items-center justify-between">
+            <Button text @click="showSidebar = !showSidebar">
+              <Icon name="ri:menu-2-line" class="w-5 h-5" />
+            </Button>
+            <Button text size="sm" href="#">Back to top</Button>
+          </div>
+          <ul v-if="showSidebar" class="space-y-3">
           <template v-for="item in menus" :key="item.id">
             <li>
               <p class="text-gray-900 text-sm font-medium py-2">
@@ -45,6 +68,7 @@ const menus = [
                   <NuxtLink
                     class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 text-sm" :to="child.path"
                     exact-active-class="border-l-gray-500 !text-gray-900 font-medium"
+                    @click="onMenuClick"
                   >
                     {{ child.title }}
                   </NuxtLink>
@@ -54,7 +78,7 @@ const menus = [
           </template>
         </ul>
       </div>
-      <div class="flex-1 py-8 prose">
+      <div class="flex-1 py-4 lg:py-8 prose px-4 lg:px-0">
         <slot />
       </div>
     </div>
