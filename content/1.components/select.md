@@ -1,36 +1,19 @@
 # Select
 
-Select component based on Headless UI `Combobox`. Support multiple selection.
+Select component based on Headless UI `Listbox`. Support multiple selection.
 
 ## Usage
 
 Use `<Select />` component to create select input.
 
 ::live-preview
-  ::select
-  ---
-  placeholder: Choose...
-  items:
-  - text: Item 1
-    value: 1
-  - text: Item 2
-    value: 2
-  - text: Item 3
-    value: 3
-  - text: Item 4
-    value: 4
-  - text: Item 5
-    value: 5
-  ---
-  ::
+  ::select-demos-basic
 ::
 
 ::code-block
 
 ```vue
 <script setup lang="ts">
-import { ref } from "vue";
-
 const items = ref([
   { value: 1, text: "Wade Cooper" },
   { value: 2, text: "Arlene Mccoy" },
@@ -59,31 +42,13 @@ const selected = ref();
 Use `multiple` prop to enable multiple selection to the select component.
 
 ::live-preview
-  ::select
-  ---
-  multiple: true
-  placeholder: Choose...
-  items:
-  - text: Item 1
-    value: 1
-  - text: Item 2
-    value: 2
-  - text: Item 3
-    value: 3
-  - text: Item 4
-    value: 4
-  - text: Item 5
-    value: 5
-  ---
-  ::
+  ::select-demos-multiple
 ::
 
 ::code-block
 
 ```vue
 <script setup lang="ts">
-import { ref } from "vue";
-
 const items = ref([
   { value: 1, text: "Wade Cooper" },
   { value: 2, text: "Arlene Mccoy" },
@@ -110,28 +75,28 @@ const selected = ref();
 
 ## Props
 
-| Prop          | Type                                  | Default Value |
-| ------------- | ------------------------------------- | ------------- |
-| `modelValue`  | `Item \| Item[] \| undefined \| null` | `undefined`   |
-| `multiple`    | `string`                              | `false`       |
-| `placeholder` | `string`                              | `''`          |
-| `items`       | `string`                              | `[]`          |
-| `itemText`    | `string`                              | `'text'`      |
-| `itemValue`   | `string`                              | `'value'`     |
+| Property        | Type           | Required | Default    | Description                                                                      |
+| --------------- | -------------- | -------- | ---------- | -------------------------------------------------------------------------------- |
+| `modelValue`    | `SelectItem`   | Yes      | -          | The selected item in the dropdown list.                                          |
+| `items`         | `SelectItem[]` | Yes      | `[]`       | An array of `SelectItem` objects to display in the dropdown list.                |
+| `placeholder`   | `string`       | No       | `'Choose'` | The placeholder text to display when no item is selected.                        |
+| `hideCheckIcon` | `boolean`      | No       | `false`    | Specifies whether to hide the check icon when an item is selected.               |
+| `outlined`      | `boolean`      | No       | `false`    | Specifies whether the dropdown list should be displayed with an outlined border. |
+| `large`         | `boolean`      | No       | `false`    | Specifies whether the dropdown list should be displayed with a large size.       |
+| `small`         | `boolean`      | No       | `false`    | Specifies whether the dropdown list should be displayed with a small size.       |
 
 ## Events
 
-| Name                | Payload     | Description                              |
-| ------------------- | ----------- | ---------------------------------------- |
-| `update:modelValue` | `{value: ModelValue \| ModelValue[]}` | Triggered when `modelValue` prop changed |
+| Name                | Payload               | Description                              |
+| ------------------- | --------------------- | ---------------------------------------- |
+| `update:modelValue` | `{value: SelectItem}` | Triggered when `modelValue` prop changed |
 
 ## Types
 
 ```ts
-interface Item extends Record<string, any> {
-  value: string | number
-  text: string
-}
-
-type ModelValue = Item | Item[] | undefined | null
+export type SelectItem = {
+  text: string;
+  value: string | number;
+  divider?: boolean;
+};
 ```
