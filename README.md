@@ -34,8 +34,8 @@ If you prefer to do it manually with the cleaner git history
 ```bash
 npx nuxi init -t gravitano/nuxt3-tailwind-kit my-nuxt-app
 cd my-nuxt-app
-yarn
-yarn dev
+pnpm
+pnpm dev
 ```
 
 ## Development
@@ -45,13 +45,13 @@ We recommend to look at the [documentation](https://v3.nuxtjs.org).
 Make sure to install the dependencies
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Production
@@ -59,7 +59,7 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
