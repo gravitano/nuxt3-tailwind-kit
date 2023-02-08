@@ -1,13 +1,13 @@
-# Autocomplete
+# Select
 
-Autocomplete component based on Headless UI `Combobox`. Support multiple selection.
+Select component based on Headless UI `Combobox`. Support multiple selection.
 
 ## Usage
 
-Use `<Autocomplete />` component to create autocomplete input.
+Use `<Select />` component to create select input.
 
 ::live-preview
-  ::autocomplete
+  ::select
   ---
   placeholder: Choose...
   items:
@@ -44,7 +44,7 @@ const selected = ref();
 </script>
 
 <template>
-  <Autocomplete
+  <Select
     v-model="selected"
     placeholder="Choose..."
     :items="items"
@@ -56,10 +56,10 @@ const selected = ref();
 
 ## Multiple
 
-Use `multiple` prop to enable multiple selection to the autocomplete component.
+Use `multiple` prop to enable multiple selection to the select component.
 
 ::live-preview
-  ::autocomplete
+  ::select
   ---
   multiple: true
   placeholder: Choose...
@@ -97,7 +97,7 @@ const selected = ref();
 </script>
 
 <template>
-  <Autocomplete
+  <Select
     v-model="selected"
     placeholder="Choose..."
     :items="items"

@@ -55,23 +55,23 @@ const onMenuClick = () => {
       </Button>
       <Button text size="sm" href="#">Back to top</Button>
     </div>
-    <ul v-if="showSidebar" class="space-y-3">
-      <template v-for="item in menus" :key="item.id">
-        <li>
+    <ContentNavigation v-slot="{ navigation }" class="space-y-3">
+      <ul v-if="showSidebar">
+        <li v-for="link of navigation" :key="link._path">
           <p class="text-gray-900 text-sm font-medium py-2">
-            {{ item.title }}
+            {{ link.title }}
           </p>
           <ul class="ml-1">
-            <li v-for="child in item.items" :key="child.title">
+            <li v-for="child in link.children" :key="child.title">
               <NuxtLink
                 class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 text-sm"
-                :to="child.path" exact-active-class="border-l-gray-500 !text-gray-900 font-medium" @click="onMenuClick">
+                :to="child._path" exact-active-class="border-l-gray-500 !text-gray-900 font-medium" @click="onMenuClick">
                 {{ child.title }}
               </NuxtLink>
             </li>
           </ul>
         </li>
-      </template>
-    </ul>
+      </ul>
+    </ContentNavigation>
   </div>
 </template>
