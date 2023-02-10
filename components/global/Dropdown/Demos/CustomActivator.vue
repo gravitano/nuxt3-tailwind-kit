@@ -5,7 +5,7 @@ const Button = resolveComponent('Button')
 <template>
   <Dropdown>
     <template #activator>
-      <DropdownButton :as="Button" color="primary">
+      <DropdownButton :as="Button" color="primary" size="sm">
         My Dropdown
       </DropdownButton>
     </template>
