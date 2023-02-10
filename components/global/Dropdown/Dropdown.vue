@@ -3,7 +3,7 @@ import { Menu, MenuButton, MenuItems } from '@headlessui/vue'
 import type { DropdownItemProps } from './types'
 import DropdownItem from './DropdownItem.vue'
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: boolean
     btnProps?: Record<string, any>

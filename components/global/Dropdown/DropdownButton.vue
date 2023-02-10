@@ -7,5 +7,3 @@ import { MenuButton } from '@headlessui/vue'
     <slot v-bind="props" />
   </MenuButton>
 </template>
-
-

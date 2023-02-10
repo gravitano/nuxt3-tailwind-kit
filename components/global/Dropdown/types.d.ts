@@ -1,15 +1,15 @@
-export type DropdownProps = {
-  modelValue: boolean;
-  btnProps: any;
-  label: string;
-  right: boolean;
-  items?: DropdownItemProps[];
-};
+export interface DropdownProps {
+  modelValue: boolean
+  btnProps: any
+  label: string
+  right: boolean
+  items?: DropdownItemProps[]
+}
 
-export type DropdownItemProps = {
-  text: string;
-  to?: string;
-  href?: string;
-  icon?: string;
-  newTab?: boolean;
-};
+export interface DropdownItemProps {
+  text: string
+  to?: string
+  href?: string
+  icon?: string
+  newTab?: boolean
+}
