@@ -40,8 +40,8 @@ const hrefProps = computed(() => {
       v-else
       :target="href && newTab ? '_blank' : undefined"
       :rel="href && newTab ? 'noopener' : null"
-      class="group flex gap-2 rounded-md items-center w-full px-2 py-2" :class="[
-        active ? 'bg-gray-200' : 'text-gray-900',
+      class="group flex gap-2 rounded-md items-center w-full px-2 py-2 text-sm" :class="[
+        active ? 'bg-gray-100' : 'text-gray-900',
       ]"
       v-bind="{ ...hrefProps, ...toProps, ...$attrs }"
     >

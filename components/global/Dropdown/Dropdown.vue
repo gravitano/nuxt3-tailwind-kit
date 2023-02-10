@@ -27,11 +27,11 @@ withDefaults(
   <Menu as="div" class="relative inline-block text-left">
     <div>
       <slot name="activator" :btn-props="btnProps" :label="label">
-        <MenuButton as="button" v-bind="btnProps">
+        <MenuButton as="button" class="text-sm" v-bind="btnProps">
           {{ label }}
           <Icon
             name="heroicons:chevron-down"
-            class="w-5 h-5 inline"
+            class="w-4 h-4 inline"
             aria-hidden="true"
           />
         </MenuButton>
