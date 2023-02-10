@@ -1,0 +1,19 @@
+<script setup lang="ts">
+const Button = resolveComponent('Button')
+</script>
+
+<template>
+  <Dropdown>
+    <template #activator>
+      <DropdownButton :as="Button" color="primary">
+        My Dropdown
+      </DropdownButton>
+    </template>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>Item 5</DropdownItem>
+    <DropdownItem>Item 6</DropdownItem>
+  </Dropdown>
+</template>
