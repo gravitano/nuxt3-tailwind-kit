@@ -6,7 +6,7 @@ const props = withDefaults(
     text?: string
     to?: string
     href?: string
-    icon?: any
+    icon?: string | number
     iconClass?: string
     newTab?: boolean
     divider?: boolean
@@ -46,7 +46,7 @@ const hrefProps = computed(() => {
       v-bind="{ ...hrefProps, ...toProps, ...$attrs }"
     >
       <slot name="icon">
-        <component :is="icon" :class="iconClass" />
+        <Icon v-if="icon" :name="icon" :class="iconClass" />
       </slot>
       <slot>{{ text }}</slot>
     </component>
