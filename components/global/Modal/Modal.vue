@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import {
   Dialog,
   DialogPanel,
-  DialogTitle,
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
@@ -11,37 +10,27 @@ import {
 const props = withDefaults(
   defineProps<{
     modelValue?: boolean
-    title?: string
-    headerClass?: string
-    bodyClass?: string
-    footerClass?: string
-    titleClass?: string
-    panelClass?: string
-    xButton?: boolean
-    closeText?: string
-    closeProps?: Record<string, any>
-    confirm?: boolean
-    confirmText?: string
-    confirmProps?: Record<string, any>
-    activator?: string
-    activatorProps?: Record<string, any>
+    persistent?: boolean
+    fullscreen?: boolean
   }>(),
   {
     modelValue: false,
-    closeText: 'Close',
-    confirmText: 'OK',
-    closeProps: () => ({}),
-    confirmProps: () => ({}),
-    activatorProps: () => ({}),
+    persistent: false,
+    fullscreen: false,
   },
 )
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
-  (e: 'confirm', payload: { close: () => void }): void
 }>()
 
-const isOpen = ref(props.modelValue)
+const { modelValue } = toRefs(props)
+
+const isOpen = ref(modelValue.value)
+
+watch(modelValue, (value) => {
+  isOpen.value = value
+})
 
 function closeModal() {
   isOpen.value = false
@@ -51,25 +40,30 @@ function openModal() {
   isOpen.value = true
 }
 
-function handleConfirm() {
-  emit('confirm', {
-    close: closeModal,
-  })
+function onModalClose() {
+  if (!props.persistent)
+    closeModal()
 }
+
+watch(isOpen, (value) => {
+  emit('update:modelValue', value)
+})
+
+const api = {
+  isOpen,
+  open: openModal,
+  close: closeModal,
+}
+
+provide('modal', api)
 </script>
 
 <template>
   <ClientOnly>
-    <slot name="activator" :open="openModal" :on="{ click: openModal }">
-      <Button v-if="activator" v-bind="activatorProps" @click="openModal">
-        <slot name="activatorText">
-          {{ activator }}
-        </slot>
-      </Button>
-    </slot>
+    <slot name="activator" :open="openModal" :on="{ click: openModal }" />
 
     <TransitionRoot appear :show="isOpen" as="template">
-      <Dialog as="div" class="relative z-10" @close="closeModal">
+      <Dialog as="div" class="relative z-10" @close="onModalClose">
         <TransitionChild
           as="template"
           enter="duration-300 ease-out"
@@ -83,7 +77,12 @@ function handleConfirm() {
         </TransitionChild>
 
         <div class="fixed inset-0 overflow-y-auto">
-          <div class="flex min-h-full items-center justify-center p-4 text-center">
+          <div
+            class="flex min-h-full items-center justify-center text-center"
+            :class="{
+              'p-4': !fullscreen,
+            }"
+          >
             <TransitionChild
               as="template"
               enter="duration-300 ease-out"
@@ -94,54 +93,13 @@ function handleConfirm() {
               leave-to="opacity-0 scale-95"
             >
               <DialogPanel
-                class="w-full max-w-md transform overflow-hidden rounded-lg bg-white text-left align-middle shadow-xl transition-all"
-                :class="panelClass"
+                class="w-full transform overflow-hidden bg-white text-left align-middle shadow-xl transition-all"
+                :class="{
+                  'h-screen': fullscreen,
+                  'max-w-md rounded-lg': !fullscreen,
+                }"
               >
-                <slot name="header">
-                  <DialogTitle
-                    as="div"
-                    class="flex gap-2 justify-between items-center px-4 pt-3"
-                    :class="headerClass"
-                  >
-                    <slot name="title">
-                      <h3
-                        class="text-lg font-medium leading-6 text-gray-900"
-                        :class="titleClass"
-                      >
-                        {{ title }}
-                      </h3>
-                    </slot>
-                    <slot name="x-button" :x-button="xButton">
-                      <button
-                        v-if="xButton"
-                        class="text-2xl text-gray-500 appearance-none px-2 -mr-2"
-                        @click="closeModal"
-                      >
-                        &times;
-                      </button>
-                    </slot>
-                  </DialogTitle>
-                </slot>
-                <div class="px-4 py-3" :class="bodyClass">
-                  <slot />
-                </div>
-
-                <div class="px-4 pb-3 flex gap-2 justify-end" :class="footerClass">
-                  <slot name="footer" :close="closeModal">
-                    <Button type="button" v-bind="closeProps" @click="closeModal">
-                      {{ closeText }}
-                    </Button>
-                    <Button
-                      v-if="confirm"
-                      type="button"
-                      color="primary"
-                      v-bind="confirmProps"
-                      @click="handleConfirm"
-                    >
-                      {{ confirmText }}
-                    </Button>
-                  </slot>
-                </div>
+                <slot />
               </DialogPanel>
             </TransitionChild>
           </div>
