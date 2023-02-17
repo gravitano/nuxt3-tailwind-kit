@@ -3,28 +3,30 @@ const showSidebar = ref(true)
 const isMobile = useMediaQuery('(max-width: 640px)')
 
 watchEffect(() => {
-  if (isMobile.value) {
+  if (isMobile.value)
     showSidebar.value = false
-  } else {
+
+  else
     showSidebar.value = true
-  }
 })
 
 const onMenuClick = () => {
-  if (isMobile.value) {
+  if (isMobile.value)
     showSidebar.value = false
-  }
 }
 </script>
 
 <template>
   <div
-    class="lg:px-4 lg:py-6 px-3 shadow-md lg:shadow-none pt-1 pb-3 bg-white lg:bg-transparent lg:w-[280px] lg:min-h-screen overflow-y-auto">
+    class="lg:px-4 lg:py-6 px-3 shadow-md lg:shadow-none pt-1 pb-3 bg-white lg:bg-transparent lg:w-[280px] lg:min-h-screen overflow-y-auto"
+  >
     <div class="sticky lg:hidden top-0 flex items-center justify-between">
       <Button text @click="showSidebar = !showSidebar">
         <Icon name="ri:menu-2-line" class="w-5 h-5" />
       </Button>
-      <Button text size="sm" href="#">Back to top</Button>
+      <Button text size="sm" href="#">
+        Back to top
+      </Button>
     </div>
     <ContentNavigation v-slot="{ navigation }" class="space-y-3">
       <ul v-if="showSidebar">
@@ -35,8 +37,9 @@ const onMenuClick = () => {
           <ul class="ml-1">
             <li v-for="child in link.children" :key="child.title">
               <NuxtLink
-                class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 text-sm"
-                :to="child._path" exact-active-class="border-l-gray-500 !text-gray-900 font-medium" @click="onMenuClick">
+                class="px-5 py-1.5 block text-gray-600 border-l border-l-gray-300 hover:border-l-gray-500 hover:text-gray-800 text-sm"
+                :to="child._path" exact-active-class="border-l-primary-600 font-medium !text-primary-600" @click="onMenuClick"
+              >
                 {{ child.title }}
               </NuxtLink>
             </li>
