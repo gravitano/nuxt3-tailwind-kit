@@ -21,12 +21,12 @@ const onMenuClick = () => {
     class="lg:px-4 lg:py-6 px-3 shadow-md lg:shadow-none pt-1 pb-3 bg-white lg:bg-transparent lg:w-[280px] lg:min-h-screen overflow-y-auto"
   >
     <div class="sticky lg:hidden top-0 flex items-center justify-between">
-      <Button text @click="showSidebar = !showSidebar">
+      <VButton text @click="showSidebar = !showSidebar">
         <Icon name="ri:menu-2-line" class="w-5 h-5" />
-      </Button>
-      <Button text size="sm" href="#">
+      </VButton>
+      <VButton text size="sm" href="#">
         Back to top
-      </Button>
+      </VButton>
     </div>
     <ContentNavigation v-slot="{ navigation }" class="space-y-3">
       <ul v-if="showSidebar">

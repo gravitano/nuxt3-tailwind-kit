@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants'
 const props = defineProps({
   type: {
     type: String,
-    default: 'button',
+    default: '',
   },
   color: {
     type: String as PropType<'primary' | 'secondary' | 'warning' | 'error' | 'success' | 'light' | 'dark'>,
@@ -71,7 +71,7 @@ const btn = tv({
     },
     size: {
       sm: 'px-2 py-1 text-sm h-[28px]',
-      md: 'px-3 py-1.5 text-base h-[38px]',
+      md: 'px-3.5 py-1.5 text-base',
       lg: 'py-3 px-8 text-lg h-[48px]',
     },
     rounded: {

@@ -3,9 +3,9 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <Button @click="isOpen = true">
+  <VButton @click="isOpen = true">
     Open Modal
-  </Button>
+  </VButton>
   <Modal
     v-model="isOpen"
     fullscreen

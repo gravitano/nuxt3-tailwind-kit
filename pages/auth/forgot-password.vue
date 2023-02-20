@@ -29,9 +29,9 @@ const onSubmit = handleSubmit((values) => {
 
       <FormInput name="email" label="Email" placeholder="Email" />
 
-      <Button type="submit" color="primary" block>
+      <VButton type="submit" color="primary" block>
         Send Password Reset Link
-      </Button>
+      </VButton>
     </form>
   </div>
 </template>

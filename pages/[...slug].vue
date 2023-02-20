@@ -16,9 +16,9 @@ definePageMeta({
             <p class="text-sm text-gray-600 mb-6">
               Document or page not found
             </p>
-            <Button href="/" size="sm" text color="primary">
+            <VButton href="/" size="sm" text color="primary">
               Back to home
-            </Button>
+            </VButton>
           </div>
         </div>
       </template>

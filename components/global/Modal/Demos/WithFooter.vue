@@ -3,9 +3,9 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <Button @click="isOpen = true">
+  <VButton @click="isOpen = true">
     Open Modal
-  </Button>
+  </VButton>
   <Modal
     v-model="isOpen"
   >
@@ -16,9 +16,9 @@ const isOpen = ref(false)
       Your payment has been successfully submitted. We’ve sent you an email with all of the details of your order.
     </ModalBody>
     <ModalFooter>
-      <Button @click="isOpen = false">
+      <VButton @click="isOpen = false">
         Got it, thanks!
-      </Button>
+      </VButton>
     </ModalFooter>
   </Modal>
 </template>

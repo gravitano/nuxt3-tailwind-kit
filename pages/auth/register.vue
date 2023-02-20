@@ -55,9 +55,9 @@ const onSubmit = handleSubmit((values) => {
         </label>
       </div>
 
-      <Button type="submit" color="primary" block class="mb-5">
+      <VButton type="submit" color="primary" block class="mb-5">
         Register
-      </Button>
+      </VButton>
 
       <div class="text-gray-600 text-sm">
         Already have an account?
@@ -71,5 +71,3 @@ const onSubmit = handleSubmit((values) => {
     </form>
   </div>
 </template>
-
-

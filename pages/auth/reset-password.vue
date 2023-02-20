@@ -40,9 +40,9 @@ const onSubmit = handleSubmit((values) => {
         placeholder="Password Confirmation"
       />
 
-      <Button type="submit" color="primary" block>
+      <VButton type="submit" color="primary" block>
         Submit
-      </Button>
+      </VButton>
     </form>
   </div>
 </template>
