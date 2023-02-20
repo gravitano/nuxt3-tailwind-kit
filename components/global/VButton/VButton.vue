@@ -21,10 +21,6 @@ const props = defineProps({
     default: 'primary',
     validator: (v: string) => ['primary', 'tertiary', 'ghost'].includes(v),
   },
-  outlined: {
-    type: Boolean,
-    default: false,
-  },
   block: {
     type: Boolean,
     default: false,
@@ -41,10 +37,6 @@ const props = defineProps({
     type: String as PropType<'sm' | 'md' | 'lg'>,
     default: 'md',
     validator: (v: string) => ['sm', 'md', 'lg'].includes(v),
-  },
-  icon: {
-    type: Boolean,
-    default: false,
   },
   shadow: {
     type: [Boolean, String] as PropType<boolean | 'sm' | 'md' | 'lg' | 'xl'>,
