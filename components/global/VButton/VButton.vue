@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants'
 const props = defineProps({
   type: {
     type: String,
-    default: '',
+    default: undefined,
   },
   color: {
     type: String as PropType<'primary' | 'secondary' | 'warning' | 'error' | 'success' | 'light' | 'dark'>,
@@ -27,11 +27,11 @@ const props = defineProps({
   },
   to: {
     type: [String, Object],
-    default: '',
+    default: undefined,
   },
   href: {
     type: String,
-    default: '',
+    default: undefined,
   },
   size: {
     type: String as PropType<'sm' | 'md' | 'lg'>,
