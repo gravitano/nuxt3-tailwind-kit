@@ -1,5 +1,5 @@
 import type { Story } from '@storybook/vue3'
-import Button from './Button.vue'
+import Button from './VButton.vue'
 
 const variants = [
   'default',

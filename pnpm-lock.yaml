@@ -38,6 +38,7 @@ specifiers:
   pinia: ^2.0.30
   prism-themes: ^1.9.0
   swiper: ^9.0.1
+  tailwind-variants: ^0.0.30
   tailwindcss: ^3.2.4
   vee-validate: ^4.7.3
   vue: ^3.2.47
@@ -57,6 +58,7 @@ dependencies:
   markdown-it-prism: 2.3.0
   pinia: 2.0.30_vue@3.2.47
   prism-themes: 1.9.0
+  tailwind-variants: 0.0.30_tailwindcss@3.2.4
   vee-validate: 4.7.3_vue@3.2.47
   vue: 3.2.47
   vue-gtag: 2.0.1_vue@3.2.47
@@ -2939,7 +2941,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/kit/3.2.0_rollup@3.15.0:
     resolution: {integrity: sha512-Otb1S/08tDxbpeQYLMynjr2TX7ssU1ynbWDpVzFzLBdfHkGWHXpIhJr+0u3LdnPUBw6C/xPXe7fd7RuXI9avoA==}
@@ -3045,7 +3046,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/schema/3.2.0_rollup@3.15.0:
     resolution: {integrity: sha512-tz9RandI5LgbT9BQ8dE8n4kItV7+4OUgbX42YemcGbtORVJAWJJvQyHGikJ5akUgiTFYTV8tjV6pRPH9Txx0Pg==}
@@ -3192,7 +3192,7 @@ packages:
       '@intlify/bundle-utils': 3.4.0_vue-i18n@9.3.0-beta.16
       '@intlify/shared': 9.3.0-beta.11
       '@intlify/unplugin-vue-i18n': 0.8.1_vue-i18n@9.3.0-beta.16
-      '@nuxt/kit': 3.1.1
+      '@nuxt/kit': 3.2.0
       '@vue/compiler-sfc': 3.2.47
       cookie-es: 0.5.0
       debug: 4.3.4
@@ -5889,12 +5889,6 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  /acorn/8.8.1:
-    resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
-
   /acorn/8.8.2:
     resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
     engines: {node: '>=0.4.0'}
@@ -7549,8 +7543,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      JSONStream: 1.3.5
       is-text-path: 1.0.1
+      JSONStream: 1.3.5
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -11447,7 +11441,6 @@ packages:
   /jiti/1.17.0:
     resolution: {integrity: sha512-CByzPgFqYoB9odEeef7GNmQ3S5THIBOtzRYoSCya2Sv27AuQxy2jgoFjQ6VTF53xsq1MXRm+YWNvOoDHUAteOw==}
     hasBin: true
-    dev: true
 
   /js-cookie/3.0.1:
     resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
@@ -16106,7 +16099,6 @@ packages:
 
   /std-env/3.3.2:
     resolution: {integrity: sha512-uUZI65yrV2Qva5gqE0+A7uVAvO40iPo6jGhs7s8keRfHCmtg+uB2X6EiLGCI9IgL1J17xGhvoOqSz79lzICPTA==}
-    dev: true
 
   /stop-iteration-iterator/1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
@@ -16314,7 +16306,6 @@ packages:
     resolution: {integrity: sha512-QZTsipNpa2Ppr6v1AmJHESqJ3Uz247MUS0OjrnnZjFAvEoWqxuyFuXn2xLgMtRnijJShAa1HL0gtJyUs7u7n3Q==}
     dependencies:
       acorn: 8.8.2
-    dev: true
 
   /style-loader/1.3.0_webpack@4.46.0:
     resolution: {integrity: sha512-V7TCORko8rs9rIqkSrlMfkqA63DfoGBBJmK1kKGCcSi+BWb4cqz0SRsnp4l6rU5iwOEd0/2ePv68SV22VXon4Q==}
@@ -16437,6 +16428,20 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /tailwind-merge/1.10.0:
+    resolution: {integrity: sha512-WFnDXSS4kFTZwjKg5/oZSGzBRU/l+qcbv5NVTzLUQvJ9yovDAP05h0F2+ZFW0Lw9EcgRoc2AfURUdZvnEFrXKg==}
+    dev: false
+
+  /tailwind-variants/0.0.30_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-i19FBuvyy1IibNhOHaAyEv/ZgeWlH3RwABUrjRyZSJUd53yscMv2F/Ffl6TRGya0C/phHYcBiaiGlWl1AZ/vdA==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
+    dependencies:
+      tailwind-merge: 1.10.0
+      tailwindcss: 3.2.4
+    dev: false
 
   /tailwindcss/3.2.4:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
@@ -16587,7 +16592,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.8.2
       commander: 2.20.3
       source-map: 0.6.1
       source-map-support: 0.5.21
@@ -17113,7 +17118,6 @@ packages:
       unplugin: 1.0.1
     transitivePeerDependencies:
       - rollup
-    dev: true
 
   /unimport/2.2.4_rollup@3.15.0:
     resolution: {integrity: sha512-qMgmeEGqqrrmEtm0dqxMG37J6xBtrriqxq9hILvDb+e6l2F0yTnJomLoCCp0eghLR7bYGeBsUU5Y0oyiUYhViw==}
