@@ -13,15 +13,14 @@ const navigation: NavigationItem[] = [
   { title: 'Components', to: '/docs/components/autocomplete' },
   {
     title: 'Examples',
-    to: '/examples',
     children: [
       {
         title: 'Forms',
-        to: '/forms',
+        to: '/docs/forms',
       },
       {
         title: 'Swiper',
-        to: '/swiper',
+        to: '/docs/swiper',
       },
     ],
   },
