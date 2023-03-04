@@ -8,7 +8,7 @@ const appConfig = useAppConfig()
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div v-if="appConfig.announcement.enabled" class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div class="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            {{  appConfig.announcement.message }} 
+            {{  appConfig.announcement.message }}
             <NuxtLink :to="appConfig.announcement.url" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></NuxtLink>
           </div>
         </div>
@@ -20,7 +20,7 @@ const appConfig = useAppConfig()
             {{ appConfig.description }}
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <NuxtLink to="/getting-started/installation" class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</NuxtLink>
+            <NuxtLink to="/docs/getting-started/installation" class="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</NuxtLink>
             <NuxtLink target="_blank" to="https://github.com/gravitano/nuxt3-tailwind-kit" class="text-base font-semibold leading-7 text-gray-900">View GitHub <span aria-hidden="true">→</span></NuxtLink>
           </div>
         </div>
