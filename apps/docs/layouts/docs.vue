@@ -11,6 +11,6 @@
         <slot />
       </div>
     </div>
-    <AppFooter />
+    <LandingFooter />
   </div>
 </template>
