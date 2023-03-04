@@ -10,10 +10,10 @@ useHead({
 
 <template>
   <div>
-    <HomeFeatureTwoColumn />
+    <LandingFeatureTwoColumn />
 
-    <HomeFeatureGrid />
+    <LandingFeatureGrid />
 
-    <HomeCta />
+    <LandingCta />
   </div>
 </template>

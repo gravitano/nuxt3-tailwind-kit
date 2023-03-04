@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   extends: [
-      './ui'
+      './ui',
+      './apps/landing',
   ],
   modules: [
     '@vueuse/nuxt',

@@ -46,9 +46,9 @@ const navigation: NavigationItem[] = [
       </svg>
     </div>
     <div class="px-6 py-6 lg:px-8">
-      <HomeNav :navigation="navigation" />
-      <HomeMobileNav :navigation="navigation" />
+      <LandingNav :navigation="navigation" />
+      <LandingMobileNav :navigation="navigation" />
     </div>
-    <HomeHero v-if="!hideHero" />
+    <LandingHero v-if="!hideHero" />
   </div>
 </template>

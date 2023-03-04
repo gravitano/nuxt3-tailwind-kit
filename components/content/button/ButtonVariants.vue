@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="space-x-2 space-y-2" v-for="color in $colors" :key="color">
+  <div class="space-x-2 space-y-2" v-for="color in colors" :key="color">
     <VButton :color="color">
       Default
     </VButton>
