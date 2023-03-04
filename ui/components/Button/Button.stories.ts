@@ -1,68 +1,60 @@
 import type { Story } from '@storybook/vue3'
-import Button from './VButton.vue'
+import { colors, variants } from '../../utils/buttons'
+import VButton from './Button.vue'
 
-const variants = [
-  'default',
-  'primary',
-  'secondary',
-  'info',
-  'warning',
-  'success',
-  'dark',
-]
-
-const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl']
+const sizes = ['sm', 'md', 'lg']
 
 export default {
   title: 'Components/Button',
-  component: Button,
+  component: VButton,
   args: {},
 }
 
 const Template: Story = (args, { argTypes }) => ({
-  components: { Button },
+  components: { VButton },
   setup() {
     return { args, argTypes, variants }
   },
   template: `
-  <div :class="args.block ? 'space-y-2' : 'space-x-2'">
-    <VButton v-for="variant in variants" :key="variant" v-bind="args" :color="variant">
-    {{ variant }}
+    <VButton v-bind="args">
+      Button
     </VButton>
-  </div>
   `,
 })
 
 export const Default = Template.bind({})
 Default.args = {}
 
-export const Outlined = Template.bind({})
-Outlined.args = {
-  outlined: true,
-}
+export const Colors: Story = (args, { argTypes }) => ({
+  components: { VButton },
+  setup() {
+    return { args, argTypes, colors }
+  },
+  template: `
+  <div :class="args.block ? 'space-y-2' : 'space-x-2'">
+    <VButton v-for="color in colors" :key="color" v-bind="args" :color="color">
+      {{ color }}
+    </VButton>
+  </div>
+  `,
+})
 
-export const Text = Template.bind({})
-Text.args = {
-  text: true,
-}
-
-export const Rounded = Template.bind({})
-Rounded.args = {
-  rounded: true,
-}
-
-export const Block = Template.bind({})
-Block.args = {
-  block: true,
-}
-
-export const Disabled = Template.bind({})
-Disabled.args = {
-  disabled: true,
-}
+export const Variants: Story = (args, { argTypes }) => ({
+  components: { VButton },
+  setup() {
+    return { args, argTypes, variants }
+  },
+  template: `
+  <div :class="args.block ? 'space-y-2' : 'space-x-2'">
+    <VButton v-for="variant in variants" :key="variant" v-bind="args" :color="variant">
+      {{ variant }}
+    </VButton>
+  </div>
+  `,
+})
 
 export const Sizes: Story = (args, { argTypes }) => ({
-  components: { Button },
+  components: { VButton },
   setup() {
     return { args, argTypes, sizes }
   },
@@ -76,12 +68,12 @@ export const Sizes: Story = (args, { argTypes }) => ({
 })
 
 export const Icon: Story = (args, { argTypes }) => ({
-  components: { Button },
+  components: { VButton },
   setup() {
     return { args, argTypes, sizes }
   },
   template: `
-    <VButton v-bind="args" :size="size">
+    <VButton v-bind="args">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
