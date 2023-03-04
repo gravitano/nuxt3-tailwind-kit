@@ -12,6 +12,27 @@ Nuxt 3 + Tailwind Starter Kit.
 - Easy form validation with [vee-validate](https://vee-validate.logaretm.com/v4/)
 - Custom authentication store via [`useAuthStore`](./stores/auth.ts)
 - Internalization via [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
+- Modular with [Nuxt Layer](https://nuxt.com/docs/getting-started/layers)
+
+## Directory Structure
+
+```bash
+.
+├── apps              # Nuxt Layer
+│   └── admin         # Admin Panel
+│   └── auth          # Authentication
+│   └── blog          # Blog
+│   └── docs          # Documentation
+│   └── landing       # Landing Page
+│   └── store         # Store
+├── components        # Global Components
+├── content           # Nuxt Content
+├── layouts           # Layouts
+├── plugins           # Plugins
+├── stores            # Stores
+├── ui                # UI Component Library
+├── app.config.ts     # Application Config
+```
 
 ## Try it Now
 
