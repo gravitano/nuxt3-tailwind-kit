@@ -56,8 +56,8 @@ const onSubmit = handleSubmit(async (values) => {
         {{ error }}
       </div>
 
-      <FormInput name="email" label="Email" placeholder="Email" />
-      <FormInput name="password" label="Password" placeholder="Password" type="password" />
+      <VInput name="email" label="Email" placeholder="Email" />
+      <VInput name="password" label="Password" placeholder="Password" type="password" />
 
       <div class="mb-5 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">

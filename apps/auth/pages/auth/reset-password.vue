@@ -32,9 +32,9 @@ const onSubmit = handleSubmit((values) => {
         subtitle="Please enter your new password"
       />
 
-      <FormInput name="email" label="Email" placeholder="Email" />
-      <FormInput name="password" label="Password" placeholder="Password" />
-      <FormInput
+      <VInput name="email" label="Email" placeholder="Email" />
+      <VInput name="password" label="Password" placeholder="Password" />
+      <VInput
         name="passwordConfirmation"
         label="Password Confirmation"
         placeholder="Password Confirmation"
