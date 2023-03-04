@@ -38,7 +38,7 @@ export default defineAppConfig({
   announcement: {
     enabled: true,
     message: 'Nuxt Tailwind Kit is now available for Nuxt 3!',
-    url: '/getting-started/installation'
+    url: '/docs/getting-started/installation'
   },
   cta: {
     title: 'Boost your productivity',
@@ -46,12 +46,12 @@ export default defineAppConfig({
     links: [
       {
         title: 'Get Started',
-        url: '/getting-started/installation',
+        url: '/docs/getting-started/installation',
         type: 'primary'
       },
       {
         title: 'Learn More',
-        url: '/getting-started/installation',
+        url: '/docs/getting-started/installation',
         type: 'alt',
         arrow: true
       }
