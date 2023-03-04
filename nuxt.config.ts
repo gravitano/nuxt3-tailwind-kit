@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+  extends: [
+      './ui'
+  ],
   modules: [
     '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
