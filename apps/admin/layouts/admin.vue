@@ -7,16 +7,15 @@ useHead({
   title: t('app_name'),
 })
 
-const sidebar = useSidebar()
+const sidebar = useAdminSidebar()
 </script>
 
 <template>
   <main class="flex flex-col sm:flex-row">
-    <DashboardSidebar v-model="sidebar" />
-    <!-- <NavDrawer /> -->
+    <AdminSidebar v-model="sidebar" />
 
     <div class="w-full flex-grow">
-      <DashboardHeader @menu:click="sidebar = true" />
+      <AdminHeader @menu:click="sidebar = true" />
 
       <!-- main content -->
       <div class="px-6 py-6">

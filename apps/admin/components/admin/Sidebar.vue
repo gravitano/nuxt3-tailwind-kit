@@ -80,7 +80,7 @@ const menus = ref([
 </script>
 
 <template>
-  <ModalBackdrop v-if="isOpen" @click="isOpen = false" />
+  <VModalBackdrop v-if="isOpen" @click="isOpen = false" />
 
   <aside
     class="
@@ -143,7 +143,7 @@ const menus = ref([
 
     <!-- menu -->
     <ul class="flex-grow">
-      <DashboardSidebarItem
+      <AdminSidebarItem
         v-for="menu in menus"
         :key="menu.text"
         :menu="menu"

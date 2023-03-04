@@ -44,9 +44,9 @@ const logout = () => {
         >
       </div>
 
-      <Dropdown right>
+      <VDropdown right>
         <template #activator>
-          <DropdownButton
+          <VDropdownButton
             v-slot="{ open }"
             as="button"
             type="button"
@@ -70,16 +70,16 @@ const logout = () => {
                 class="i-ri-arrow-down-s-line w-5 h-5"
               />
             </span>
-          </DropdownButton>
+          </VDropdownButton>
         </template>
 
-        <DropdownItem>Profile</DropdownItem>
-        <DropdownItem>Setting</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem @click="logout">
+        <VDropdownItem>Profile</VDropdownItem>
+        <VDropdownItem>Setting</VDropdownItem>
+        <VDropdownItem divider />
+        <VDropdownItem @click="logout">
           Logout
-        </DropdownItem>
-      </Dropdown>
+        </VDropdownItem>
+      </VDropdown>
     </div>
   </header>
 </template>

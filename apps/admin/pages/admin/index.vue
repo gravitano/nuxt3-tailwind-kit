@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'dashboard',
+  layout: 'admin',
   middleware: 'auth',
 })
 
@@ -45,7 +45,7 @@ const stats = ref([
 
     <!-- stats -->
     <div class="grid grid-cols-2 sm:grid-cols-4 mb-5 gap-5">
-      <DashboardStatsItem
+      <AdminMetricItem
         v-for="stat in stats"
         :key="stat.text"
         v-bind="stat"
@@ -53,10 +53,10 @@ const stats = ref([
     </div>
 
     <!-- card -->
-    <Card title="Hello World">
+    <VCard title="Hello">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sit esse
       voluptatem et deserunt earum explicabo aut quis laboriosam nostrum
       quisquam sequi maxime est vitae, vero reiciendis veniam repudiandae fugit!
-    </Card>
+    </VCard>
   </div>
 </template>
