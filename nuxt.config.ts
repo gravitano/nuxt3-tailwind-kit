@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     './apps/store',
     './apps/blog',
     './apps/admin',
+    './apps/docs',
   ],
   modules: [
     '@vueuse/nuxt',
