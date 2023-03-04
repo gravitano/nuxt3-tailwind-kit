@@ -9,5 +9,15 @@
   },
   "devDependencies": {
     "nuxt": "^3.2.3"
-  }
+  },
+  "files": [
+    "components",
+    "composables",
+    "layouts",
+    "middleware",
+    "pages",
+    "public",
+    "app.vue",
+    "nuxt.config.ts"
+  ]
 }
