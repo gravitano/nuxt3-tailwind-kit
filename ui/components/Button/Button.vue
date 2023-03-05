@@ -63,7 +63,7 @@ const btn = tv({
     },
     size: {
       sm: 'px-2 py-1 text-sm h-[28px]',
-      md: 'px-3.5 py-1.5 text-base',
+      md: 'px-3.5 py-1.5 text-sm',
       lg: 'py-3 px-8 text-lg h-[48px]',
     },
     rounded: {
