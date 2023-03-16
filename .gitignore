@@ -6,3 +6,4 @@ nuxt.d.ts
 .DS_Store
 .idea
 .env
+.vercel
