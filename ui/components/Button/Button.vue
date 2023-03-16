@@ -50,16 +50,18 @@ const tag = computed(() => (props.to ? 'nuxt-link' : props.href ? 'a' : 'button'
 const btn = tv({
   base: `inline-flex items-center gap-2 justify-center border border-transparent text-center font-medium
     focus:outline-none focus:ring-2 focus:ring-offset-2
-    transition duration-200 ease-in-out`,
+    transition duration-200 ease-in-out
+    disabled:cursor-not-allowed
+    `,
   variants: {
     color: {
-      light: 'bg-white text-gray-800 border-gray-400 hover:bg-gray-100 focus:ring-indigo-600',
-      dark: 'text-white bg-neutral-800 border-neutral-800 focus:ring-neutral-800',
-      primary: 'bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-600',
-      secondary: 'bg-gray-600 border-gray-600 text-white hover:bg-gray-700 focus:ring-gray-600',
-      warning: 'bg-amber-500 border-amber-500 text-white hover:bg-amber-600 focus:ring-amber-500',
-      error: 'bg-rose-600 border-rose-600 text-white hover:bg-rose-700 focus:ring-rose-600',
-      success: 'bg-green-600 border-green-600 text-white hover:bg-green-700 focus:ring-green-600',
+      light: 'bg-white text-gray-800 border-gray-400 hover:bg-gray-100 focus:ring-indigo-600 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200 disabled:bg-gray-200',
+      dark: 'text-white bg-neutral-800 border-neutral-800 focus:ring-neutral-800 disabled:bg-neutral-500 disabled:text-neutral-300 disabled:border-neutral-500',
+      primary: 'bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-600 disabled:bg-indigo-400 disabled:text-indigo-200 disabled:border-indigo-400',
+      secondary: 'bg-gray-600 border-gray-600 text-white hover:bg-gray-700 focus:ring-gray-600 disabled:bg-gray-400 disabled:text-gray-200 disabled:border-gray-400',
+      warning: 'bg-amber-500 border-amber-500 text-white hover:bg-amber-600 focus:ring-amber-500 disabled:bg-amber-300 disabled:text-amber-100 disabled:border-amber-300',
+      error: 'bg-rose-600 border-rose-600 text-white hover:bg-rose-700 focus:ring-rose-600 disabled:bg-rose-400 disabled:text-rose-200 disabled:border-rose-400',
+      success: 'bg-green-600 border-green-600 text-white hover:bg-green-700 focus:ring-green-600 disabled:bg-green-400 disabled:text-green-200 disabled:border-green-400',
     },
     size: {
       sm: 'px-2 py-1 text-sm h-[28px]',
