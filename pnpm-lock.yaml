@@ -1,8 +1,5 @@
 lockfileVersion: 5.4
 
-overrides:
-  consola: 3.0.1
-
 specifiers:
   '@antfu/eslint-config': ^0.38.4
   '@babel/core': ^7.20.12
@@ -3004,7 +3001,7 @@ packages:
     resolution: {integrity: sha512-bSO4g2aNk7AT5abAIJtHLTN+FZFYMvwP6MH9oP6XAo/SsIowvFq7g38in3jK/OMDR+dZq3Nt1z8GrMDGipzsfQ==}
     dependencies:
       '@nuxt/kit': 3.2.3
-      consola: 3.0.1
+      consola: 2.15.3
       defu: 6.1.2
       destr: 1.2.2
       detab: 3.0.2
@@ -3056,7 +3053,7 @@ packages:
     dependencies:
       '@nuxt/schema': 3.0.0
       c12: 1.2.0
-      consola: 3.0.1
+      consola: 2.15.3
       defu: 6.1.2
       globby: 13.1.3
       hash-sum: 2.0.0
@@ -3083,7 +3080,7 @@ packages:
     dependencies:
       '@nuxt/schema': 3.2.3
       c12: 1.2.0
-      consola: 3.0.1
+      consola: 2.15.3
       defu: 6.1.2
       globby: 13.1.3
       hash-sum: 2.0.0
@@ -3110,7 +3107,7 @@ packages:
     dependencies:
       '@nuxt/schema': 3.3.1
       c12: 1.2.0
-      consola: 3.0.1
+      consola: 2.15.3
       defu: 6.1.2
       globby: 13.1.3
       hash-sum: 2.0.0
@@ -3427,7 +3424,7 @@ packages:
       chalk: 5.2.0
       chokidar: 3.5.3
       clear-module: 4.1.2
-      consola: 3.0.1
+      consola: 2.15.3
       defu: 6.1.2
       pathe: 1.1.0
       postcss: 8.4.21
@@ -7323,7 +7320,7 @@ packages:
     hasBin: true
     dependencies:
       c12: 1.2.0
-      consola: 3.0.1
+      consola: 2.15.3
       convert-gitmoji: 0.1.3
       execa: 6.1.0
       mri: 1.2.0
@@ -7709,6 +7706,9 @@ packages:
       readable-stream: 2.3.8
       typedarray: 0.0.6
     dev: true
+
+  /consola/2.15.3:
+    resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
 
   /consola/3.0.1:
     resolution: {integrity: sha512-08E7bC2N6gaFdzPU/qtBi4ulVvJitYnfrDdxEiwElC3jSNICbOvkcE+8N56EfIrBoxp37O9Qnn5ZZPElov83UQ==}
