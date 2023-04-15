@@ -33,12 +33,12 @@ export default defineAppConfig({
     title: 'Develop Faster',
     subtitle: 'Everything you need to create your app',
     description: 'Includes everything you need to build your app, including a customizable UI kit, authentication, and more.',
-    image: 'https://tailwindui.com/img/component-images/dark-project-app-screenshot.png'
+    image: 'https://tailwindui.com/img/component-images/dark-project-app-screenshot.png',
   },
   announcement: {
     enabled: true,
     message: 'Nuxt Tailwind Kit is now available for Nuxt 3!',
-    url: '/docs/getting-started/installation'
+    url: '/docs/getting-started/installation',
   },
   cta: {
     title: 'Boost your productivity',
@@ -47,15 +47,15 @@ export default defineAppConfig({
       {
         title: 'Get Started',
         url: '/docs/getting-started/installation',
-        type: 'primary'
+        type: 'primary',
       },
       {
         title: 'Learn More',
         url: '/docs/getting-started/installation',
         type: 'alt',
-        arrow: true
-      }
+        arrow: true,
+      },
     ],
-    image: 'https://tailwindui.com/img/component-images/dark-project-app-screenshot.png'
-  }
+    image: 'https://tailwindui.com/img/component-images/dark-project-app-screenshot.png',
+  },
 })
