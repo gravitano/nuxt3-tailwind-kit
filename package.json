@@ -38,7 +38,7 @@
     "@nuxt/content": "^2.5.2",
     "@nuxtjs/fontaine": "^0.2.5",
     "@nuxtjs/google-fonts": "^3.0.0",
-    "@nuxtjs/i18n": "8.0.0-beta.10",
+    "@nuxtjs/i18n": "next",
     "@nuxtjs/tailwindcss": "^6.6.6",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
