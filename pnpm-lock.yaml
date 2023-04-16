@@ -27,8 +27,8 @@ specifiers:
   '@tailwindcss/aspect-ratio': ^0.4.2
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
-  '@vueuse/core': ^9.13.0
-  '@vueuse/nuxt': ^9.13.0
+  '@vueuse/core': ^10.0.2
+  '@vueuse/nuxt': ^10.0.2
   babel-loader: ^9.1.2
   eslint: ^8.38.0
   highlight.js: ^11.7.0
@@ -36,11 +36,11 @@ specifiers:
   markdown-it: ^13.0.1
   markdown-it-prism: ^2.3.0
   nuxt: ^3.4.1
-  nuxt-icon: ^0.2.11
+  nuxt-icon: ^0.3.3
   pinia: ^2.0.34
   prism-themes: ^1.9.0
   swiper: ^9.2.2
-  tailwind-variants: ^0.0.30
+  tailwind-variants: ^0.1.2
   tailwindcss: ^3.3.1
   vee-validate: ^4.8.5
   vue: ^3.2.47
@@ -53,13 +53,13 @@ dependencies:
   '@headlessui/vue': 1.7.13_vue@3.2.47
   '@heroicons/vue': 2.0.17_vue@3.2.47
   '@pinia/nuxt': 0.4.8_vue@3.2.47
-  '@vueuse/core': 9.13.0_vue@3.2.47
+  '@vueuse/core': 10.0.2_vue@3.2.47
   highlight.js: 11.7.0
   markdown-it: 13.0.1
   markdown-it-prism: 2.3.0
   pinia: 2.0.34_vue@3.2.47
   prism-themes: 1.9.0
-  tailwind-variants: 0.0.30_tailwindcss@3.3.1
+  tailwind-variants: 0.1.2_tailwindcss@3.3.1
   vee-validate: 4.8.5_vue@3.2.47
   vue: 3.2.47
   vue-gtag: 2.0.1_vue@3.2.47
@@ -87,12 +87,12 @@ devDependencies:
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.3.1
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.3.1
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.1
-  '@vueuse/nuxt': 9.13.0_nuxt@3.4.1+vue@3.2.47
+  '@vueuse/nuxt': 10.0.2_nuxt@3.4.1+vue@3.2.47
   babel-loader: 9.1.2_@babel+core@7.21.4
   eslint: 8.38.0
   husky: 8.0.3
   nuxt: 3.4.1_eslint@8.38.0
-  nuxt-icon: 0.2.11_vue@3.2.47
+  nuxt-icon: 0.3.3_vue@3.2.47
   swiper: 9.2.2
   tailwindcss: 3.3.1
   vue-loader: 17.0.1_vue@3.2.47
@@ -5354,28 +5354,28 @@ packages:
   /@vue/shared/3.2.47:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
 
-  /@vueuse/core/9.13.0_vue@3.2.47:
-    resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
+  /@vueuse/core/10.0.2_vue@3.2.47:
+    resolution: {integrity: sha512-/UGc2cXbxbeIFLDSJyHUjI9QZ4CJJkhiJe9TbKNPSofcWmYhhUgJ+7iw9njXTKu/Xc3Z6UeXVR9fosW1+cyrnQ==}
     dependencies:
       '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0_vue@3.2.47
+      '@vueuse/metadata': 10.0.2
+      '@vueuse/shared': 10.0.2_vue@3.2.47
       vue-demi: 0.14.0_vue@3.2.47
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
 
-  /@vueuse/metadata/9.13.0:
-    resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
+  /@vueuse/metadata/10.0.2:
+    resolution: {integrity: sha512-APSjlABrV+Q74c+FR0kFETvcN9W2pAaT3XF3WwqWUuk4srmVxv7DY4WshZxK2KYk1+MVY0Fus6J1Hk/JXVm6Aw==}
 
-  /@vueuse/nuxt/9.13.0_nuxt@3.4.1+vue@3.2.47:
-    resolution: {integrity: sha512-JunH/w6nFIwCyaZ0s+pfrYFMfBzGfhkwmFPz7ogHFmb71Ty/5HINrYOAOZCXpN44X6QH6FiJq/wuLLdvYzqFUw==}
+  /@vueuse/nuxt/10.0.2_nuxt@3.4.1+vue@3.2.47:
+    resolution: {integrity: sha512-JO/ja8DbvagM5bYmWKOCu+ZEge1Q9fLBnMlCiy7auWvMK6JiGpqloxqGYZGgKS3JXwhbCC9DkuZ1rGZ1RuyZ5w==}
     peerDependencies:
       nuxt: ^3.0.0
     dependencies:
       '@nuxt/kit': 3.4.1
-      '@vueuse/core': 9.13.0_vue@3.2.47
-      '@vueuse/metadata': 9.13.0
+      '@vueuse/core': 10.0.2_vue@3.2.47
+      '@vueuse/metadata': 10.0.2
       local-pkg: 0.4.3
       nuxt: 3.4.1_eslint@8.38.0
       vue-demi: 0.14.0_vue@3.2.47
@@ -5386,8 +5386,8 @@ packages:
       - vue
     dev: true
 
-  /@vueuse/shared/9.13.0_vue@3.2.47:
-    resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
+  /@vueuse/shared/10.0.2_vue@3.2.47:
+    resolution: {integrity: sha512-7W2l6qZaFvla3zAeEVo8hNHkNRKCezJa3JjZAKv3K4KsevXobHhVNr+RHaOVNK/6ETpFmtqiK+0pMIADbHjjag==}
     dependencies:
       vue-demi: 0.14.0_vue@3.2.47
     transitivePeerDependencies:
@@ -13045,8 +13045,8 @@ packages:
       - supports-color
     dev: true
 
-  /nuxt-icon/0.2.11_vue@3.2.47:
-    resolution: {integrity: sha512-mHFgTMrf+CzG7l6cdVQ7vF2XaXz8fs53QC6bk+zVZEHBCCwFtRoG0H+62y+y0iAo2+cD4VYmvsAiRMKIlIGxVA==}
+  /nuxt-icon/0.3.3_vue@3.2.47:
+    resolution: {integrity: sha512-KdhJAigBGTP8/YIFZ3orwetk40AgLq6VQ5HRYuDLmv5hiDptor9Ro+WIdZggHw7nciRxZvDdQkEwi9B5G/jrkQ==}
     dependencies:
       '@iconify/vue': 4.1.1_vue@3.2.47
       '@nuxt/kit': 3.4.1
@@ -16276,8 +16276,8 @@ packages:
     resolution: {integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==}
     dev: false
 
-  /tailwind-variants/0.0.30_tailwindcss@3.3.1:
-    resolution: {integrity: sha512-i19FBuvyy1IibNhOHaAyEv/ZgeWlH3RwABUrjRyZSJUd53yscMv2F/Ffl6TRGya0C/phHYcBiaiGlWl1AZ/vdA==}
+  /tailwind-variants/0.1.2_tailwindcss@3.3.1:
+    resolution: {integrity: sha512-MOTaBS5Hg7RN/M0tlMZCUD1crDGPlHe7XsFS7+I5bc4hfwQPVuTiPiRqivW9xH/0QvtuVo8AlEwvR2uxSC3phw==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
