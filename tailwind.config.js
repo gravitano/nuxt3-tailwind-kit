@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+
 const primary = colors.indigo
 const secondary = colors.pink
 const info = colors.sky
@@ -63,6 +64,5 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
   ],
 }

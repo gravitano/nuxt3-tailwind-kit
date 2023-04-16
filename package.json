@@ -39,7 +39,7 @@
     "@nuxtjs/fontaine": "^0.2.4",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/i18n": "8.0.0-beta.11",
-    "@nuxtjs/tailwindcss": "^6.3.1",
+    "@nuxtjs/tailwindcss": "^6.6.6",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -49,7 +49,6 @@
     "@storybook/vue3": "^6.5.16",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@vueuse/nuxt": "^9.12.0",
     "babel-loader": "^9.1.2",
@@ -58,7 +57,7 @@
     "nuxt": "^3.4.1",
     "nuxt-icon": "^0.2.10",
     "swiper": "^9.0.1",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.3.1",
     "vue-loader": "^17.0.1"
   },
   "overrides": {

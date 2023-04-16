@@ -15,7 +15,7 @@ specifiers:
   '@nuxtjs/fontaine': ^0.2.4
   '@nuxtjs/google-fonts': ^3.0.0-1
   '@nuxtjs/i18n': 8.0.0-beta.11
-  '@nuxtjs/tailwindcss': ^6.3.1
+  '@nuxtjs/tailwindcss': ^6.6.6
   '@pinia/nuxt': ^0.4.6
   '@storybook/addon-actions': ^6.5.16
   '@storybook/addon-essentials': ^6.5.16
@@ -26,7 +26,6 @@ specifiers:
   '@storybook/vue3': ^6.5.16
   '@tailwindcss/aspect-ratio': ^0.4.2
   '@tailwindcss/forms': ^0.5.3
-  '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.9
   '@vueuse/core': ^9.12.0
   '@vueuse/nuxt': ^9.12.0
@@ -42,7 +41,7 @@ specifiers:
   prism-themes: ^1.9.0
   swiper: ^9.0.1
   tailwind-variants: ^0.0.30
-  tailwindcss: ^3.2.4
+  tailwindcss: ^3.3.1
   vee-validate: ^4.7.3
   vue: ^3.2.47
   vue-gtag: ^2.0.1
@@ -87,7 +86,6 @@ devDependencies:
   '@storybook/vue3': 6.5.16_hyqknvbiomsw7ixvwwyqwu2wde
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.3.1
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.3.1
-  '@tailwindcss/line-clamp': 0.4.4_tailwindcss@3.3.1
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.1
   '@vueuse/nuxt': 9.13.0_nuxt@3.4.1+vue@3.2.47
   babel-loader: 9.1.2_@babel+core@7.21.4
@@ -4762,14 +4760,6 @@ packages:
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.3.1
-
-  /@tailwindcss/line-clamp/0.4.4_tailwindcss@3.3.1:
-    resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    dependencies:
-      tailwindcss: 3.3.1
-    dev: true
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.3.1:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
