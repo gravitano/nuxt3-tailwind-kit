@@ -11,7 +11,7 @@ pnpm dev
 
 ## Development
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+We recommend to look at the [documentation](https://nuxt.com/docs).
 
 Make sure to install the dependencies
 
@@ -33,4 +33,4 @@ Build the application for production:
 pnpm build
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
