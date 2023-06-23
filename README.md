@@ -11,7 +11,7 @@ Nuxt 3 + Tailwind Starter Kit.
 - State management with [Pinia](https://pinia.vuejs.org/)
 - Easy form validation with [vee-validate](https://vee-validate.logaretm.com/v4/)
 - Custom authentication store via [`useAuthStore`](./stores/auth.ts)
-- Internalization via [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
+- Internationalization via [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/)
 - Modular with [Nuxt Layer](https://nuxt.com/docs/getting-started/layers)
 
 ## Directory Structure
