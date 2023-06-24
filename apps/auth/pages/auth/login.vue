@@ -27,23 +27,26 @@ const route = useRoute()
 const { store } = useAuthStorage()
 
 const onSubmit = handleSubmit(async (values) => {
-  const { data, error: err } = await useFetch('/api/auth/login', {
-    method: 'post',
-    body: values,
-  })
+  error.value = ''
+  try {
+    const res = await $fetch('/api/auth/login', {
+      method: 'post',
+      body: values,
+    })
 
-  const token = data.value.data.token
-  const user = data.value.data.user
+    const token = res.token
+    const user = res.user
 
-  store(token, user)
+    store(token, user)
 
-  auth.user = user
-  auth.loggedIn = true
+    auth.user = user
+    auth.loggedIn = true
 
-  if (!err.value && !data.value.error)
     router.push((route.query as any).next || '/')
-  else
-    error.value = err.value || data.value.error?.message
+  }
+  catch (e: any) {
+    error.value = e.data.error
+  }
 })
 </script>
 
@@ -52,7 +55,7 @@ const onSubmit = handleSubmit(async (values) => {
     <form class="rounded-lg px-10 py-8 w-full max-w-md mx-auto" @submit="onSubmit">
       <AuthHeader title="Login" subtitle="Please enter your credentials" />
 
-      <div v-if="error" class="alert alert-error mb-4">
+      <div v-if="error" class="bg-error-600 text-white text-sm px-4 py-3 rounded-lg mb-4">
         {{ error }}
       </div>
 
