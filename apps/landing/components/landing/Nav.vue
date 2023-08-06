@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { Bars3Icon } from '@heroicons/vue/24/outline'
 import type { NavigationItem } from '~~/types'
+import { useAuthStore } from '~~/stores/auth'
 
 defineProps<{
   navigation: NavigationItem[]
 }>()
 
 const mobileMenu = useMobileMenu()
+
+const auth = useAuthStore()
 </script>
 
 <template>
@@ -29,7 +32,10 @@ const mobileMenu = useMobileMenu()
       </template>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <NuxtLink to="/auth/login" class="text-sm font-semibold leading-6 text-gray-900">
+      <NuxtLink v-if="auth.loggedIn" to="/admin" class="text-sm font-semibold leading-6 text-gray-900">
+        Go to admin page <span aria-hidden="true">&rarr;</span>
+      </NuxtLink>
+      <NuxtLink v-else to="/auth/login" class="text-sm font-semibold leading-6 text-gray-900">
         Log in <span aria-hidden="true">&rarr;</span>
       </NuxtLink>
     </div>
