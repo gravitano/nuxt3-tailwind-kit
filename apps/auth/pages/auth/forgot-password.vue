@@ -27,7 +27,7 @@ const onSubmit = handleSubmit((values) => {
     <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
       <AuthHeader title="Forgot Password" subtitle="Please enter your email" />
 
-      <VInput name="email" label="Email" placeholder="Email" />
+      <VInput wrapper-class="mb-4" name="email" label="Email" placeholder="Email" />
 
       <VButton type="submit" color="primary" block>
         Send Password Reset Link

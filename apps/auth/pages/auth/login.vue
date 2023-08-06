@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useForm } from 'vee-validate'
+import { useField, useForm } from 'vee-validate'
 import { object, string } from 'yup'
 import { useAuthStore } from '~~/stores/auth'
 
@@ -25,6 +25,13 @@ const error = ref()
 const route = useRoute()
 
 const { store } = useAuthStorage()
+
+const { value: email } = useField('email', undefined, {
+  initialValue: '',
+})
+const { value: password } = useField('password', undefined, {
+  initialValue: '',
+})
 
 const onSubmit = handleSubmit(async (values) => {
   error.value = ''
@@ -52,15 +59,33 @@ const onSubmit = handleSubmit(async (values) => {
 
 <template>
   <div class="flex items-center justify-center h-full">
-    <form class="rounded-lg px-10 py-8 w-full max-w-md mx-auto" @submit="onSubmit">
+    <form
+      class="rounded-lg px-10 py-8 w-full max-w-md mx-auto"
+      @submit="onSubmit"
+    >
       <AuthHeader title="Login" subtitle="Please enter your credentials" />
 
       <div v-if="error" class="bg-error-600 text-white text-sm px-4 py-3 rounded-lg mb-4">
         {{ error }}
       </div>
 
-      <VInput name="email" label="Email" placeholder="Email" />
-      <VInput name="password" label="Password" placeholder="Password" type="password" />
+      <VInput
+        v-model="email"
+        wrapper-class="mb-4"
+        name="email"
+        label="Email"
+        placeholder="Email"
+        hint="Email: admin@example.com"
+      />
+      <VInput
+        v-model="password"
+        wrapper-class="mb-4"
+        name="password"
+        label="Password"
+        placeholder="Password"
+        type="password"
+        hint="Password: admin"
+      />
 
       <div class="mb-5 flex gap-2 justify-between items-center">
         <label class="flex gap-2 items-center text-sm">

@@ -29,9 +29,10 @@ const onSubmit = handleSubmit((values) => {
     <form class="rounded-lg p-8 w-full max-w-md mx-auto" @submit="onSubmit">
       <AuthHeader title="Register" subtitle="Please enter your credentials" />
 
-      <VInput name="name" label="Name" placeholder="Name" />
-      <VInput name="email" label="Email" placeholder="Email" />
+      <VInput wrapper-class="mb-4" name="name" label="Name" placeholder="Name" />
+      <VInput wrapper-class="mb-4" name="email" label="Email" placeholder="Email" />
       <VInput
+        wrapper-class="mb-4"
         name="password"
         label="Password"
         placeholder="Password"

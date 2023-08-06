@@ -32,9 +32,10 @@ const onSubmit = handleSubmit((values) => {
         subtitle="Please enter your new password"
       />
 
-      <VInput name="email" label="Email" placeholder="Email" />
-      <VInput name="password" label="Password" placeholder="Password" />
+      <VInput wrapper-class="mb-4" name="email" label="Email" placeholder="Email" />
+      <VInput wrapper-class="mb-4" name="password" label="Password" placeholder="Password" />
       <VInput
+        wrapper-class="mb-4"
         name="passwordConfirmation"
         label="Password Confirmation"
         placeholder="Password Confirmation"
