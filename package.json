@@ -36,6 +36,7 @@
     "@commitlint/config-conventional": "^17.6.1",
     "@iconify/json": "^2.2.50",
     "@nuxt/content": "^2.5.2",
+    "@nuxt/devtools": "^0.7.4",
     "@nuxtjs/fontaine": "^0.2.5",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@nuxtjs/i18n": "8.0.0-beta.10",
