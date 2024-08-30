@@ -1,13 +1,13 @@
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    '@pinia/nuxt',
-    'nuxt-icon',
+    '@nuxt/icon',
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
   ],
   i18n: {
     locales: ['en', 'id'],
