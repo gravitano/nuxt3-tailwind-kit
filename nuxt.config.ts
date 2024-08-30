@@ -1,13 +1,4 @@
 export default defineNuxtConfig({
-  extends: [
-    './ui',
-    './apps/landing',
-    './apps/store',
-    './apps/blog',
-    './apps/admin',
-    './apps/docs',
-    './apps/auth',
-  ],
   modules: [
     '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
@@ -71,11 +62,12 @@ export default defineNuxtConfig({
   vite: {
     vue: {
       script: {
-        defineModel: true,
         propsDestructure: true,
       },
     },
   },
 
-  devtools: true,
+  devtools: {
+    enabled: true,
+  },
 })
