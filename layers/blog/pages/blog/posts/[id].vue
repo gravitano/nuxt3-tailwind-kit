@@ -41,7 +41,7 @@ useHead({
 
     <BlogPostImage
       v-if="post.image"
-      :src="`https://source.unsplash.com/random?${post.tags.join(',')}`"
+      :src="`https://picsum.photos/seed/${encodeURIComponent(post.tags.join(','))}/1200/600`"
       :alt="post.title"
       class="rounded mb-8"
     />
